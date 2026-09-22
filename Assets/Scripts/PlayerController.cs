@@ -14,17 +14,26 @@ public class PlayerController : MonoBehaviour
     public bool isFacingRight;
     public float health = 0;
 
+    public float dashForce = 20f;
+    public float dashDuration = 0.15f;
+    public float dashCooldown = 1f;
+    private bool canDash = true;
+    private bool isDashing = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         canJump = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        rb.linearVelocity = new Vector2(speed * direction, rb.linearVelocityY);
+        if (!isDashing)
+        {
+            rb.linearVelocity = new Vector2(speed * direction, rb.linearVelocityY);
+        }
 
         if (!isFacingRight && direction > 0f)
         {
@@ -47,6 +56,31 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+    }
+
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.performed && canDash)
+        {
+            StartCoroutine(DoDash());
+        }
+    }
+
+    private System.Collections.IEnumerator DoDash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        float dashDirection = isFacingRight ? 1f : -1f;
+        rb.linearVelocity = new Vector2(dashDirection * dashForce, 0f);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+        rb.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
     private void Flip()
     {
