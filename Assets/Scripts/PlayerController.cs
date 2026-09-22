@@ -131,6 +131,11 @@ public class PlayerController : MonoBehaviour
                                                     // Hay que reasignarlo completo porque
                                                     // no se puede modificar localScale.x directo.
     }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;   // -= significa "réstate a ti mismo".
+
+    }
 
 }
 

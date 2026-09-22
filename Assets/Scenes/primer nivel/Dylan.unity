@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 33186450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.3157644, y: -0.3047138, z: -10}
+  m_LocalPosition: {x: -36.3, y: 2.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4046,6 +4046,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
+--- !u!1 &1125865985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125865986}
+  m_Layer: 0
+  m_Name: Punto2
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1125865986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125865985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1249788291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4120,42 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 293649652}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1572729727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 307880469416427001, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
+  m_PrefabInstance: {fileID: 417673134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1612668723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612668724}
+  m_Layer: 0
+  m_Name: punto1
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612668724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612668723}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.34, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1780009144
@@ -4195,6 +4262,7 @@ GameObject:
   - component: {fileID: 2140907285}
   - component: {fileID: 2140907284}
   - component: {fileID: 2140907283}
+  - component: {fileID: 2140907286}
   m_Layer: 0
   m_Name: Coagulito
   m_TagString: Untagged
@@ -4270,7 +4338,7 @@ Transform:
   m_GameObject: {fileID: 2140907280}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.59, y: 0.07, z: 0}
+  m_LocalPosition: {x: -31.78, y: 0.37, z: 0}
   m_LocalScale: {x: 0.18245022, y: 0.18245022, z: 0.18245022}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4385,6 +4453,27 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.09004619, y: 0}
   m_Radius: 3.228475
+--- !u!114 &2140907286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140907280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ce59b34ddd8d444a090729c9c65686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaogulitoController
+  enemySpeed: 5
+  enemyRb: {fileID: 2140907283}
+  detectionRadius: 0.5
+  actualObjective: {fileID: 1572729727}
+  enemyMovementPoints:
+  - {fileID: 1572729727}
+  isFacingRight: 0
+  enemyDamage: 5
+  enemyStrength: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4394,3 +4483,5 @@ SceneRoots:
   - {fileID: 417673134}
   - {fileID: 1780009146}
   - {fileID: 2140907282}
+  - {fileID: 1612668724}
+  - {fileID: 1125865986}

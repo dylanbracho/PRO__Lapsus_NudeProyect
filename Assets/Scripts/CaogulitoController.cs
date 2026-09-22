@@ -104,11 +104,7 @@ public class CaogulitoController : MonoBehaviour
                 player.hitFromRight = false;
             }
 
-            public void TakeDamage(float damage)
-            {
-                 health -= damage;   // -= significa "réstate a ti mismo".
-                            
-            }
+            
         }
     }
 
