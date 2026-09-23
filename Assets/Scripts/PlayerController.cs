@@ -1,5 +1,7 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,12 +19,16 @@ public class PlayerController : MonoBehaviour
     public float hitTime;       // Cuántos segundos dura el empujón. Mientras sea > 0, el
                                 // jugador NO puede controlarse (está "aturdido").
     public bool hitFromRight;
-
-    public float dashForce = 20f;
-    public float dashDuration = 0.15f;
+    public float dashSpeed = 20f;
+    public float dashTime = 0.2f;
     public float dashCooldown = 1f;
-    private bool canDash = true;
+    [HideInInspector] public bool isInvincible = false;
     private bool isDashing = false;
+    private bool canDash = true;
+    public Collider2D hurtBox1;
+    public Collider2D hurtBox2;
+    public LayerMask enemyLayer;
+    private float lastMoveX = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,10 +40,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         canJump = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if (!isDashing)
-        {
-            rb.linearVelocity = new Vector2(speed * direction, rb.linearVelocityY);
-        }
+      
+        
 
         if (!isFacingRight && direction > 0f)
         {
@@ -46,6 +50,11 @@ public class PlayerController : MonoBehaviour
         else if (isFacingRight && direction < 0f)
         {
             Flip();
+        }
+
+        if (isDashing)
+        {
+            return;
         }
 
         if (hitTime <= 0)
@@ -80,9 +89,39 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.performed && canDash && !isDashing)
+        {
+            StartCoroutine(DoDash(context));
+        }
+    }
+
+    private IEnumerator DoDash(InputAction.CallbackContext context)
+    {
+        isDashing = true;
+        canDash = false;
+        isInvincible = true;
+        int enemyLayerIndex = LayerMaskToLayer(enemyLayer);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, true);
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f; // Desactiva la gredad durante el dash
+        rb.linearVelocity = new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = originalGravity; // Restaura la gravedad
+        isDashing = false;
+        isInvincible = false;
+        Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, false);
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
     public void Mover(InputAction.CallbackContext context)
     {
-        direction = context.ReadValue<Vector2>().x;
+
+        float x = context.ReadValue<Vector2>().x;
+        direction = x;
+        if (x != 0f) lastMoveX = x;
+
     }
 
     public void Salto(InputAction.CallbackContext context)
@@ -93,30 +132,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Dash(InputAction.CallbackContext context)
-    {
-        if (context.performed && canDash)
-        {
-            StartCoroutine(DoDash());
-        }
-    }
-
-    private System.Collections.IEnumerator DoDash()
-    {
-        canDash = false;
-        isDashing = true;
-
-        float dashDirection = isFacingRight ? 1f : -1f;
-        rb.linearVelocity = new Vector2(dashDirection * dashForce, 0f);
-
-        yield return new WaitForSeconds(dashDuration);
-
-        isDashing = false;
-        rb.linearVelocity = Vector2.zero;
-
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
-    }
     private void Flip()
     {
         isFacingRight = !isFacingRight;             // Cambia el estado de la variable
@@ -133,9 +148,26 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        health -= damage;   // -= significa "réstate a ti mismo".
+        if (isInvincible == true)
+        {
+            return;
+        }
+        health -= damage;  
 
     }
+
+    private int LayerMaskToLayer(LayerMask mask)
+    {
+        int bitmask = mask.value;
+        int layerNumber = 0;
+        while (bitmask > 1)
+        {
+            bitmask >>= 1;
+            layerNumber++;
+        }
+        return layerNumber;
+    }
+
 
 }
 

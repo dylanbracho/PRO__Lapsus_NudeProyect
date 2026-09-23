@@ -82,7 +82,7 @@
                 {
                     "name": "",
                     "id": "d0dc4555-f594-46de-814f-fe1fd7aa5efc",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
