@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    
     public void Dash(InputAction.CallbackContext context)
     {
         if (context.performed && canDash && !isDashing)
@@ -97,6 +99,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
     private IEnumerator DoDash(InputAction.CallbackContext context)
     {
         isDashing = true;
