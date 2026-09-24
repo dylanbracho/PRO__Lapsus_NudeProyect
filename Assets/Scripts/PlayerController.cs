@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         canJump = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        canDash = !canJump;
       
         
 
@@ -95,28 +96,30 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && canDash && !isDashing)
         {
-            StartCoroutine(DoDash(context));
+            isDashing = true;
+            canDash = false;
+            isInvincible = true;
+            int enemyLayerIndex = LayerMaskToLayer(enemyLayer);
+            Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, true);
+            float originalGravity = rb.gravityScale;
+            rb.gravityScale = 0f; // Desactiva la gredad durante el dash
+            rb.linearVelocity = new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
+            StartCoroutine(DoDash(originalGravity, enemyLayerIndex));
         }
     }
 
     
-    private IEnumerator DoDash(InputAction.CallbackContext context)
+    private IEnumerator DoDash(float originalGravity, int layerIndex)
     {
-        isDashing = true;
-        canDash = false;
-        isInvincible = true;
-        int enemyLayerIndex = LayerMaskToLayer(enemyLayer);
-        Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, true);
-        float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f; // Desactiva la gredad durante el dash
-        rb.linearVelocity = new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
+        
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = originalGravity; // Restaura la gravedad
         isDashing = false;
         isInvincible = false;
-        Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, false);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, layerIndex, false);
         yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        isDashing = true;
+        //canDash = true;
     }
     public void Mover(InputAction.CallbackContext context)
     {
@@ -132,6 +135,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && canJump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+           // canDash = true;
         }
     }
 
