@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         canJump = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        canDash = !canJump;
+        //canDash = !canJump;
       
         
 
@@ -94,31 +94,40 @@ public class PlayerController : MonoBehaviour
     
     public void Dash(InputAction.CallbackContext context)
     {
-        if (context.performed && canDash && !isDashing)
+        if (context.performed && canDash  && !canJump)
         {
-            isDashing = true;
-            canDash = false;
-            isInvincible = true;
-            int enemyLayerIndex = LayerMaskToLayer(enemyLayer);
-            Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, true);
-            float originalGravity = rb.gravityScale;
-            rb.gravityScale = 0f; // Desactiva la gredad durante el dash
-            rb.linearVelocity = new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
-            StartCoroutine(DoDash(originalGravity, enemyLayerIndex));
+            Debug.Log("Simon lo mejor");
+            StartCoroutine(DoDash());
+            StartCoroutine(DashCooldown());
         }
     }
 
-    
-    private IEnumerator DoDash(float originalGravity, int layerIndex)
+    private IEnumerator DashCooldown()
     {
-        
+        Debug.Log("hdcskhk");
+        yield return new WaitForSeconds(dashCooldown);
+        Debug.Log("Me da un fomo");
+        canDash = true;
+
+    }
+
+    
+    private IEnumerator DoDash()
+    {
+        //isDashing = true;
+        canDash = false;
+        isInvincible = true;
+        int enemyLayerIndex = LayerMaskToLayer(enemyLayer);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, true);
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f; // Desactiva la gredad durante el dash
+        rb.linearVelocity = new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = originalGravity; // Restaura la gravedad
-        isDashing = false;
+        //isDashing = false;
         isInvincible = false;
-        Physics2D.IgnoreLayerCollision(gameObject.layer, layerIndex, false);
-        yield return new WaitForSeconds(dashCooldown);
-        isDashing = true;
+        Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, false);
+        //isDashing = true;
         //canDash = true;
     }
     public void Mover(InputAction.CallbackContext context)
