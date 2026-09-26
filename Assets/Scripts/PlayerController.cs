@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
     
     public void Dash(InputAction.CallbackContext context)
     {
+            //Debug.Log("verga");
         if (context.performed && canDash  && !canJump)
         {
             Debug.Log("Simon lo mejor");
@@ -111,24 +112,22 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    
+
     private IEnumerator DoDash()
     {
-        //isDashing = true;
+        isDashing = true;
         canDash = false;
         isInvincible = true;
         int enemyLayerIndex = LayerMaskToLayer(enemyLayer);
         Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, true);
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f; // Desactiva la gredad durante el dash
-        rb.linearVelocity = new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
+        rb.linearVelocity += new Vector2(lastMoveX * dashSpeed, 0f); // Dash en la dirección del último movimiento
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = originalGravity; // Restaura la gravedad
-        //isDashing = false;
+        isDashing = false;
         isInvincible = false;
         Physics2D.IgnoreLayerCollision(gameObject.layer, enemyLayerIndex, false);
-        //isDashing = true;
-        //canDash = true;
     }
     public void Mover(InputAction.CallbackContext context)
     {
