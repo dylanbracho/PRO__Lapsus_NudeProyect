@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public Collider2D hurtBox2;
     public LayerMask enemyLayer;
     private float lastMoveX = 1f;
+    private bool isAttacking = false;
 
     //ataque
 
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
             //   Y = rb.linearVelocityY -> ¡OJO! Conservamos la velocidad vertical que ya tenía.
             // Si en Y pusiéramos 0, borraríamos el salto y la gravedad cada frame.
             rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocityY);
+            
         }
         else // Me golpearon: el jugador pierde el control por unos instantes.
         {
@@ -144,10 +147,12 @@ public class PlayerController : MonoBehaviour
     }
     public void Mover(InputAction.CallbackContext context)
     {
-
+        
         float x = context.ReadValue<Vector2>().x;
         direction = x;
         if (x != 0f) lastMoveX = x;
+        animator.SetFloat("Direccion", direction);
+        
 
     }
 
@@ -206,13 +211,14 @@ public class PlayerController : MonoBehaviour
     {
         attackAction.action.performed -= OnAttack;
         attackAction.action.Disable();
+        isAttacking = false;
     }
 
     private void OnAttack(InputAction.CallbackContext context)
     {
         if (!canAttack)
             return;
-
+        isAttacking = true;
         canAttack = false;
         animator.SetTrigger("Attack");
 
