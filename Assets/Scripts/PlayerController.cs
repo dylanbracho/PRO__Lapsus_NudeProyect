@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && canDash  && !canJump)
         {
             Debug.Log("Simon lo mejor");
+            animator.SetTrigger("Dash");
             StartCoroutine(DoDash());
             StartCoroutine(DashCooldown());
         }
