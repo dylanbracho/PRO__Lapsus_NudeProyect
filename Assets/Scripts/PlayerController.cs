@@ -30,6 +30,18 @@ public class PlayerController : MonoBehaviour
     public LayerMask enemyLayer;
     private float lastMoveX = 1f;
 
+    //ataque
+
+    public InputActionReference attackAction;
+    public Animator animator;
+    public GameObject whipHitbox;
+
+    public float attackCooldown = 0.5f;
+    public float hitboxActiveTime = 0.2f;
+
+    private bool canAttack = true;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -183,6 +195,42 @@ public class PlayerController : MonoBehaviour
         }
         return layerNumber;
     }
+
+    private void OnEnable()
+    {
+        attackAction.action.Enable();
+        attackAction.action.performed += OnAttack;
+    }
+
+    private void OnDisable()
+    {
+        attackAction.action.performed -= OnAttack;
+        attackAction.action.Disable();
+    }
+
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        if (!canAttack)
+            return;
+
+        canAttack = false;
+        animator.SetTrigger("Attack");
+
+        whipHitbox.SetActive(true);
+        Invoke(nameof(DisableWhip), hitboxActiveTime);
+        Invoke(nameof(ResetAttack), attackCooldown);
+    }
+
+    private void DisableWhip()
+    {
+        whipHitbox.SetActive(false);
+    }
+
+    private void ResetAttack()
+    {
+        canAttack = true;
+    }
+
 
 
 }
