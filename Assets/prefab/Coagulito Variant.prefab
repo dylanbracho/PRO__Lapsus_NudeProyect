@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7242710030751842697, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: enemyMovementPoints.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8215717744017236110, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_LocalScale.x
