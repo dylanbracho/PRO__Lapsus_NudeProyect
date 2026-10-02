@@ -21,14 +21,15 @@ public class nucleo : MonoBehaviour
 
     IEnumerator NucleoOHSI_() 
     {
-       
 
-        while (true)
+        int ustednosientequetodoserepite = 1;
+
+        while (ustednosientequetodoserepite<50)
         {
             yield return new WaitForSeconds(2f);
             nucleoOHSI.SetActive(isActive);
             isActive = !isActive;
-            //stednosientequetodoserepite++;
+            ustednosientequetodoserepite++;
         }
         
     }
