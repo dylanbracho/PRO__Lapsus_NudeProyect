@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FINALprimerNivel/PrimerNivelFinal.unity
     guid: 39e0f1d1441634f4d93275215af98765
+  - enabled: 1
+    path: Assets/Scenes/FINALprimerNivel/uteromedio.unity
+    guid: 4f651f0905ef7444ca848653c3f91941
+  - enabled: 1
+    path: Assets/Scenes/FINALprimerNivel/Period.unity
+    guid: 873a0c299c303584cbebd22226f08019
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

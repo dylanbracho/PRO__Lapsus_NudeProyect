@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf91f82c69cd59449e70bbea8a04cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTrigger2D
-  sceneToLoad: PrimerNivelFinal
+  sceneToLoad: uteromedio
 --- !u!61 &199326706
 BoxCollider2D:
   m_ObjectHideFlags: 0
