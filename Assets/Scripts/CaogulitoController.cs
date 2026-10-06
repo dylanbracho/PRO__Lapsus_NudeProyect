@@ -23,6 +23,7 @@ public class CaogulitoController : MonoBehaviour
     void Update()
     {
         float distanceToObjective = Vector2.Distance(transform.position, actualObjective.position);
+        Debug.Log(distanceToObjective);
         if (distanceToObjective < detectionRadius)
         {
             if (actualObjective == enemyMovementPoints[0])

@@ -1,3 +1,4 @@
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -5,6 +6,9 @@ public class CutsceneTrigger : MonoBehaviour
 {
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject cutsceneCanvas;
+    [SerializeField] private GameObject bloqueo;
+    [SerializeField] private GameObject trampa;
+
 
     public bool played;
     public PlayerController player;
@@ -36,6 +40,10 @@ public class CutsceneTrigger : MonoBehaviour
         d.stopped -= OnCutsceneEnd;
         cutsceneCanvas.SetActive(false);
         player.enabled = true;
+        bloqueo.SetActive(false);
+        trampa.SetActive(true);
         Destroy(gameObject); // collectable is gone for good
     }
+
+    
 }
