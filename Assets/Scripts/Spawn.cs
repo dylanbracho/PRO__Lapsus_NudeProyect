@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    [SerializeField] GameObject coagulito;
+    [SerializeField] CaogulitoController coagulito;
     [SerializeField] GameObject spawn;
+    [SerializeField] GameObject player;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,7 +30,8 @@ public class Spawn : MonoBehaviour
         while (ustednosientequetodoserepite < 50) 
         {
             yield return new WaitForSeconds(6f);
-            Instantiate(coagulito, spawn.transform.position, spawn.transform.rotation);
+            CaogulitoController spawnedCoagulito = Instantiate(coagulito, spawn.transform.position, spawn.transform.rotation);
+            spawnedCoagulito.enemyMovementPoints[0] = player.transform;
             ustednosientequetodoserepite++;
         }
 

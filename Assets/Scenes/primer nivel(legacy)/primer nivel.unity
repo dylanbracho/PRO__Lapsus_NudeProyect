@@ -3832,6 +3832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
   coagulito: {fileID: 8819968358438367019, guid: 659d8aec1641a134287f5b791472fc21, type: 3}
   spawn: {fileID: 1241351050}
+  player: {fileID: 0}
 --- !u!114 &979951690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4269,7 +4270,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: -44
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   m_Color: {r: 1, g: 0.94259137, b: 0, a: 1}
