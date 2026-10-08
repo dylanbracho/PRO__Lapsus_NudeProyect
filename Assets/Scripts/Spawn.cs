@@ -8,11 +8,15 @@ public class Spawn : MonoBehaviour
     [SerializeField] GameObject spawn;
     [SerializeField] GameObject player;
 
+    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(SpawnOHSI());
+
+       
     }
 
     // Update is called once per frame
