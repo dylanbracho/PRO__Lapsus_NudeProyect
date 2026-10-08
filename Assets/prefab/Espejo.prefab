@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5218823490559287709, guid: e72d7aea9ef8bed41a6ae3911ef7baed, type: 3}
+  m_Sprite: {fileID: -6542300990690614983, guid: 40f34460658a86148bb0c9c5d9ebe965, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 100
+  dead: 0
+  trampa: {fileID: 0}
 --- !u!50 &7926781932149335530
 Rigidbody2D:
   serializedVersion: 5
@@ -195,7 +197,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.8, y: 12.8}
+    oldSize: {x: 8.380001, y: 19.15}
     newSize: {x: 12.8, y: 12.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
