@@ -8,6 +8,7 @@ public class CutsceneTrigger : MonoBehaviour
     [SerializeField] private GameObject cutsceneCanvas;
     [SerializeField] private GameObject bloqueo;
     [SerializeField] private GameObject trampa;
+    [SerializeField] private SceneTrigger2D escena;
 
 
     public bool played;
@@ -27,11 +28,12 @@ public class CutsceneTrigger : MonoBehaviour
 
         // stop the player from moving
         if (other.TryGetComponent(out Rigidbody2D rb))
-            rb.linearVelocity = Vector2.zero; // use rb.velocity on older Unity versions
+            rb.linearVelocity = Vector2.zero; 
         player.enabled = false;
 
         cutsceneCanvas.SetActive(true);
         director.stopped += OnCutsceneEnd;
+        director.stopped += Test;
         director.Play();
     }
 
@@ -42,7 +44,13 @@ public class CutsceneTrigger : MonoBehaviour
         player.enabled = true;
         bloqueo.SetActive(false);
         trampa.SetActive(true);
-        Destroy(gameObject); // collectable is gone for good
+       // escena.SwitchScene();
+        Destroy(gameObject);
+    }
+
+    void Test(PlayableDirector d)
+    {
+        Debug.Log("JDEWFKWÑ");
     }
 
     

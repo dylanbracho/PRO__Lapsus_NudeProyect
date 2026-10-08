@@ -264,7 +264,7 @@ MonoBehaviour:
   direction: 0
   speed: 5
   rb: {fileID: 2752431758123172179}
-  jumpForce: 9
+  jumpForce: 10
   canJump: 0
   groundCheck: {fileID: 4697080010540025091}
   groundCheckRadius: 0.5

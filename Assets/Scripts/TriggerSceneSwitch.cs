@@ -26,4 +26,9 @@ public class SceneTrigger2D : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void SwitchScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
+    }
 }
