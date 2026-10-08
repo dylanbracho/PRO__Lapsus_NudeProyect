@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canAttack = true;
 
+    public UIManager uimanager;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -162,6 +164,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
            // canDash = true;
+        }
+    }
+
+    public void Activarmenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            uimanager.Activarmenu();
         }
     }
 

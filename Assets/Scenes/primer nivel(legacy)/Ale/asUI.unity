@@ -445,8 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79cbfd5651e36747b6c1878b8041492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  sceneToLoad: Level2
-  sceneSwitch: 0
+  sceneToLoad: ovario1
 --- !u!114 &394745711
 MonoBehaviour:
   m_ObjectHideFlags: 0
