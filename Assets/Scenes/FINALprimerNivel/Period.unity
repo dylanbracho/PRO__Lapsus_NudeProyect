@@ -80102,11 +80102,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3682216063792654131, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 106.6
+      value: 78.56
       objectReference: {fileID: 0}
     - target: {fileID: 3682216063792654131, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.5
+      value: -25.23
       objectReference: {fileID: 0}
     - target: {fileID: 3682216063792654131, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80222,6 +80222,7 @@ GameObject:
   - component: {fileID: 1278361726}
   - component: {fileID: 1278361728}
   - component: {fileID: 1278361729}
+  - component: {fileID: 1278361731}
   - component: {fileID: 1278361730}
   m_Layer: 0
   m_Name: periodo
@@ -80359,11 +80360,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1278361723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf91f82c69cd59449e70bbea8a04cae, type: 3}
+  m_Script: {fileID: 11500000, guid: 802a5ddb40e6b3941bc6a843211985f5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneTrigger2D
-  sceneToLoad: PrimerNivelFinal
-  sceneSwitch: 1
+  m_EditorClassIdentifier: Assembly-CSharp::EscenayCinematica
+  cutsceneTrigger: {fileID: 1278361730}
+  sceneTrigger: {fileID: 1278361731}
 --- !u!114 &1278361730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80373,15 +80374,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1278361723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9598029d448778a42afdd721b9816b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb5fbb16fed91d4a8201c8a2a39f016, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CutsceneTrigger
+  m_EditorClassIdentifier: Assembly-CSharp::copiaSceneTrigger
   director: {fileID: 184249448}
   cutsceneCanvas: {fileID: 272023701}
-  bloqueo: {fileID: 0}
-  trampa: {fileID: 0}
-  played: 0
-  player: {fileID: 0}
+--- !u!114 &1278361731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278361723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf91f82c69cd59449e70bbea8a04cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTrigger2D
+  sceneToLoad: PrimerNivelFinal
 --- !u!1001 &1289396774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80718,7 +80728,7 @@ Transform:
   m_GameObject: {fileID: 1724839299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7000005, y: -15.640001, z: -10}
+  m_LocalPosition: {x: 78.56, y: -23.17, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81030,7 +81040,7 @@ Transform:
   m_GameObject: {fileID: 2123630186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.6, y: 22.56, z: -10}
+  m_LocalPosition: {x: 78.56, y: -23.17, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
