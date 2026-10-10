@@ -851,7 +851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTrigger2D
   sceneToLoad: uteromedio
-  sceneSwitch: 0
 --- !u!61 &199326706
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1829,14 +1828,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 581572221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9598029d448778a42afdd721b9816b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 776c21d652f2f394694d3e7f68e0a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneTrigger
   director: {fileID: 1546378444}
   cutsceneCanvas: {fileID: 646364572}
   bloqueo: {fileID: 185027271}
-  trampa: {fileID: 0}
-  escena: {fileID: 0}
+  trampaObject: 0
   played: 0
   player: {fileID: 0}
 --- !u!1 &628181740

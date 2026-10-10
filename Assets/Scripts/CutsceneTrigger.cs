@@ -8,7 +8,6 @@ public class CutsceneTrigger : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject cutsceneCanvas;
     [SerializeField] private GameObject bloqueo;
-    [SerializeField] private bool trampaObject;
     public event Action CutsceneFinished;
     public bool played;
     public PlayerController player;

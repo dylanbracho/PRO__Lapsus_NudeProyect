@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class EscenayCinematica : MonoBehaviour
 {
     [SerializeField] private copiaSceneTrigger cutsceneTrigger;
-    [SerializeField] private SceneTrigger2D sceneTrigger;
+    [SerializeField] private string sceneToLoad = "Level2";
     private bool started;
     private void OnEnable() => cutsceneTrigger.CutsceneFinished += GoToNextScene;
     private void OnDisable() => cutsceneTrigger.CutsceneFinished -= GoToNextScene;
@@ -20,7 +21,12 @@ public class EscenayCinematica : MonoBehaviour
 
     private void GoToNextScene()
     {
-        sceneTrigger.SwitchScene();   // use whatever your method is actually called
+        SwitchScene();   // use whatever your method is actually called
+    }
+
+    public void SwitchScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 
 }

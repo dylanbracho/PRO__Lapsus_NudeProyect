@@ -7,8 +7,11 @@ public class SceneTrigger2D : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad = "Level2";
 
-    public void SwitchScene()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(sceneToLoad);
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
 }
