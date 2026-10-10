@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     public bool isFacingRight;
-    public float health = 0;
+    
     public float hitForce;      // Con cuánta fuerza sale volando el jugador al ser golpeado.
     public float hitTime;       // Cuántos segundos dura el empujón. Mientras sea > 0, el
                                 // jugador NO puede controlarse (está "aturdido").
@@ -42,12 +42,22 @@ public class PlayerController : MonoBehaviour
 
     private bool canAttack = true;
 
+    //vida
+    public float health;
+    public float maxhealth;  
+    public bool muerta = false;
+
+    //ui, spawn, cosas de ale
+
     public UIManager uimanager;
+  
+    public GameObject spawnpoint;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        health = maxhealth;
         rb = GetComponent<Rigidbody2D>();
         
     }
@@ -106,9 +116,42 @@ public class PlayerController : MonoBehaviour
             hitTime -= Time.deltaTime;
         }
 
+
+        //spawn cuando muerte 
+
+        if (health <= 0 && !muerta) // Usamos !muerta para que solo se ejecute una vez al morir
+        {
+            muerta = true;
+            StartCoroutine(RespawnRoutine());
+        }
+
     }
 
-    
+    private IEnumerator RespawnRoutine()
+    {
+       
+        rb.linearVelocity = Vector2.zero;
+        enabled = optionalDisableControlsOnDeath(); 
+        yield return null;
+
+        // Reposicionar al jugador
+        transform.position = spawnpoint.transform.position;
+
+        // Restaurar salud y estados
+        health = maxhealth;
+        hitTime = 0f;          // Quita el estado de aturdimiento del golpe
+        isDashing = false;     // Por si estaba dasheando
+        isInvincible = false;
+
+        muerta = false;
+    }
+
+    private bool optionalDisableControlsOnDeath()
+    {
+        return true;
+    }
+
+
     public void Dash(InputAction.CallbackContext context)
     {
             //Debug.Log("verga");
