@@ -18671,15 +18671,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 528374392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9598029d448778a42afdd721b9816b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 776c21d652f2f394694d3e7f68e0a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneTrigger
   director: {fileID: 734140751}
   cutsceneCanvas: {fileID: 469749092}
   bloqueo: {fileID: 1406145370}
-  trampa: {fileID: 675255006}
   played: 0
-  player: {fileID: 0}
+  player: {fileID: 1786290827}
 --- !u!4 &611490109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 885799378733883459, guid: ab052b4b674bcfb4e9b2da670309aa41, type: 3}
@@ -18702,7 +18701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &675255007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18871,7 +18870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTrigger2D
   sceneToLoad: Period
-  sceneSwitch: 0
 --- !u!61 &761608704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21064,6 +21062,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3682216063792654131, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
   m_PrefabInstance: {fileID: 1786290821}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1786290827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+  m_PrefabInstance: {fileID: 1786290821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e1c8770f9f12849badb0aa0596754e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1786328840
 GameObject:
   m_ObjectHideFlags: 0
@@ -21275,7 +21284,7 @@ Transform:
   m_GameObject: {fileID: 1849962982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.6, y: 22.56, z: -10}
+  m_LocalPosition: {x: 121.76, y: 22.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21341,6 +21350,10 @@ PrefabInstance:
       propertyPath: trampa
       value: 
       objectReference: {fileID: 1035818148}
+    - target: {fileID: 3575917193395338318, guid: 3f072b585b837c7469e8e7bbd1ee6693, type: 3}
+      propertyPath: currentHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5144175330443347657, guid: 3f072b585b837c7469e8e7bbd1ee6693, type: 3}
       propertyPath: m_SortingOrder
       value: 1
