@@ -1,4 +1,3 @@
-using System;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -8,7 +7,10 @@ public class CutsceneTrigger : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject cutsceneCanvas;
     [SerializeField] private GameObject bloqueo;
-    public event Action CutsceneFinished;
+    [SerializeField] private GameObject trampa;
+    [SerializeField] private SceneTrigger2D escena;
+
+
     public bool played;
     public PlayerController player;
 
@@ -35,17 +37,18 @@ public class CutsceneTrigger : MonoBehaviour
         director.Play();
     }
 
-    public void OnCutsceneEnd(PlayableDirector d)
+    void OnCutsceneEnd(PlayableDirector d)
     {
         d.stopped -= OnCutsceneEnd;
         cutsceneCanvas.SetActive(false);
         player.enabled = true;
         bloqueo.SetActive(false);
-        // escena.SwitchScene();
+        trampa.SetActive(true);
+       // escena.SwitchScene();
         Destroy(gameObject);
     }
 
-    public void Test(PlayableDirector d)
+    void Test(PlayableDirector d)
     {
         Debug.Log("JDEWFKWÑ");
     }
