@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
     public float health;
     public float maxhealth;  
     public bool muerta = false;
+    public Slider healthBarSlider;
 
     //ui, spawn, cosas de ale
 
@@ -123,6 +125,8 @@ public class PlayerController : MonoBehaviour
         {
             muerta = true;
             StartCoroutine(RespawnRoutine());
+            healthBarSlider.value = health;
+            healthBarSlider.maxValue = maxhealth;
         }
 
     }
