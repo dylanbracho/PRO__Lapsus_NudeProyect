@@ -2,6 +2,7 @@ using System;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
 
 public class CutsceneTrigger : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CutsceneTrigger : MonoBehaviour
     public event Action CutsceneFinished;
     public bool played;
     public PlayerController player;
+
+    [SerializeField] private Image coleccionableui;
 
      public void OnTriggerEnter2D(Collider2D other)
     {
@@ -33,6 +36,8 @@ public class CutsceneTrigger : MonoBehaviour
         director.stopped += OnCutsceneEnd;
         director.stopped += Test;
         director.Play();
+
+        
     }
 
     public void OnCutsceneEnd(PlayableDirector d)
@@ -43,12 +48,17 @@ public class CutsceneTrigger : MonoBehaviour
         bloqueo.SetActive(false);
         // escena.SwitchScene();
         Destroy(gameObject);
+        coleccionableui.enabled = true;
+
     }
 
+    
     public void Test(PlayableDirector d)
     {
         Debug.Log("JDEWFKWÑ");
     }
 
+
+    
     
 }
