@@ -2,7 +2,9 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using UnityEngine.UIElements;
+
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -54,6 +56,8 @@ public class PlayerController : MonoBehaviour
     public UIManager uimanager;
   
     public GameObject spawnpoint;
+
+    public Slider healthBarSlider;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -145,6 +149,8 @@ public class PlayerController : MonoBehaviour
         hitTime = 0f;          // Quita el estado de aturdimiento del golpe
         isDashing = false;     // Por si estaba dasheando
         isInvincible = false;
+        healthBarSlider.value = health;
+        healthBarSlider.maxValue = maxhealth;
 
         muerta = false;
     }
@@ -241,7 +247,9 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        health -= damage;  
+        health -= damage;
+        healthBarSlider.value = health;
+        healthBarSlider.maxValue = maxhealth;
 
     }
 
