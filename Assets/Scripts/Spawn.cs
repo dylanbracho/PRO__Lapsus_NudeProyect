@@ -8,15 +8,17 @@ public class Spawn : MonoBehaviour
     [SerializeField] GameObject spawn;
     [SerializeField] GameObject player;
 
-    
+    //[SerializeField] GameObject bloodPanel;
+    [SerializeField] GameObject[] espinas;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SpawnOHSI());
-
        
+        //StartCoroutine(SpawnEspinas());
+
     }
 
     // Update is called once per frame
@@ -24,10 +26,18 @@ public class Spawn : MonoBehaviour
     {
         
     }
+    IEnumerator SpawnEspinas()
+    {
+        foreach (GameObject espina in espinas)
+        {
+            yield return new WaitForSeconds(1f);
+            espina.SetActive(true);
+        }
+    }
 
     IEnumerator SpawnOHSI() 
     {
-        int ustednosientequetodoserepite = 1;
+        int ustednosientequetodoserepite = 0;
 
         
 
@@ -41,5 +51,15 @@ public class Spawn : MonoBehaviour
 
         
        
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            //bloodPanel.SetActive(true);
+
+            StartCoroutine(SpawnOHSI());
+        }
+    }
 }
