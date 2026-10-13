@@ -16505,9 +16505,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1913557926}
+      objectReference: {fileID: 0}
     - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -18077,17 +18089,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872896597}
   m_CullTransparentMesh: 1
---- !u!114 &1913557926 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
-  m_PrefabInstance: {fileID: 1224125447}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e1c8770f9f12849badb0aa0596754e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1920364748
 GameObject:
   m_ObjectHideFlags: 0
