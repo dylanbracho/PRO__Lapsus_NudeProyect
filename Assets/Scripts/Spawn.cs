@@ -31,7 +31,7 @@ public class Spawn : MonoBehaviour
 
         
 
-        while (ustednosientequetodoserepite < 50) 
+        while (ustednosientequetodoserepite < 5) 
         {
             yield return new WaitForSeconds(6f);
             CaogulitoController spawnedCoagulito = Instantiate(coagulito, spawn.transform.position, spawn.transform.rotation);
