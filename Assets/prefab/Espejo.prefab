@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ce59b34ddd8d444a090729c9c65686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CaogulitoController
-  enemySpeed: 30
+  enemySpeed: 5
   enemyRb: {fileID: 7926781932149335530}
   detectionRadius: 0.5
   actualObjective: {fileID: 0}
