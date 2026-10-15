@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 3ad356d84dbef164596b2d53e51618a2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5815178333601276105
+    second: Terrain (24x24) 2_0
+  - first:
+      213: 246103432383418179
+    second: Terrain (24x24) 2_1
+  - first:
+      213: -516645743271724817
+    second: Terrain (24x24) 2_2
+  - first:
+      213: -492189645557236101
+    second: Terrain (24x24) 2_3
+  - first:
+      213: -8877150115570194640
+    second: Terrain (24x24) 2_4
+  - first:
+      213: 5787557000071190942
+    second: Terrain (24x24) 2_5
+  - first:
+      213: -8828580985655899
+    second: Terrain (24x24) 2_6
+  - first:
+      213: 8477901371921527171
+    second: Terrain (24x24) 2_7
+  - first:
+      213: 7855857989180741367
+    second: Terrain (24x24) 2_8
+  - first:
+      213: 8577273626378578942
+    second: Terrain (24x24) 2_9
+  - first:
+      213: -4220640156597219486
+    second: Terrain (24x24) 2_10
+  - first:
+      213: -5299984197495197283
+    second: Terrain (24x24) 2_11
+  - first:
+      213: -8708654664402841383
+    second: Terrain (24x24) 2_12
+  - first:
+      213: -3586617722568259667
+    second: Terrain (24x24) 2_13
+  - first:
+      213: -896112942959606880
+    second: Terrain (24x24) 2_14
+  - first:
+      213: -6922532356336324328
+    second: Terrain (24x24) 2_15
+  - first:
+      213: -6168372800745299459
+    second: Terrain (24x24) 2_16
+  - first:
+      213: 7098782944829955066
+    second: Terrain (24x24) 2_17
+  - first:
+      213: 3261155205839184542
+    second: Terrain (24x24) 2_18
+  - first:
+      213: 3900906746336167710
+    second: Terrain (24x24) 2_19
+  - first:
+      213: 1593327878949237132
+    second: Terrain (24x24) 2_20
+  - first:
+      213: 4316731284129425370
+    second: Terrain (24x24) 2_21
+  - first:
+      213: -3027512298596662186
+    second: Terrain (24x24) 2_22
+  - first:
+      213: 4273309312706460255
+    second: Terrain (24x24) 2_23
+  - first:
+      213: -4885532862616545278
+    second: Terrain (24x24) 2_24
+  - first:
+      213: 5124128962621072707
+    second: Terrain (24x24) 2_25
+  - first:
+      213: -1991399019488083451
+    second: Terrain (24x24) 2_26
+  - first:
+      213: -627237722722813451
+    second: Terrain (24x24) 2_27
+  - first:
+      213: 386541331407188928
+    second: Terrain (24x24) 2_28
+  - first:
+      213: 5335604112270766307
+    second: Terrain (24x24) 2_29
+  - first:
+      213: -6628600213329262670
+    second: Terrain (24x24) 2_30
+  - first:
+      213: -3733678042126258700
+    second: Terrain (24x24) 2_31
+  - first:
+      213: -4328820600290954309
+    second: Terrain (24x24) 2_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_0
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 174
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fd520ad165c4fa0800000000000000
+      internalID: -5815178333601276105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 154
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34fc73194c55a6300800000000000000
+      internalID: 246103432383418179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 154
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8329d0f6184d8f0800000000000000
+      internalID: -516645743271724817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 160
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e7f6600246b29f0800000000000000
+      internalID: -492189645557236101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_4
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 136
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037ee97c0070ec480800000000000000
+      internalID: -8877150115570194640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_5
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 130
+        width: 34
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9991928d68815050800000000000000
+      internalID: 5787557000071190942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_6
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 141
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5adaa7ec372a0eff0800000000000000
+      internalID: -8828580985655899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 140
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381fd22416e87a570800000000000000
+      internalID: 8477901371921527171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 108
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f65803183d950d60800000000000000
+      internalID: 7855857989180741367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 109
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb2f993be8980770800000000000000
+      internalID: 8577273626378578942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_10
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 110
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f0645b3264d65c0800000000000000
+      internalID: -4220640156597219486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_11
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 115
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d917d11f37ca276b0800000000000000
+      internalID: -5299984197495197283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_12
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 113
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d058b029b4a42780800000000000000
+      internalID: -8708654664402841383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7c23d1f26c93ec0800000000000000
+      internalID: -3586617722568259667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 81
+        width: 6
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a34344b60e5093f0800000000000000
+      internalID: -896112942959606880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_15
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 83
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811fc62cf793eef90800000000000000
+      internalID: -6922532356336324328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_16
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 87
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df125618e99856aa0800000000000000
+      internalID: -6168372800745299459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 62
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afbd0343a71f38260800000000000000
+      internalID: 7098782944829955066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_18
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 63
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92e571a163f14d20800000000000000
+      internalID: 3261155205839184542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_19
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 57
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e17ca45940ec22630800000000000000
+      internalID: 3900906746336167710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 60
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81fe7b9343ac1610800000000000000
+      internalID: 1593327878949237132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_21
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 59
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7a95d5b3c18eb30800000000000000
+      internalID: 4316731284129425370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_22
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 59
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6540509da9d1cf5d0800000000000000
+      internalID: -3027512298596662186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 41
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5abc3fcd28dd4b30800000000000000
+      internalID: 4273309312706460255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_24
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 45
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2085e310fb9133cb0800000000000000
+      internalID: -4885532862616545278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_25
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 31
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345e15884209c1740800000000000000
+      internalID: 5124128962621072707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_26
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 45
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5020a5584212d54e0800000000000000
+      internalID: -1991399019488083451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_27
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 35
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9b16b4d9a9b47f0800000000000000
+      internalID: -627237722722813451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_28
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 32
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c3388dfa454d5500800000000000000
+      internalID: 386541331407188928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_29
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0330ebbafdb0a40800000000000000
+      internalID: 5335604112270766307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 22
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b74e6ec93b7204a0800000000000000
+      internalID: -6628600213329262670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_31
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 14
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd63614a9f4f2cc0800000000000000
+      internalID: -3733678042126258700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terrain (24x24) 2_32
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 15
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3b34f5990fce3c0800000000000000
+      internalID: -4328820600290954309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Terrain (24x24) 2_0: -5815178333601276105
+      Terrain (24x24) 2_1: 246103432383418179
+      Terrain (24x24) 2_10: -4220640156597219486
+      Terrain (24x24) 2_11: -5299984197495197283
+      Terrain (24x24) 2_12: -8708654664402841383
+      Terrain (24x24) 2_13: -3586617722568259667
+      Terrain (24x24) 2_14: -896112942959606880
+      Terrain (24x24) 2_15: -6922532356336324328
+      Terrain (24x24) 2_16: -6168372800745299459
+      Terrain (24x24) 2_17: 7098782944829955066
+      Terrain (24x24) 2_18: 3261155205839184542
+      Terrain (24x24) 2_19: 3900906746336167710
+      Terrain (24x24) 2_2: -516645743271724817
+      Terrain (24x24) 2_20: 1593327878949237132
+      Terrain (24x24) 2_21: 4316731284129425370
+      Terrain (24x24) 2_22: -3027512298596662186
+      Terrain (24x24) 2_23: 4273309312706460255
+      Terrain (24x24) 2_24: -4885532862616545278
+      Terrain (24x24) 2_25: 5124128962621072707
+      Terrain (24x24) 2_26: -1991399019488083451
+      Terrain (24x24) 2_27: -627237722722813451
+      Terrain (24x24) 2_28: 386541331407188928
+      Terrain (24x24) 2_29: 5335604112270766307
+      Terrain (24x24) 2_3: -492189645557236101
+      Terrain (24x24) 2_30: -6628600213329262670
+      Terrain (24x24) 2_31: -3733678042126258700
+      Terrain (24x24) 2_32: -4328820600290954309
+      Terrain (24x24) 2_4: -8877150115570194640
+      Terrain (24x24) 2_5: 5787557000071190942
+      Terrain (24x24) 2_6: -8828580985655899
+      Terrain (24x24) 2_7: 8477901371921527171
+      Terrain (24x24) 2_8: 7855857989180741367
+      Terrain (24x24) 2_9: 8577273626378578942
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
