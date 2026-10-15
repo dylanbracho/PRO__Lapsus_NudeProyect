@@ -59,6 +59,10 @@ public class PlayerController : MonoBehaviour
 
     public Slider healthBarSlider;
 
+    // NPC
+    public DialogueTrigger activeNPC;
+    public Animator holasamy;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -219,6 +223,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ActivarDialogo(InputAction.CallbackContext context)
+    {
+        if (context.performed && activeNPC != null)
+        {
+            Debug.Log("Hola Dylan");
+            activeNPC.TriggerDialogue();
+            
+        }
+    }
+
     public void Activarmenu(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -301,6 +315,23 @@ public class PlayerController : MonoBehaviour
         canAttack = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            activeNPC = collision.gameObject.GetComponent<DialogueTrigger>();
+            holasamy.SetTrigger("algop");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            activeNPC = null;
+            holasamy.SetTrigger("algop");
+        }
+    }
 
 
 }

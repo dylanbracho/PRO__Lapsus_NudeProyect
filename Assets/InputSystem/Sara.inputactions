@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interactuar",
+                    "type": "Button",
+                    "id": "8f9e9bd9-241a-4c6b-a6f8-1d244c1bc4a8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -127,6 +136,17 @@
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "Pausa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53d82ea5-bdc7-4901-b73a-9b718920a20b",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interactuar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
