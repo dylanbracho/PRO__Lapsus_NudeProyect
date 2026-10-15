@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 233801904}
   m_Layer: 0
   m_Name: dialogo
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   npcNameText: {fileID: 1616816600}
   npcDialogueText: {fileID: 994378989}
-  animator: {fileID: 0}
+  animator: {fileID: 994378991}
   textAnimationSpeed: 0
 --- !u!1 &357481528
 GameObject:
@@ -15672,6 +15672,7 @@ GameObject:
   - component: {fileID: 994378988}
   - component: {fileID: 994378990}
   - component: {fileID: 994378989}
+  - component: {fileID: 994378991}
   m_Layer: 5
   m_Name: dialogo
   m_TagString: Untagged
@@ -15695,7 +15696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -432, y: -134}
+  m_AnchoredPosition: {x: -432, y: -604}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994378989
@@ -15798,6 +15799,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994378987}
   m_CullTransparentMesh: 1
+--- !u!95 &994378991
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994378987}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9beefde1e8fd044ea1b572d365085cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1182287910
 GameObject:
   m_ObjectHideFlags: 0
@@ -18164,6 +18187,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 56bc301c-6f24-4598-8210-1c2933dacf4b
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 8f9e9bd9-241a-4c6b-a6f8-1d244c1bc4a8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: 'Movimiento/Pausa[/Keyboard/escape]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: 'Movimiento/Interactuar[/Keyboard/e]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1591045531}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivarDialogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924841076811310492, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8269995751584998563, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -18186,6 +18257,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3682216063792654131, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
   m_PrefabInstance: {fileID: 1591045525}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591045531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+  m_PrefabInstance: {fileID: 1591045525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e1c8770f9f12849badb0aa0596754e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1611607061
 GameObject:
   m_ObjectHideFlags: 0

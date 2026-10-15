@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class BossCorazon : MonoBehaviour
 {
-    [Header("Objetivo")]
+
     [SerializeField] private Transform objetivoSara;
 
-    [Header("Movimiento de Merodeo")]
+    
     [SerializeField] private float distanciaMinimaSeguridad = 50f;
     [SerializeField] private float velocidadMovimiento = 0.4f;
     [SerializeField] private float suavidadMovimiento = 2f;
 
-    [Header("Límites del Escenario")]
+   
     [SerializeField] private float minX = -40f;
     [SerializeField] private float maxX = 40f;
     [SerializeField] private float minY = -10f;
     [SerializeField] private float maxY = 35f;
 
-    [Header("Control de Ataques y Cooldowns")]
+  
     [SerializeField] private float tiempoAviso = 0.8f;
     [SerializeField] private float velocidadAtaque = 38f;
     [SerializeField] private float minCooldown = 3.0f;

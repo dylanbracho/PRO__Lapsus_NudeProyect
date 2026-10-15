@@ -6,6 +6,7 @@ public class tpenemy : MonoBehaviour // O herencia de Teleport si lo requiere tu
 {
     [SerializeField] GameObject[] sppoints;
 
+
     void Start()
     {
         StartCoroutine(TeleportOHSI());
