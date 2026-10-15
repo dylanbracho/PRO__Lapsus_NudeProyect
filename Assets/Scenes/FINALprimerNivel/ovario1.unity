@@ -3327,7 +3327,7 @@ MonoBehaviour:
   bloqueo: {fileID: 185027271}
   played: 0
   player: {fileID: 0}
-  coleccionableui: {fileID: 1770620766}
+  coleccionableui: {fileID: 1770620764}
 --- !u!1 &628181740
 GameObject:
   m_ObjectHideFlags: 0
