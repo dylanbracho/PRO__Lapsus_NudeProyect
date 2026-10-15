@@ -10,12 +10,4 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
     }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            TriggerDialogue();
-        }
-    }
 }

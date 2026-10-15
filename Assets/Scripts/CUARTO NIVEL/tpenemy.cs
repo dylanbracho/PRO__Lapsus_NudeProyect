@@ -1,23 +1,20 @@
 using System;
 using UnityEngine;
 using System.Collections;
-//using Unity.Mathematics;
 
-public class tpenemy : Teleport
+public class tpenemy : MonoBehaviour // O herencia de Teleport si lo requiere tu proyecto
 {
     [SerializeField] GameObject[] sppoints;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
     void Start()
     {
-        //base.TeleportCharacter();
         StartCoroutine(TeleportOHSI());
     }
 
-    // Update is called once per frame
     void Update()
     {
 
-        
     }
 
     IEnumerator TeleportOHSI()
@@ -25,22 +22,25 @@ public class tpenemy : Teleport
         int ustednosientequetodoserepite = 0;
         int order = 0;
 
-
-
         while (ustednosientequetodoserepite < 10)
         {
             yield return new WaitForSeconds(6f);
-            transform.position = sppoints[order].transform.position;
+
+            // Valida que existan puntos asignados antes de teletransportar
+            if (sppoints.Length > 0 && sppoints[order] != null)
+            {
+                transform.position = sppoints[order].transform.position;
+            }
+
             order++;
-            if (order>sppoints.Length)
+
+            // Si llega al último punto, regresa al primero (índice 0) de forma segura
+            if (order >= sppoints.Length)
             {
                 order = 0;
             }
+
             ustednosientequetodoserepite++;
         }
-
-
-
     }
-
 }

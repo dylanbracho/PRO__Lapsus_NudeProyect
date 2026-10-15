@@ -13,7 +13,7 @@ public class CutsceneTrigger : MonoBehaviour
     public bool played;
     public PlayerController player;
 
-    [SerializeField] private Image coleccionableui;
+    [SerializeField] private GameObject coleccionableui;
 
      public void OnTriggerEnter2D(Collider2D other)
     {
@@ -48,7 +48,7 @@ public class CutsceneTrigger : MonoBehaviour
         bloqueo.SetActive(false);
         // escena.SwitchScene();
         Destroy(gameObject);
-        coleccionableui.enabled = true;
+        coleccionableui.SetActive(true);
 
     }
 
