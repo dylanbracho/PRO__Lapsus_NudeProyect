@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12087457}
   m_Layer: 0
-  m_Name: GameObject (5)
+  m_Name: PUNTOENEMY6
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 12087456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.17066, y: -61.37195, z: 0}
+  m_LocalPosition: {x: -9.82934, y: 2.6280518, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28772,7 +28772,7 @@ GameObject:
   - component: {fileID: 250713978}
   - component: {fileID: 250713980}
   m_Layer: 0
-  m_Name: Heart-Anatomy-Graphic-1024x1154_0
+  m_Name: Heart Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28846,7 +28846,7 @@ Transform:
   m_GameObject: {fileID: 250713977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.24649073, w: 0.9691452}
-  m_LocalPosition: {x: 18, y: 19.2, z: 0}
+  m_LocalPosition: {x: -3.7771397, y: 10.553837, z: 0}
   m_LocalScale: {x: 1.1441919, y: 1.1441919, z: 1.1441919}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28927,7 +28927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 567766437}
   m_Layer: 0
-  m_Name: GameObject (4)
+  m_Name: PUNTOENEMY5
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29049,7 +29049,7 @@ Transform:
   m_GameObject: {fileID: 593017323}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.3, y: -75.3, z: -10}
+  m_LocalPosition: {x: 9.299999, y: -34.300003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29065,11 +29065,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 307880469416427001, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.3
+      value: 9.299999
       objectReference: {fileID: 0}
     - target: {fileID: 307880469416427001, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -75.3
+      value: -34.300003
       objectReference: {fileID: 0}
     - target: {fileID: 307880469416427001, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29107,6 +29107,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sara
       objectReference: {fileID: 0}
+    - target: {fileID: 4231276584559735639, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231276584559735639, guid: 38dd14dd2f39ed54084a5ac676c1ce66, type: 3}
+      propertyPath: maxhealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29122,7 +29130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797227060}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: PUNTOENEMY2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29153,7 +29161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 899963435}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PUNTOENEMY1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29312,7 +29320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534962128}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: PUNTOENEMY4
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29343,7 +29351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1819998317}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: PUNTOENEMY3
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29651,7 +29659,7 @@ Transform:
   m_GameObject: {fileID: 2066555636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.3, y: -75.3, z: -10}
+  m_LocalPosition: {x: 9.299999, y: -34.300003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
