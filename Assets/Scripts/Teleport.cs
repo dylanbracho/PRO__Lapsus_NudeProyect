@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject tp;
+    [SerializeField] protected GameObject player;
+    [SerializeField] protected GameObject tp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
