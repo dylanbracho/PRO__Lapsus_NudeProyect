@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
     public DialogueTrigger activeNPC;
     public Animator holasamy;
 
+    //Proyectil
+    public ProjectlieBehaviour proyectilPrefab;
+    public Transform launchOffset;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -230,6 +234,15 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Hola Dylan");
             activeNPC.TriggerDialogue();
             
+        }
+    }
+
+    public void LanzarProyectil(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            ProjectlieBehaviour proyectil = Instantiate(proyectilPrefab, launchOffset.position, Quaternion.identity);
+            proyectil.SetDirection(isFacingRight ? Vector2.right : Vector2.left);
         }
     }
 
