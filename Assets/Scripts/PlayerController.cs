@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
     public GameObject spawnpoint;
 
     public Slider healthBarSlider;
+    public TextMeshProUGUI vidaentexto;
 
     // NPC
     public DialogueTrigger activeNPC;
@@ -159,6 +160,7 @@ public class PlayerController : MonoBehaviour
         isInvincible = false;
         healthBarSlider.value = health;
         healthBarSlider.maxValue = maxhealth;
+        vidaentexto.text = $"HP: {health}/{maxhealth}";
 
         muerta = false;
     }
@@ -277,6 +279,7 @@ public class PlayerController : MonoBehaviour
         health -= damage;
         healthBarSlider.value = health;
         healthBarSlider.maxValue = maxhealth;
+        vidaentexto.text = $"HP: {health}/{maxhealth}";
 
     }
 
