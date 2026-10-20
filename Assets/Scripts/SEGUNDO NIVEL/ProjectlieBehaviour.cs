@@ -17,8 +17,18 @@ public class ProjectlieBehaviour : MonoBehaviour
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+ 
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(10f); // Adjust the damage value as needed
+            }
+        }
     }
 }

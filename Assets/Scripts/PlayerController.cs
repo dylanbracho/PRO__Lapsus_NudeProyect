@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 1f;
     [HideInInspector] public bool isInvincible = false;
     private bool isDashing = false;
-    private bool canDash = true;
+    public bool canDash = true;
     public Collider2D hurtBox1;
     public Collider2D hurtBox2;
     public LayerMask enemyLayer;
