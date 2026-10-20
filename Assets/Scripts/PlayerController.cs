@@ -68,6 +68,12 @@ public class PlayerController : MonoBehaviour
     public ProjectlieBehaviour proyectilPrefab;
     public Transform launchOffset;
 
+    //Mazo
+    public InputActionReference attackActionMazo;
+    [SerializeField] private GameObject mazoHitbox;
+    private float mazoCooldown = 1f;
+    private float mazoHitboxActiveTime = 0.2f;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -299,12 +305,17 @@ public class PlayerController : MonoBehaviour
     {
         attackAction.action.Enable();
         attackAction.action.performed += OnAttack;
+        attackActionMazo.action.Enable();
+        attackActionMazo.action.performed += AttackMazo;
+
     }
 
     private void OnDisable()
     {
         attackAction.action.performed -= OnAttack;
         attackAction.action.Disable();
+        attackActionMazo.action.performed -= AttackMazo;
+        attackActionMazo.action.Disable();
         isAttacking = false;
     }
 
@@ -321,9 +332,30 @@ public class PlayerController : MonoBehaviour
         Invoke(nameof(ResetAttack), attackCooldown);
     }
 
+    void AttackMazo(InputAction.CallbackContext context)
+    {
+        if (!canAttack)
+            return;
+        if (!canJump)
+        {
+            isAttacking = true;
+            canAttack = false;
+            animator.SetTrigger("AttackMazo");
+            mazoHitbox.SetActive(true);
+            Debug.Log("AttackMazo triggered");
+            Invoke(nameof(DisableMazo), mazoHitboxActiveTime);
+            Invoke(nameof(ResetAttack), mazoCooldown);
+        }
+    }
+
     private void DisableWhip()
     {
         whipHitbox.SetActive(false);
+    }
+
+    private void DisableMazo()
+    {
+        mazoHitbox.SetActive(false);
     }
 
     private void ResetAttack()
