@@ -12,6 +12,8 @@ public class copiaSceneTrigger : MonoBehaviour
     private bool played;
     private PlayerController player;
 
+    [SerializeField] private GameObject coleccionableui;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out PlayerController p))
@@ -47,6 +49,7 @@ public class copiaSceneTrigger : MonoBehaviour
 
         CutsceneFinished?.Invoke();   // <-- fire BEFORE destroying
         Destroy(gameObject);
+        coleccionableui.SetActive(true);
     }
 
     private void OnDestroy()
