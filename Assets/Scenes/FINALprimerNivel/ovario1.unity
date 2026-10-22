@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 1840347640}
-  sceneToLoad: 
+  sceneToLoad: ovario1
 --- !u!1 &67262989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,7 +3783,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -639, y: 421}
-  m_SizeDelta: {x: 500, y: 150}
+  m_SizeDelta: {x: 520, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719382410
 MonoBehaviour:
