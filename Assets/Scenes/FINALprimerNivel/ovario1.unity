@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 1840347640}
-  sceneToLoad: 
+  sceneToLoad: ovario1
 --- !u!1 &67262989
 GameObject:
   m_ObjectHideFlags: 0
