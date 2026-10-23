@@ -22,33 +22,27 @@ public class CaogulitoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distanceToObjective = Vector2.Distance(transform.position, actualObjective.position);
-       // Debug.Log(distanceToObjective);
-        if (distanceToObjective < detectionRadius)
-        {
-            if (actualObjective == enemyMovementPoints[0])
-            {
-                actualObjective = enemyMovementPoints[1];
-            }
-            else if (actualObjective == enemyMovementPoints[1])
-            {
-                actualObjective = enemyMovementPoints[0];
-            }
-        }
-        Vector2 direction = (actualObjective.position - transform.position).normalized;
-        int roundDirection = Mathf.RoundToInt(direction.x);
-        movement = new Vector2(roundDirection, 0);
+        
 
-        if (roundDirection < 0 && isFacingRight)        // Va a la izquierda pero mira a la derecha.
-        {
-            Flip();
-        }
-        else if (roundDirection > 0 && !isFacingRight)  // Va a la derecha pero mira a la izquierda.
-        {
-            Flip();
-        }
+            // Arrived? (compare X only, ignore height)
+            if (Mathf.Abs(actualObjective.position.x - transform.position.x) < detectionRadius)
+            {
+                actualObjective = (actualObjective == enemyMovementPoints[0])
+                    ? enemyMovementPoints[1]
+                    : enemyMovementPoints[0];
+            }
 
-        enemyRb.MovePosition(enemyRb.position + movement * enemySpeed * Time.deltaTime);
+            // -1 = go left, +1 = go right
+            float dir = Mathf.Sign(actualObjective.position.x - transform.position.x);
+
+            // Turn around if facing the wrong way
+            if ((dir < 0 && isFacingRight) || (dir > 0 && !isFacingRight))
+            {
+                Flip();
+            }
+
+            enemyRb.MovePosition(enemyRb.position + new Vector2(dir, 0) * enemySpeed * Time.deltaTime);
+        
     }
 
     private void Flip()
