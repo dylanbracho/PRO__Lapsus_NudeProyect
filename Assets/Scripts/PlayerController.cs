@@ -303,10 +303,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        attackAction.action.Enable();
-        attackAction.action.performed += OnAttack;
-        attackActionMazo.action.Enable();
-        attackActionMazo.action.performed += AttackMazo;
+        if(attackAction != null)
+        {
+            attackAction.action.Enable();
+            attackAction.action.performed += OnAttack;
+        }
+        if(attackActionMazo != null)
+        {
+            attackActionMazo.action.Enable();
+            attackActionMazo.action.performed += AttackMazo;
+
+        }
 
     }
 

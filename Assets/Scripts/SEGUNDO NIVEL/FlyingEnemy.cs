@@ -57,6 +57,7 @@ public class FlyingEnemy : MonoBehaviour
     {
         if (collision.transform == player)
         {
+
             if (hitParticles != null)
             {
                 Vector2 contactoPunto = collision.ClosestPoint(transform.position);
@@ -66,13 +67,8 @@ public class FlyingEnemy : MonoBehaviour
                 Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
             }
 
-            Vector2 hitDirection = (collision.transform.position - transform.position).normalized;
-
-            collision.transform.SendMessage(
-                "RecibirDanioConKnockback",
-                new HitData(enemyDamage, enemyHitStrengthX, enemyHitStrengthY, enemyHitTime, hitDirection),
-                SendMessageOptions.DontRequireReceiver
-            );
+            PlayerController actualPlayer = collision.gameObject.GetComponent<PlayerController>();
+            actualPlayer.TakeDamage(enemyDamage);
 
             Destroy(gameObject);
         }
