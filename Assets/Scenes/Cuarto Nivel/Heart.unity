@@ -28866,6 +28866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 250713979}
   - component: {fileID: 250713978}
+  - component: {fileID: 250713984}
   - component: {fileID: 250713983}
   - component: {fileID: 250713982}
   - component: {fileID: 250713980}
@@ -29034,6 +29035,19 @@ MonoBehaviour:
   duracionAtaque: 1.5
   distanciaRetroceso: 2
   distanciaOvershoot: 4
+--- !u!114 &250713984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250713977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858c9e1589fec8f4ebf2d90c18fb3588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DanoParticulas
+  danoPorParticula: 5
 --- !u!1 &372238884
 GameObject:
   m_ObjectHideFlags: 0
@@ -32791,10 +32805,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -32968,7 +32982,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
