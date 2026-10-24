@@ -10,8 +10,9 @@ public class GlitchedEnemy : MonoBehaviour
     [SerializeField] private float projectileSpeed = 6f;
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float enemyStrength = 7f;
-
+    [SerializeField] public bool isFacingRight;
     [SerializeField] private float fireTimer = 0f;
+    public float direction;
 
     void Update()
     {
@@ -35,7 +36,32 @@ public class GlitchedEnemy : MonoBehaviour
         {
             fireTimer = 0f;
         }
+
+
+        if (!isFacingRight && direction > 0f)
+        {
+            Flip();
+        }
+        else if (isFacingRight && direction < 0f)
+
+        {
+            Flip();
+        }
+
+
     }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+
+    }
+
+
 
     void Shoot()
     {
