@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GlitchedEnemy : MonoBehaviour
 {
+    Vector2 movement;
     [SerializeField] private Transform player;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
@@ -12,7 +13,21 @@ public class GlitchedEnemy : MonoBehaviour
     [SerializeField] private float enemyStrength = 7f;
     [SerializeField] public bool isFacingRight;
     [SerializeField] private float fireTimer = 0f;
+    public Rigidbody2D enemyRb;
+    public Transform actualObjective;
     public float direction;
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+        enemyRb = GetComponent<Rigidbody2D>();
+        actualObjective = player;
+        isFacingRight = false;
+
+    }
+
 
     void Update()
     {

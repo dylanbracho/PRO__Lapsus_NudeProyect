@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
 {
+    Vector2 movement;
     [SerializeField] private Transform player;
     [SerializeField] private float detectionRange = 5f;
     [SerializeField] private float attackDelay = 1f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float enemyStrength = 5f;
-
+    public bool isFacingRight;
     private bool isWaiting = false;
     private bool isAttacking = false;
     private float timer = 0f;
+    public Rigidbody2D enemyRb;
+    public Transform actualObjective;
+    public float direction;
+
+    void Start()
+    {
+        enemyRb = GetComponent<Rigidbody2D>();
+
+        actualObjective = player;
+        isFacingRight = false;
+
+
+    }
 
     void Update()
     {
@@ -43,7 +57,29 @@ public class FlyingEnemy : MonoBehaviour
                 isAttacking = false;
             }
         }
+
+        if (!isFacingRight && direction > 0f)
+        {
+            Flip();
+        }
+        else if (isFacingRight && direction < 0f)
+
+        {
+            Flip();
+        }
+
     }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
