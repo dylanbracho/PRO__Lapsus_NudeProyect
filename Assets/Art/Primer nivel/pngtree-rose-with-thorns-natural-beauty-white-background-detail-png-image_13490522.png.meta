@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d826b80c5ebf1b48876922d6f80fcd7
+guid: 8d0f67fb6501bae438ad199d4ec72762
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1383726273786842384
-    second: WhatsApp Image 2026-09-18 at 8.34.04 PM_0
+      213: 8845832951737579985
+    second: pngtree-rose-with-thorns-natural-beauty-white-background-detail-png-image_13490522_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp Image 2026-09-18 at 8.34.04 PM_0
+      name: pngtree-rose-with-thorns-natural-beauty-white-background-detail-png-image_13490522_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 719
-        height: 851
+        width: 640
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f27f8809440ccce0800000000000000
-      internalID: -1383726273786842384
+      spriteID: 1d973cec336b2ca70800000000000000
+      internalID: 8845832951737579985
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhatsApp Image 2026-09-18 at 8.34.04 PM_0: -1383726273786842384
+      pngtree-rose-with-thorns-natural-beauty-white-background-detail-png-image_13490522_0: 8845832951737579985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

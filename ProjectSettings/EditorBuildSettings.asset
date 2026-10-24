@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FINALprimerNivel/Period.unity
     guid: 873a0c299c303584cbebd22226f08019
+  - enabled: 1
+    path: Assets/Scenes/tercer nivel/boobs.unity
+    guid: 53dac1748f6ed374ca0b2aae8dc5fdc6
+  - enabled: 1
+    path: Assets/Scenes/tercer nivel/Sucubo.unity
+    guid: ce67c4376c5e6dd46a58212b4334001a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 63eb1ec512d55534b916035cba925ef4
+guid: 7808f977132868c4384759bd510de6da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1441752550922281412
-    second: 1 solo tile_0
+      213: 4770399313877565385
+    second: 9ac450c6a05d02a1c87c5e00e7bb5a65_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1 solo tile_0
+      name: 9ac450c6a05d02a1c87c5e00e7bb5a65_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 95
-        height: 44
+        y: 0
+        width: 300
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c16cbb6e42220410800000000000000
-      internalID: 1441752550922281412
+      spriteID: 9cf707cb6ecd33240800000000000000
+      internalID: 4770399313877565385
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1 solo tile_0: 1441752550922281412
+      9ac450c6a05d02a1c87c5e00e7bb5a65_0: 4770399313877565385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

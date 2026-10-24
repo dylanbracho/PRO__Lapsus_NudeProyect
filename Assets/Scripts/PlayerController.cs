@@ -74,6 +74,9 @@ public class PlayerController : MonoBehaviour
     private float mazoCooldown = 1f;
     private float mazoHitboxActiveTime = 0.2f;
 
+    //Stun
+    public bool isStunned;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -102,6 +105,12 @@ public class PlayerController : MonoBehaviour
 
         if (isDashing)
         {
+            return;
+        }
+
+        if (isStunned)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);  
             return;
         }
 
@@ -385,6 +394,29 @@ public class PlayerController : MonoBehaviour
             activeNPC = null;
             holasamy.SetTrigger("algop");
         }
+    }
+
+    public void Stun(float duration)
+    {
+        if (isStunned) return;   // Ignore hits while already stunned
+        StartCoroutine(StunRoutine(duration));
+    }
+
+    private IEnumerator StunRoutine(float duration)
+    {
+        isStunned = true;
+        bool couldJump = canJump;
+        bool couldDash = canDash;
+        canJump = false;
+        canDash = false;
+
+        rb.linearVelocity = Vector2.zero;   // use rb.velocity on older Unity versions
+
+        yield return new WaitForSeconds(duration);
+
+        canJump = couldJump;
+        canDash = couldDash;
+        isStunned = false;
     }
 
 
