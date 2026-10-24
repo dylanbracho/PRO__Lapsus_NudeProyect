@@ -2,28 +2,26 @@ using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
 {
-    Vector2 movement;
     [SerializeField] private Transform player;
-    [SerializeField] private float detectionRange = 5f;
-    [SerializeField] private float attackDelay = 1f;
-    [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float enemyStrength = 5f;
-    public bool isFacingRight;
+    [SerializeField] private ParticleSystem hitParticles;
+    [SerializeField] private float detectionRange = 10f;
+    [SerializeField] private float attackDelay = 3f;
+    [SerializeField] private float moveSpeed = 8f;
+    [SerializeField] private float enemyDamage = 10f;
+    [SerializeField] private float enemyHitStrength = 5f;
+    [SerializeField] private float enemyHitTime = 0.2f;
+
     private bool isWaiting = false;
     private bool isAttacking = false;
     private float timer = 0f;
-    public Rigidbody2D enemyRb;
-    public Transform actualObjective;
-    public float direction;
 
     void Start()
     {
-        enemyRb = GetComponent<Rigidbody2D>();
-
-        actualObjective = player;
-        isFacingRight = false;
-
-
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null) player = playerObj.transform;
+        }
     }
 
     void Update()
@@ -51,44 +49,29 @@ public class FlyingEnemy : MonoBehaviour
         if (isAttacking)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-            if (distanceToPlayer > detectionRange * 1.5f)
-            {
-                isAttacking = false;
-            }
         }
-
-        if (!isFacingRight && direction > 0f)
-        {
-            Flip();
-        }
-        else if (isFacingRight && direction < 0f)
-
-        {
-            Flip();
-        }
-
     }
 
-    private void Flip()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        isFacingRight = !isFacingRight;
-
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
-
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+        PlayerController pc = collision.GetComponent<PlayerController>();
         if (pc != null)
         {
-            pc.hitTime = 0.5f;
-            pc.hitForce = enemyStrength;
+            // Reproduce las partículas en el punto de contacto
+            if (hitParticles != null)
+            {
+                Vector2 contactoPunto = collision.ClosestPoint(transform.position);
+                ParticleSystem particles = Instantiate(hitParticles, contactoPunto, Quaternion.identity);
+                particles.Play();
+                Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
+            }
 
+            // Aplica los valores de daño y retroceso directamente al PlayerController
+            pc.hitTime = enemyHitTime;
+            pc.hitForce = enemyHitStrength;
+            pc.TakeDamage(enemyDamage);
+
+            // Define la dirección del empuje según la posición de Sara frente al enemigo
             if (collision.transform.position.x < transform.position.x)
             {
                 pc.hitFromRight = true;
@@ -97,23 +80,9 @@ public class FlyingEnemy : MonoBehaviour
             {
                 pc.hitFromRight = false;
             }
-        }
-    }
-}
-public struct HitData
-{
-    public float damage;
-    public float strengthX;
-    public float strengthY;
-    public float hitTime;
-    public Vector2 direction;
 
-    public HitData(float dmg, float sx, float sy, float time, Vector2 dir)
-    {
-        damage = dmg;
-        strengthX = sx;
-        strengthY = sy;
-        hitTime = time;
-        direction = dir;
+            // Destruye al enemigo al impactar a Sara
+            Destroy(gameObject);
+        }
     }
 }

@@ -325,6 +325,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1137963026475610449, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6698113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137963026475610449, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137963026475610449, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4817469
+      objectReference: {fileID: 0}
     - target: {fileID: 2095603952855354850, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: m_Name
       value: GLITCHED
@@ -374,6 +386,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1450472227}
     - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: enemyRb
+      value: 
+      objectReference: {fileID: 529275564}
+    - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: fireInterval
       value: 0.67
       objectReference: {fileID: 0}
@@ -386,13 +402,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: actualObjective
+      value: 
+      objectReference: {fileID: 1450472227}
+    - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: projectileSpeed
       value: 11.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2095603952855354850, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 529275568}
   m_SourcePrefab: {fileID: 100100000, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
 --- !u!1 &44846161
 GameObject:
@@ -802,6 +825,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5516340151589558156, guid: 3bbccb78cbc1f3941b7da40446f2b11d, type: 3}
   m_PrefabInstance: {fileID: 2002696714}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &140019362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1861600111304704508, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+  m_PrefabInstance: {fileID: 148534492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &140019363 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4294996870528386332, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+  m_PrefabInstance: {fileID: 148534492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &140019368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140019362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d78464c90fc6bf489567147efe67ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  currentHealth: 50
+  dead: 0
+  trampa: {fileID: 0}
 --- !u!1 &144304651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4088,10 +4136,25 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1450472227}
+    - target: {fileID: 6448937923584212500, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: enemyRb
+      value: 
+      objectReference: {fileID: 140019363}
+    - target: {fileID: 6448937923584212500, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: isFacingRight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448937923584212500, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: actualObjective
+      value: 
+      objectReference: {fileID: 1450472227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1861600111304704508, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 140019368}
   m_SourcePrefab: {fileID: 100100000, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
 --- !u!1 &189317517
 GameObject:
@@ -48483,6 +48546,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514983039}
   m_CullTransparentMesh: 1
+--- !u!1 &529275562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2095603952855354850, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+  m_PrefabInstance: {fileID: 41497711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &529275564 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5010464284923813537, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+  m_PrefabInstance: {fileID: 41497711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &529275568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529275562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d78464c90fc6bf489567147efe67ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  currentHealth: 50
+  dead: 0
+  trampa: {fileID: 0}
 --- !u!1 &572480160
 GameObject:
   m_ObjectHideFlags: 0
@@ -83569,6 +83657,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 385679699}
     - target: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: enableMazo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: enableWhip
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: spawnpoint
       value: 
       objectReference: {fileID: 1900022568}
@@ -85547,7 +85643,7 @@ Transform:
   m_GameObject: {fileID: 1806474343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.853273, y: -1.6828003, z: -10}
+  m_LocalPosition: {x: 30.87836, y: -1.6828003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86789,7 +86885,7 @@ Transform:
   m_GameObject: {fileID: 2088706346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.853273, y: -1.6828003, z: -10}
+  m_LocalPosition: {x: 30.87836, y: -1.6828003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

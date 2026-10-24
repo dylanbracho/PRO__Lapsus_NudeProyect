@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour
     public float hitTime;       // Cuántos segundos dura el empujón. Mientras sea > 0, el
                                 // jugador NO puede controlarse (está "aturdido").
     public bool hitFromRight;
-    public float dashSpeed = 20f;
+    [SerializeField] private bool enableWhip = true;
+    [SerializeField] private bool enableMazo = true;
+    [SerializeField] private bool enableProjectile = true; public float dashSpeed = 20f;
     public float dashTime = 0.2f;
     public float dashCooldown = 1f;
     [HideInInspector] public bool isInvincible = false;
@@ -256,13 +258,14 @@ public class PlayerController : MonoBehaviour
 
     public void LanzarProyectil(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!enableProjectile) return; // Si la casilla está apagada, no hace nada
+
+        if (context.performed && proyectilPrefab != null && launchOffset != null)
         {
             ProjectlieBehaviour proyectil = Instantiate(proyectilPrefab, launchOffset.position, Quaternion.identity);
             proyectil.SetDirection(isFacingRight ? Vector2.right : Vector2.left);
         }
     }
-
     public void Activarmenu(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -311,44 +314,51 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        if(attackAction != null)
+        if (attackAction != null && attackAction.action != null)
         {
             attackAction.action.Enable();
             attackAction.action.performed += OnAttack;
         }
-        if(attackActionMazo != null)
+        if (enableMazo && attackActionMazo != null && attackActionMazo.action != null)
         {
             attackActionMazo.action.Enable();
             attackActionMazo.action.performed += AttackMazo;
-
         }
-
     }
 
     private void OnDisable()
     {
-        attackAction.action.performed -= OnAttack;
-        attackAction.action.Disable();
-        attackActionMazo.action.performed -= AttackMazo;
-        attackActionMazo.action.Disable();
+        if (attackAction != null && attackAction.action != null)
+        {
+            attackAction.action.performed -= OnAttack;
+            attackAction.action.Disable();
+        }
+        if (attackActionMazo != null && attackActionMazo.action != null)
+        {
+            attackActionMazo.action.performed -= AttackMazo;
+            attackActionMazo.action.Disable();
+        }
         isAttacking = false;
     }
 
     private void OnAttack(InputAction.CallbackContext context)
     {
+        if (!enableWhip) return; // Si la casilla está apagada, no hace nada
+
         if (!canAttack)
             return;
         isAttacking = true;
         canAttack = false;
         animator.SetTrigger("Attack");
 
-        whipHitbox.SetActive(true);
+        if (whipHitbox != null) whipHitbox.SetActive(true);
         Invoke(nameof(DisableWhip), hitboxActiveTime);
         Invoke(nameof(ResetAttack), attackCooldown);
     }
-
     void AttackMazo(InputAction.CallbackContext context)
     {
+        if (!enableMazo) return; // Si la casilla está apagada, no hace nada
+
         if (!canAttack)
             return;
         if (!canJump)
@@ -356,15 +366,14 @@ public class PlayerController : MonoBehaviour
             isAttacking = true;
             canAttack = false;
             animator.SetTrigger("AttackMazo");
-            mazoHitbox.SetActive(true);
-            Debug.Log("AttackMazo triggered");
+            if (mazoHitbox != null) mazoHitbox.SetActive(true);
             Invoke(nameof(DisableMazo), mazoHitboxActiveTime);
             Invoke(nameof(ResetAttack), mazoCooldown);
         }
     }
-
     private void DisableWhip()
     {
+        if (!enableWhip) return;
         whipHitbox.SetActive(false);
     }
 

@@ -38,7 +38,8 @@ public class EnemyProjectile : MonoBehaviour
             return;
         }
 
-        if (!other.CompareTag("Enemy") && !other.isTrigger)
+        bool isEnemy = other.GetComponent<GlitchedEnemy>() != null || other.GetComponent<FlyingEnemy>() != null;
+        if (!isEnemy && !other.isTrigger)
         {
             Destroy(gameObject);
         }

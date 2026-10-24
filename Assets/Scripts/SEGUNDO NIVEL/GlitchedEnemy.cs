@@ -52,18 +52,19 @@ public class GlitchedEnemy : MonoBehaviour
             fireTimer = 0f;
         }
 
+        // Calculamos la distancia en X entre el enemigo y Sara para saber de qué lado está
+        float diffX = player.position.x - transform.position.x;
 
-        if (!isFacingRight && direction > 0f)
+        // Si Sara está a la derecha (diffX > 0) y el enemigo mira a la izquierda, se voltea
+        if (!isFacingRight && diffX > 0f)
         {
             Flip();
         }
-        else if (isFacingRight && direction < 0f)
-
+        // Si Sara está a la izquierda (diffX < 0) y el enemigo mira a la derecha, se voltea
+        else if (isFacingRight && diffX < 0f)
         {
             Flip();
         }
-
-
     }
 
     private void Flip()
