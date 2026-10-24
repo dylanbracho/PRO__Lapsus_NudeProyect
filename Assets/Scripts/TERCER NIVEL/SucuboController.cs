@@ -141,7 +141,7 @@ public class SucuboController : MonoBehaviour
         }
     }
 
-    public void LanzarProyectil(Transform target)
+    private void LanzarProyectil(Transform target)
     {
         ProjectlieBehaviour proyectil = Instantiate(proyectilPrefab, launchOffset.position, Quaternion.identity);
 
@@ -149,7 +149,7 @@ public class SucuboController : MonoBehaviour
         proyectil.SetDirection(direction);
     }
 
-    public void LanzarGagit(Transform target)
+    private void LanzarGagit(Transform target)
     {
         ProjectlieBehaviour gag = Instantiate(gagitPrefab, launchOffset.position, Quaternion.identity);
 

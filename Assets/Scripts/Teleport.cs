@@ -15,7 +15,7 @@ public class Teleport : MonoBehaviour
     {
         
     }
-
+   
     protected void TeleportCharacter()
     {
         player.transform.position = tp.transform.position;
