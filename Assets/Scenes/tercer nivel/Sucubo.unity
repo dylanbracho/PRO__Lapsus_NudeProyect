@@ -2692,6 +2692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: switcher
       objectReference: {fileID: 0}
+    - target: {fileID: 2403551010101594777, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
+      propertyPath: sceneToLoad
+      value: boobsPart2
+      objectReference: {fileID: 0}
     - target: {fileID: 5635408622486410113, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.05
