@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4befd5c0fbb37a44a90ce271e869a763
+guid: 9d826b80c5ebf1b48876922d6f80fcd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9139330975122868335
-    second: descarga_0
+      213: -1383726273786842384
+    second: WhatsApp Image 2026-09-18 at 8.34.04 PM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: descarga_0
+      name: WhatsApp Image 2026-09-18 at 8.34.04 PM_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 576
-        height: 1024
-      alignment: 9
-      pivot: {x: 0.48755062, y: 0.03081224}
+        width: 719
+        height: 851
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f684ce0891d65de70800000000000000
-      internalID: 9139330975122868335
+      spriteID: 0f27f8809440ccce0800000000000000
+      internalID: -1383726273786842384
       vertices: []
       indices: 
       edges: []
@@ -151,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 00a478acb9fe5754688c490f400baec2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      descarga_0: 9139330975122868335
+      WhatsApp Image 2026-09-18 at 8.34.04 PM_0: -1383726273786842384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
