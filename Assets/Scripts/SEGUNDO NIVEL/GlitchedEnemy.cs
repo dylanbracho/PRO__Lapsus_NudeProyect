@@ -9,9 +9,9 @@ public class GlitchedEnemy : MonoBehaviour
     [SerializeField] private float fireInterval = 1.5f;
     [SerializeField] private float projectileSpeed = 6f;
     [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private int damageAmount = 20;
+    [SerializeField] private float enemyStrength = 7f;
 
-    private float fireTimer = 0f;
+    [SerializeField] private float fireTimer = 0f;
 
     void Update()
     {
@@ -53,7 +53,7 @@ public class GlitchedEnemy : MonoBehaviour
             EnemyProjectile projectileScript = proj.GetComponent<EnemyProjectile>();
             if (projectileScript != null)
             {
-                projectileScript.SetDamage(damageAmount);
+                projectileScript.SetStrength(enemyStrength);
             }
         }
     }

@@ -3,27 +3,14 @@ using UnityEngine;
 public class FlyingEnemy : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private ParticleSystem hitParticles;
-    [SerializeField] private float detectionRange = 10f;
-    [SerializeField] private float attackDelay = 3f;
-    [SerializeField] private float moveSpeed = 8f;
-    [SerializeField] private float enemyDamage = 10f;
-    [SerializeField] private float enemyHitStrengthX = 5f;
-    [SerializeField] private float enemyHitStrengthY = 5f;
-    [SerializeField] private float enemyHitTime = 0.2f;
+    [SerializeField] private float detectionRange = 5f;
+    [SerializeField] private float attackDelay = 1f;
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float enemyStrength = 5f;
 
     private bool isWaiting = false;
     private bool isAttacking = false;
     private float timer = 0f;
-
-    void Start()
-    {
-        if (player == null)
-        {
-            GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null) player = playerObj.transform;
-        }
-    }
 
     void Update()
     {
@@ -50,31 +37,33 @@ public class FlyingEnemy : MonoBehaviour
         if (isAttacking)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+            if (distanceToPlayer > detectionRange * 1.5f)
+            {
+                isAttacking = false;
+            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform == player)
+        PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+        if (pc != null)
         {
+            pc.hitTime = 0.5f;
+            pc.hitForce = enemyStrength;
 
-            if (hitParticles != null)
+            if (collision.transform.position.x < transform.position.x)
             {
-                Vector2 contactoPunto = collision.ClosestPoint(transform.position);
-
-                ParticleSystem particles = Instantiate(hitParticles, contactoPunto, Quaternion.identity);
-                particles.Play();
-                Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
+                pc.hitFromRight = true;
             }
-
-            PlayerController actualPlayer = collision.gameObject.GetComponent<PlayerController>();
-            actualPlayer.TakeDamage(enemyDamage);
-
-            Destroy(gameObject);
+            else
+            {
+                pc.hitFromRight = false;
+            }
         }
     }
 }
-
 public struct HitData
 {
     public float damage;

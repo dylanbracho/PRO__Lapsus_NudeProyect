@@ -264,10 +264,9 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;             // Cambia el estado de la variable
-                                                    // (si era true pasa a false y al revés).
+        isFacingRight = !isFacingRight;             
 
-        Vector3 localScale = transform.localScale;  // Guarda la escala actual
+        Vector3 localScale = transform.localScale;  
                                                     // (transform es el componente de posición,
                                                     //  rotación y escala del GameObject).
         localScale.x *= -1f;                        // Invierte el eje X (espejo)
@@ -390,4 +389,5 @@ public class PlayerController : MonoBehaviour
 
 
 }
+
 
