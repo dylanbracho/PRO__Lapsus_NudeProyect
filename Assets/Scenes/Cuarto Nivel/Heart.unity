@@ -29059,6 +29059,7 @@ GameObject:
   - component: {fileID: 372238885}
   - component: {fileID: 372238887}
   - component: {fileID: 372238886}
+  - component: {fileID: 372238888}
   m_Layer: 0
   m_Name: Sangre
   m_TagString: Untagged
@@ -33942,6 +33943,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &372238888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372238884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858c9e1589fec8f4ebf2d90c18fb3588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DanoParticulas
+  danoPorParticula: 5
 --- !u!1 &443402508
 GameObject:
   m_ObjectHideFlags: 0
