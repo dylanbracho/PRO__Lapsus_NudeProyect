@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5402452844338525206}
   - component: {fileID: 2210735862190322732}
   - component: {fileID: 4511091037999572644}
+  - component: {fileID: -7473822159202356123}
   m_Layer: 6
   m_Name: Conejita
   m_TagString: Untagged
@@ -55,8 +56,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   isFacingRight: 0
-  enemyDamage: 10
-  enemyStrength: 2
+  enemyDamage: 3
+  enemyStrength: 3
 --- !u!212 &5402452844338525206
 SpriteRenderer:
   serializedVersion: 2
@@ -189,3 +190,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7473822159202356123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388071290455081103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d78464c90fc6bf489567147efe67ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  currentHealth: 50
+  dead: 0
+  espejo: 0
+  sucubo: 0
+  trampa: {fileID: 0}
+  objeto: {fileID: 0}

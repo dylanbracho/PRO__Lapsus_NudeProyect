@@ -392,7 +392,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             activeNPC = collision.gameObject.GetComponent<DialogueTrigger>();
-            holasamy.SetTrigger("algop");
+            
         }
     }
 
@@ -401,7 +401,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             activeNPC = null;
-            holasamy.SetTrigger("algop");
+            
         }
     }
 

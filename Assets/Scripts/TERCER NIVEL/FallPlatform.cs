@@ -3,36 +3,46 @@ using UnityEngine;
 
 public class FallPlatform : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private float fallDelay = 0.8f;     // Time standing on it before it falls
+    [SerializeField] private float respawnDelay = 3f;    // Time after falling before it returns
+    [SerializeField] private float fallGravity = 10f;
+
+    private Rigidbody2D rb;
+    private Vector3 startPosition;
+    private bool isFalling;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!isFalling && collision.gameObject.CompareTag("Player"))
         {
-            // Start the coroutine to make the platform fall
-            StartCoroutine(Fall());
+            StartCoroutine(FallAndRespawn());
         }
     }
 
-    IEnumerator Fall()
+    IEnumerator FallAndRespawn()
     {
-        // Wait for a short delay before making the platform fall
-        yield return new WaitForSeconds(0.8f);
-        // Make the platform fall by enabling gravity and disabling kinematic
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.isKinematic = false;
-            rb.gravityScale = 10f; // Adjust gravity scale as needed
-        }
+        isFalling = true;
+
+        yield return new WaitForSeconds(fallDelay);
+
+        // Fall
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = fallGravity;
+
+        yield return new WaitForSeconds(respawnDelay);
+
+        // Respawn: stop all motion, make it static again, and move it back
+        rb.linearVelocity = Vector2.zero;   // use rb.velocity on older Unity versions
+        rb.angularVelocity = 0f;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        transform.position = startPosition;
+
+        isFalling = false;
     }
 }
