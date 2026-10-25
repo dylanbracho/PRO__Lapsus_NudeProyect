@@ -256,7 +256,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void LanzarProyectil(InputAction.CallbackContext context)
+    private void LanzarProyectil(InputAction.CallbackContext context)
     {
         if (!enableProjectile) return; // Si la casilla está apagada, no hace nada
 
@@ -419,7 +419,7 @@ public class PlayerController : MonoBehaviour
         canJump = false;
         canDash = false;
 
-        rb.linearVelocity = Vector2.zero;   // use rb.velocity on older Unity versions
+        rb.linearVelocity = Vector2.zero;   
 
         yield return new WaitForSeconds(duration);
 

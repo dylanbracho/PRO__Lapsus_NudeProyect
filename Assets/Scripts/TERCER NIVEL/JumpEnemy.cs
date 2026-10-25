@@ -3,7 +3,7 @@ using UnityEngine;
 
 // Wind-up -> leap up and follow player -> freeze -> slam onto shadow -> cooldown
 // Assumes the enemy's pivot is at its feet.
-public class JumpingEnemy : MonoBehaviour
+public class JumpEnemy : MonoBehaviour
 {
     public Transform player;
     public Transform shadow;          // dark ellipse sprite (not a child of the enemy)
@@ -22,7 +22,7 @@ public class JumpingEnemy : MonoBehaviour
     public float landRadius = 1.5f;
     public int damage = 20;
 
-    bool busy;
+    public bool busy;
     float nextAttackTime;
     Vector3 shadowBaseScale;
     PlayerController playerController;

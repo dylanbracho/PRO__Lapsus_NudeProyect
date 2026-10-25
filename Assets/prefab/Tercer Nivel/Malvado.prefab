@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5279186712730082514}
   - component: {fileID: 867364596360480081}
-  - component: {fileID: 3055901009974437744}
+  - component: {fileID: 773301035383015305}
   - component: {fileID: 8917452987133054880}
   - component: {fileID: 6147271151233826570}
   m_Layer: 7
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &3055901009974437744
+--- !u!114 &773301035383015305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6572bd6a590f1534f931c8bc7aecd82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectlieBehaviour
-  speed: 9
+  speed: 10
+  damage: 10
+  enemyProjectile: 1
 --- !u!58 &8917452987133054880
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,8 +143,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 2
+  m_Offset: {x: -0.1458327, y: 0}
+  m_Radius: 4.6253047
 --- !u!50 &6147271151233826570
 Rigidbody2D:
   serializedVersion: 5

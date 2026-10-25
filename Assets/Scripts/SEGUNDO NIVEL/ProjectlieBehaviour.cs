@@ -4,7 +4,13 @@ public class ProjectlieBehaviour : MonoBehaviour
 {
     public float speed = 10f;
     private Vector2 moveDirection = Vector2.right;
-    public int damage = 10;
+    public float damage = 10f;
+    [SerializeField]bool enemyProjectile = false;
+
+    private void Start()
+    {
+       
+    }
 
     void Update()
     {
@@ -29,6 +35,17 @@ public class ProjectlieBehaviour : MonoBehaviour
         if (!other.CompareTag("Player") && !other.isTrigger)
         {
             Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Player") && enemyProjectile)
+        {
+            PlayerController playerHealth = other.GetComponentInParent<PlayerController>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+                Destroy(gameObject);
+            }
         }
     }
 }

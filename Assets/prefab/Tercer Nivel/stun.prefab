@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectlieBehaviour
   speed: 6
-  enemyDamage: 10
-  enemyStrength: 1
+  damage: 10
+  enemyProjectile: 1
 --- !u!50 &4009361898382465973
 Rigidbody2D:
   serializedVersion: 5

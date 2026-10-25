@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int currentHealth = 50;
+    public float currentHealth = 50;
     public bool dead = false;
     [SerializeField] private bool espejo = false;
     [SerializeField] private bool sucubo = false;
@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
             objeto.SetActive(true);
         }
     }
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
