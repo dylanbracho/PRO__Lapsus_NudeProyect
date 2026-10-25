@@ -6,6 +6,8 @@ public class AtaquesBoss : MonoBehaviour
     [SerializeField] private ParticleSystem sistemaSangre;
 
     [Header("Configuración de Estampida")]
+    [SerializeField] private BoxCollider2D colliderEmbestida; // Arrastra aquí el BoxCollider
+    [SerializeField] private float danoEmbestida = 20f;        // Daño que hace la embestida
     [SerializeField] private float duracionCarga = 0.8f;
     [SerializeField] private float duracionAtaque = 0.25f;
     [SerializeField] private float distanciaRetroceso = 1.5f;
@@ -21,6 +23,12 @@ public class AtaquesBoss : MonoBehaviour
         if (sistemaSangre == null)
         {
             sistemaSangre = transform.Find("Sangre")?.GetComponent<ParticleSystem>();
+        }
+
+        // Asegurarnos de que el collider empiece apagado para que no haga daño de la nada
+        if (colliderEmbestida != null)
+        {
+            colliderEmbestida.enabled = false;
         }
     }
 
@@ -71,7 +79,7 @@ public class AtaquesBoss : MonoBehaviour
 
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
-            sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo - 90f);
+            sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo);
 
             sistemaSangre.Play();
         }
@@ -90,6 +98,7 @@ public class AtaquesBoss : MonoBehaviour
         Vector3 puntoLentitud = posicionInicial - (direccionCarga * distanciaRetroceso);
         Vector3 puntoDestino = posicionSara + (direccionCarga * distanciaOvershoot);
 
+        // Fase 1: Retroceso (Seguro, no hace daño)
         float tiempoCarga = 0f;
         while (tiempoCarga < duracionCarga)
         {
@@ -105,6 +114,10 @@ public class AtaquesBoss : MonoBehaviour
             yield return null;
         }
 
+        // ¡AQUÍ ACTIVA EL DAÑO (Empieza la embestida rápida)!
+        if (colliderEmbestida != null) colliderEmbestida.enabled = true;
+
+        // Fase 2: Ataque veloz
         float tiempoAtaque = 0f;
         while (tiempoAtaque < duracionAtaque)
         {
@@ -115,6 +128,9 @@ public class AtaquesBoss : MonoBehaviour
 
             yield return null;
         }
+
+        // ¡APAGA EL DAÑO (Terminó la embestida)!
+        if (colliderEmbestida != null) colliderEmbestida.enabled = false;
 
         yield return new WaitForSeconds(0.4f);
 
@@ -168,5 +184,18 @@ public class AtaquesBoss : MonoBehaviour
 
         transform.rotation = Quaternion.identity;
         movimientoJefe.movimientoPausado = false;
+    }
+
+    // Detecta la colisión solo cuando el collider de embestida esté activo
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (colliderEmbestida != null && colliderEmbestida.enabled && collision.CompareTag("Player"))
+        {
+            if (collision.TryGetComponent<PlayerController>(out PlayerController player))
+            {
+                player.TakeDamage(danoEmbestida);
+                Debug.Log("¡Embestida conectada a Sara!");
+            }
+        }
     }
 }

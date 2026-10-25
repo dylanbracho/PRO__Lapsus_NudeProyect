@@ -28854,6 +28854,7 @@ MonoBehaviour:
   jefe: {fileID: 250713977}
   camaraSeguimientoSara: {fileID: 593017325}
   nuevoOrthoSize: 20
+  nuevoObjetivoCamara: {fileID: 0}
   duracionShake: 3
   intensidadShake: 20
 --- !u!1 &250713977
@@ -28871,6 +28872,7 @@ GameObject:
   - component: {fileID: 250713982}
   - component: {fileID: 250713980}
   - component: {fileID: 250713981}
+  - component: {fileID: 250713985}
   m_Layer: 0
   m_Name: Heart Enemy
   m_TagString: Untagged
@@ -29031,8 +29033,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AtaquesBoss
   sistemaSangre: {fileID: 372238887}
+  colliderEmbestida: {fileID: 250713985}
+  danoEmbestida: 20
   duracionCarga: 2
-  duracionAtaque: 1.5
+  duracionAtaque: 1
   distanciaRetroceso: 2
   distanciaOvershoot: 4
 --- !u!114 &250713984
@@ -29047,7 +29051,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858c9e1589fec8f4ebf2d90c18fb3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DanoParticulas
-  danoPorParticula: 5
+  danoPorParticula: 0.2
+--- !u!61 &250713985
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250713977}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.015176773, y: -0.029634714}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.24, y: 11.54}
+    newSize: {x: 10.24, y: 11.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8.548706, y: 9.119202}
+  m_EdgeRadius: 0
 --- !u!1 &372238884
 GameObject:
   m_ObjectHideFlags: 0
@@ -29245,7 +29295,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -36267,7 +36317,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.24606052, y: 0.45330265}
+  m_Offset: {x: -0.029574126, y: 0.17283997}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -36277,7 +36327,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.06351644, y: 0.86126703}
+  m_Size: {x: 0.61478573, y: 0.3003416}
   m_EdgeRadius: 0
 --- !u!1 &2064426751
 GameObject:
