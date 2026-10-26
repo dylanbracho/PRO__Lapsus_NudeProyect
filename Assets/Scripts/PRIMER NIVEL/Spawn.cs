@@ -8,15 +8,18 @@ public class Spawn : MonoBehaviour
     [SerializeField] GameObject spawn;
     [SerializeField] GameObject player;
 
+    bool hasFightStarted;
+
     //[SerializeField] GameObject bloodPanel;
-    [SerializeField] GameObject[] espinas;
+    //[SerializeField] GameObject[] espinas;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        //StartCoroutine(SpawnOHSI());
+
         //StartCoroutine(SpawnEspinas());
 
     }
@@ -24,16 +27,19 @@ public class Spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (true)
+        {
+
+        }
     }
-    IEnumerator SpawnEspinas()
+    /*IEnumerator SpawnEspinas()
     {
         foreach (GameObject espina in espinas)
         {
             yield return new WaitForSeconds(1f);
             espina.SetActive(true);
         }
-    }
+    }*/
 
     IEnumerator SpawnOHSI() 
     {
@@ -43,7 +49,8 @@ public class Spawn : MonoBehaviour
 
         while (ustednosientequetodoserepite < 10) 
         {
-            yield return new WaitForSeconds(6f);
+            Debug.Log("Spawned Coagulito");
+            yield return new WaitForSeconds(9f);
             CaogulitoController spawnedCoagulito = Instantiate(coagulito, spawn.transform.position, spawn.transform.rotation);
             spawnedCoagulito.enemyMovementPoints[0] = player.transform;
             ustednosientequetodoserepite++;
@@ -55,8 +62,9 @@ public class Spawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !hasFightStarted)
         {
+            hasFightStarted = true;
             //bloodPanel.SetActive(true);
 
             StartCoroutine(SpawnOHSI());
