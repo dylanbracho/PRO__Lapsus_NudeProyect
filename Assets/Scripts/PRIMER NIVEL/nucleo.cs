@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class nucleo : MonoBehaviour
 {
     [SerializeField] GameObject nucleoOHSI;
+    [SerializeField] Collider2D collidernucleo;
+    [SerializeField] SpriteRenderer imagennucleo;
     [SerializeField] bool isActive;
 
     public float health;
@@ -47,7 +49,17 @@ public class nucleo : MonoBehaviour
         while (ustednosientequetodoserepite<50)
         {
             yield return new WaitForSeconds(2f);
-            nucleoOHSI.SetActive(isActive);
+            //nucleoOHSI.SetActive(isActive);
+            if (isActive)
+            {
+                imagennucleo.color = new Color(1, 1, 1, 1);
+                collidernucleo.enabled = true;
+            }
+            else if (!isActive)
+            {
+                imagennucleo.color = new Color(1, 1, 1, 0);
+                collidernucleo.enabled = false;
+            }
             isActive = !isActive;
             ustednosientequetodoserepite++;
         }
@@ -78,9 +90,5 @@ public class nucleo : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
-    {
-        RecibirDaño(amount);
-        Debug.Log("¡Le pegaste a la flor rosa del jefe!");
-    }
+    
 }

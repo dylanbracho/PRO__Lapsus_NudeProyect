@@ -18,18 +18,24 @@ public class whip : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 1. Si es un enemigo normal, busca Health (mantiene todo lo demás funcionando)
-        Health health = other.GetComponent<Health>();
-        if (health != null)
+        //Health health = other.GetComponent<Health>();  VERSIÓN VIEJA, SI NO FUNCIONA PONGANLO Y BORREN LA NUEVA
+        //if (health != null)
+        //{
+        //    health.TakeDamage(damage);
+        //}
+
+        if (other.TryGetComponent<Health>(out Health enemigo))
         {
-            health.TakeDamage(damage);
+            enemigo.TakeDamage(damage);
+            //Debug.Log("cbdhsjj");
         }
 
         // 2. Si es la flor rosa del jefe, busca vidajefe
-        vidajefe jefe = other.GetComponent<vidajefe>();
-        if (jefe != null)
+
+        if (other.TryGetComponent<nucleo>(out nucleo jefe))
         {
             jefe.RecibirDaño(damage);
-            Debug.Log("¡Látigo conectó con la flor rosa del jefe!");
+            //Debug.Log("cbdhsjj");
         }
     }
 
