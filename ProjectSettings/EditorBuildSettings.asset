@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Segundo nivel/PRIMER PARKOUR.unity
     guid: d8c115fb38e15bc4a8b54287c0f7399a
+  - enabled: 1
+    path: Assets/Scenes/Cuarto Nivel/Heart.unity
+    guid: 28ad5ec98504a9a4fa13b48b5cdab5d7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
