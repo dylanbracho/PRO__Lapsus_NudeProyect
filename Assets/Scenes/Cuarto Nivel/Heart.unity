@@ -28854,7 +28854,6 @@ MonoBehaviour:
   jefe: {fileID: 250713977}
   camaraSeguimientoSara: {fileID: 593017325}
   nuevoOrthoSize: 20
-  nuevoObjetivoCamara: {fileID: 0}
   duracionShake: 3
   intensidadShake: 20
 --- !u!1 &250713977
@@ -28867,6 +28866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 250713979}
   - component: {fileID: 250713978}
+  - component: {fileID: 250713986}
   - component: {fileID: 250713984}
   - component: {fileID: 250713983}
   - component: {fileID: 250713982}
@@ -29035,6 +29035,7 @@ MonoBehaviour:
   sistemaSangre: {fileID: 372238887}
   colliderEmbestida: {fileID: 250713985}
   danoEmbestida: 20
+  fuerzaEmpuje: 12
   duracionCarga: 2
   duracionAtaque: 1
   distanciaRetroceso: 2
@@ -29098,6 +29099,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.548706, y: 9.119202}
   m_EdgeRadius: 0
+--- !u!114 &250713986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250713977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48571dfa8294b6845a86254a7c9178e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossVida
+  vidaMaxima: 100
+  efectoMuerte: {fileID: 0}
 --- !u!1 &372238884
 GameObject:
   m_ObjectHideFlags: 0

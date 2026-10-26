@@ -5,9 +5,10 @@ public class AtaquesBoss : MonoBehaviour
 {
     [SerializeField] private ParticleSystem sistemaSangre;
 
-    [Header("Configuración de Estampida")]
-    [SerializeField] private BoxCollider2D colliderEmbestida; // Arrastra aquí el BoxCollider
-    [SerializeField] private float danoEmbestida = 20f;        // Daño que hace la embestida
+    [Header("ConfiguraciÃ³n de Estampida")]
+    [SerializeField] private BoxCollider2D colliderEmbestida; // Arrastra aquÃ­ el BoxCollider
+    [SerializeField] private float danoEmbestida = 20f;        // DaÃ±o que hace la embestida
+    [SerializeField] private float fuerzaEmpuje = 16f;        // Fuerza con la que empuja a Sara
     [SerializeField] private float duracionCarga = 0.8f;
     [SerializeField] private float duracionAtaque = 0.25f;
     [SerializeField] private float distanciaRetroceso = 1.5f;
@@ -25,7 +26,7 @@ public class AtaquesBoss : MonoBehaviour
             sistemaSangre = transform.Find("Sangre")?.GetComponent<ParticleSystem>();
         }
 
-        // Asegurarnos de que el collider empiece apagado para que no haga daño de la nada
+        // Asegurarnos de que el collider empiece apagado para que no haga daÃ±o de la nada
         if (colliderEmbestida != null)
         {
             colliderEmbestida.enabled = false;
@@ -98,7 +99,7 @@ public class AtaquesBoss : MonoBehaviour
         Vector3 puntoLentitud = posicionInicial - (direccionCarga * distanciaRetroceso);
         Vector3 puntoDestino = posicionSara + (direccionCarga * distanciaOvershoot);
 
-        // Fase 1: Retroceso (Seguro, no hace daño)
+        // Fase 1: Retroceso (Seguro, no hace daÃ±o)
         float tiempoCarga = 0f;
         while (tiempoCarga < duracionCarga)
         {
@@ -114,7 +115,7 @@ public class AtaquesBoss : MonoBehaviour
             yield return null;
         }
 
-        // ¡AQUÍ ACTIVA EL DAÑO (Empieza la embestida rápida)!
+        // Â¡AQUÃ ACTIVA EL DAÃ‘O (Empieza la embestida rÃ¡pida)!
         if (colliderEmbestida != null) colliderEmbestida.enabled = true;
 
         // Fase 2: Ataque veloz
@@ -129,7 +130,7 @@ public class AtaquesBoss : MonoBehaviour
             yield return null;
         }
 
-        // ¡APAGA EL DAÑO (Terminó la embestida)!
+        // Â¡APAGA EL DAÃ‘O (TerminÃ³ la embestida)!
         if (colliderEmbestida != null) colliderEmbestida.enabled = false;
 
         yield return new WaitForSeconds(0.4f);
@@ -186,16 +187,37 @@ public class AtaquesBoss : MonoBehaviour
         movimientoJefe.movimientoPausado = false;
     }
 
-    // Detecta la colisión solo cuando el collider de embestida esté activo
+    // Detecta la colisiÃ³n, le quita vida a Sara mediante su mÃ©todo original y la empuja liberando su movimiento por un instante
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (colliderEmbestida != null && colliderEmbestida.enabled && collision.CompareTag("Player"))
         {
             if (collision.TryGetComponent<PlayerController>(out PlayerController player))
             {
-                player.TakeDamage(danoEmbestida);
-                Debug.Log("¡Embestida conectada a Sara!");
+                player.TakeDamage(danoEmbestida); // Llama al mÃ©todo original de vida de Sara
+
+                // Aplicamos el impulso fÃ­sico directo con linearVelocity (Unity 6)
+                if (collision.TryGetComponent<Rigidbody2D>(out Rigidbody2D rbPlayer))
+                {
+                    Vector2 direccionEmpuje = (collision.transform.position - transform.position).normalized;
+                    direccionEmpuje.y += 0.5f; // Salto ligero hacia arriba
+                    direccionEmpuje.Normalize();
+
+                    rbPlayer.linearVelocity = direccionEmpuje * fuerzaEmpuje;
+                }
+
+                // Apagamos el PlayerController de Sara por 0.25 segundos para que vuele libre sin que su script frene el golpe
+                StartCoroutine(PausarControlTemporada(player, 0.25f));
+
+                Debug.Log("Â¡Embestida conectada y Sara empujada sin tocar su script!");
             }
         }
+    }
+
+    IEnumerator PausarControlTemporada(PlayerController player, float duracion)
+    {
+        player.enabled = false;
+        yield return new WaitForSeconds(duracion);
+        player.enabled = true;
     }
 }
