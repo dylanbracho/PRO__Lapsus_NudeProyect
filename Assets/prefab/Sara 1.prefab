@@ -272,14 +272,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   isFacingRight: 0
-  health: 100
   hitForce: 0
   hitTime: 0
   hitFromRight: 0
+  enableWhip: 1
+  enableMazo: 1
+  enableProjectile: 1
   dashSpeed: 20
   dashTime: 0.3
   dashCooldown: 0
   isInvincible: 0
+  canDash: 1
   hurtBox1: {fileID: 6470465576697560449}
   hurtBox2: {fileID: 7948445514800136837}
   enemyLayer:
@@ -290,6 +293,20 @@ MonoBehaviour:
   whipHitbox: {fileID: 4277237691267306680}
   attackCooldown: 0.5
   hitboxActiveTime: 0.5
+  health: 100
+  maxhealth: 0
+  muerta: 0
+  uimanager: {fileID: 0}
+  spawnpoint: {fileID: 0}
+  healthBarSlider: {fileID: 0}
+  vidaentexto: {fileID: 0}
+  activeNPC: {fileID: 0}
+  holasamy: {fileID: 0}
+  proyectilPrefab: {fileID: 0}
+  launchOffset: {fileID: 0}
+  attackActionMazo: {fileID: 0}
+  mazoHitbox: {fileID: 0}
+  isStunned: 0
 --- !u!114 &5924841076811310492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +396,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9f185588-4e42-4c9e-9fd6-f035a2084ee9
     m_ActionName: 'Movimiento/New action[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 56bc301c-6f24-4598-8210-1c2933dacf4b
+    m_ActionName: 'Movimiento/Pausa[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f9e9bd9-241a-4c6b-a6f8-1d244c1bc4a8
+    m_ActionName: 'Movimiento/Interactuar[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d9ebec6-75c1-4d34-b0ed-7c18f676155c
+    m_ActionName: 'Movimiento/Disparo[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8276c31c-9353-4d39-907a-bd5cd7463985
+    m_ActionName: 'Movimiento/Mazo[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Movimiento
