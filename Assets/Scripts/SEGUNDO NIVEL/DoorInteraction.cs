@@ -1,15 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 
 public class DoorInteraction : MonoBehaviour
 {
     [SerializeField] private GameObject keyObject;
-    [SerializeField] private Transform destinationPoint;
+    [SerializeField] private string targetSceneName; // Nombre de la otra escena a la que quieres viajar
     [SerializeField] private bool isDoorOpen = false;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip lockedSound;
-    [SerializeField] private Collider2D detectionArea; 
+    [SerializeField] private Collider2D detectionArea;
 
     private bool isPlayerInRange = false;
     private Transform playerTransform;
@@ -32,14 +33,15 @@ public class DoorInteraction : MonoBehaviour
             {
                 if (isDoorOpen)
                 {
-                    if (destinationPoint != null && playerTransform != null)
-                    {
-                        playerTransform.position = destinationPoint.position;
-                    }
-
                     if (audioSource != null && openSound != null)
                     {
                         audioSource.PlayOneShot(openSound);
+                    }
+
+                    // Cambia a la escena especificada en el Inspector
+                    if (!string.IsNullOrEmpty(targetSceneName))
+                    {
+                        SceneManager.LoadScene(targetSceneName);
                     }
 
                     if (keyObject != null)
@@ -60,7 +62,6 @@ public class DoorInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       
         if (detectionArea != null && other != detectionArea && !other.IsTouching(detectionArea))
             return;
 

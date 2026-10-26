@@ -106,8 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6572bd6a590f1534f931c8bc7aecd82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectlieBehaviour
-  speed: 9
-  damage: 2
+  speed: 16.2
+  damage: 5
+  enemyProjectile: 0
 --- !u!58 &8917452987133054880
 CircleCollider2D:
   m_ObjectHideFlags: 0

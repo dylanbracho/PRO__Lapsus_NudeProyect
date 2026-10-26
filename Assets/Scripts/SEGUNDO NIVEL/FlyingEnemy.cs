@@ -4,6 +4,7 @@ public class FlyingEnemy : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private ParticleSystem hitParticles;
+    [SerializeField] private Collider2D triggerCollider;
     [SerializeField] private float detectionRange = 10f;
     [SerializeField] private float attackDelay = 3f;
     [SerializeField] private float moveSpeed = 8f;
@@ -21,6 +22,11 @@ public class FlyingEnemy : MonoBehaviour
         {
             GameObject playerObj = GameObject.FindWithTag("Player");
             if (playerObj != null) player = playerObj.transform;
+        }
+
+        if (triggerCollider == null)
+        {
+            triggerCollider = GetComponent<Collider2D>();
         }
     }
 
@@ -54,10 +60,9 @@ public class FlyingEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerController pc = collision.GetComponent<PlayerController>();
+        PlayerController pc = collision.GetComponentInParent<PlayerController>();
         if (pc != null)
         {
-            // Reproduce las partículas en el punto de contacto
             if (hitParticles != null)
             {
                 Vector2 contactoPunto = collision.ClosestPoint(transform.position);
@@ -66,12 +71,10 @@ public class FlyingEnemy : MonoBehaviour
                 Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
             }
 
-            // Aplica los valores de daño y retroceso directamente al PlayerController
             pc.hitTime = enemyHitTime;
             pc.hitForce = enemyHitStrength;
             pc.TakeDamage(enemyDamage);
 
-            // Define la dirección del empuje según la posición de Sara frente al enemigo
             if (collision.transform.position.x < transform.position.x)
             {
                 pc.hitFromRight = true;
@@ -81,7 +84,6 @@ public class FlyingEnemy : MonoBehaviour
                 pc.hitFromRight = false;
             }
 
-            // Destruye al enemigo al impactar a Sara
             Destroy(gameObject);
         }
     }

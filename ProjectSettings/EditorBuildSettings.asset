@@ -35,6 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tercer nivel/boob2.unity
     guid: 663f648f03f744746925ba4a4903bfae
+  - enabled: 1
+    path: Assets/Scripts/TERCER NIVEL/Segundo nivel/segundo nivel.unity
+    guid: c99d074703a3bb548ad7e659c607817c
+  - enabled: 1
+    path: Assets/Scripts/TERCER NIVEL/Segundo nivel/PRIMER PARKOUR.unity
+    guid: d8c115fb38e15bc4a8b54287c0f7399a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

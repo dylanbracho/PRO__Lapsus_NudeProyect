@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6470234460855062036}
   - component: {fileID: 5010464284923813537}
   - component: {fileID: 8714982951006377653}
+  - component: {fileID: -8124521762231071913}
   m_Layer: 0
   m_Name: GLITCHED
   m_TagString: Untagged
@@ -179,7 +180,29 @@ MonoBehaviour:
   projectileSpeed: 6
   moveSpeed: 1
   enemyStrength: 2.03
+  isFacingRight: 0
   fireTimer: 0
+  enemyRb: {fileID: 5010464284923813537}
+  actualObjective: {fileID: 0}
+  direction: 0
+--- !u!114 &-8124521762231071913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095603952855354850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d78464c90fc6bf489567147efe67ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  currentHealth: 50
+  dead: 0
+  espejo: 0
+  sucubo: 0
+  trampa: {fileID: 0}
+  objeto: {fileID: 0}
 --- !u!1 &7651343336293538955
 GameObject:
   m_ObjectHideFlags: 0
