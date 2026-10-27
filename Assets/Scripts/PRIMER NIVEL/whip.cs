@@ -2,12 +2,9 @@ using UnityEngine;
 
 public class whip : MonoBehaviour
 {
-    public int damage = 15;
+    public float damage = 15f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -31,12 +28,14 @@ public class whip : MonoBehaviour
         }
 
         // 2. Si es la flor rosa del jefe, busca vidajefe
-
-        if (other.TryGetComponent<nucleo>(out nucleo jefe))
+        nucleo jefe = other.GetComponentInParent<nucleo>();
+        if (jefe != null)
         {
             jefe.RecibirDaño(damage);
-            //Debug.Log("cbdhsjj");
+            Debug.Log("dano");
         }
     }
+
+    
 
 }

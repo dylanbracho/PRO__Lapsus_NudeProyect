@@ -64943,6 +64943,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1757972125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757972126}
+  m_Layer: 0
+  m_Name: spawntrampa
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757972126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757972125}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 166.63, y: 2.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760723989
 GameObject:
   m_ObjectHideFlags: 0
@@ -65117,7 +65148,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8477577315465477158, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 2140055147}
   m_SourcePrefab: {fileID: 100100000, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
 --- !u!4 &1786290822 stripped
 Transform:
@@ -65129,7 +65163,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1014524921074286551, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
   m_PrefabInstance: {fileID: 1786290821}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2140055146}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3e1c8770f9f12849badb0aa0596754e, type: 3}
@@ -67054,6 +67088,27 @@ RectTransform:
   m_AnchoredPosition: {x: -638.9999, y: 421}
   m_SizeDelta: {x: 600, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2140055146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8477577315465477158, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+  m_PrefabInstance: {fileID: 1786290821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140055147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140055146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2573012c30451b4e97fbd6bf88da279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::condicionspawn
+  trampa: {fileID: 1035818148}
+  spawn: {fileID: 722456556}
+  spawnTrampa: {fileID: 1757972125}
+  pC: {fileID: 1786290827}
 --- !u!1 &2141473985
 GameObject:
   m_ObjectHideFlags: 0
@@ -67180,6 +67235,7 @@ SceneRoots:
   - {fileID: 1160618237}
   - {fileID: 474859178}
   - {fileID: 1981202417}
+  - {fileID: 1757972126}
   - {fileID: 722456557}
   - {fileID: 268313491}
   - {fileID: 231452792}
