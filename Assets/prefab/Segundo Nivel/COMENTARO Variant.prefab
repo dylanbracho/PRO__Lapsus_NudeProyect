@@ -12,6 +12,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: COMENTARO Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2301410354188945509, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2600418723446463888, guid: a8cc243315cec2c458e0fe2fbd38d166, type: 3}
+    - target: {fileID: 2301410354188945509, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301410354188945509, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301410354188945509, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800980445618397348, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800980445618397348, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.98
+      objectReference: {fileID: 0}
     - target: {fileID: 3800980445618397348, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -369.0724
@@ -51,6 +75,14 @@ PrefabInstance:
     - target: {fileID: 3800980445618397348, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368965371757304970, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368965371757304970, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 6448937923584212500, guid: 182292562cee8be42b8ed737ef15fcf8, type: 3}
       propertyPath: enemyRb
