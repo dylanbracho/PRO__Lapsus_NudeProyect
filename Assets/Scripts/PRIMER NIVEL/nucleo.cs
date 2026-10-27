@@ -22,12 +22,15 @@ public class nucleo : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine("NucleoOHSI_");
+        
 
         health = maxhealth;
         healthBarSlider.value = health;
         healthBarSlider.maxValue = maxhealth;
         vidaentexto.text = $"HP: {health}/{maxhealth}";
+        imagennucleo.color = new Color(1, 1, 1, 0);
+        collidernucleo.enabled = false;
+        StartCoroutine(NucleoOHSI_());
     }
 
     // Update is called once per frame
@@ -44,26 +47,15 @@ public class nucleo : MonoBehaviour
     IEnumerator NucleoOHSI_() 
     {
 
-        int ustednosientequetodoserepite = 1;
-
-        while (ustednosientequetodoserepite<50)
+        while (true)
         {
-            yield return new WaitForSeconds(2f);
-            //nucleoOHSI.SetActive(isActive);
-            if (isActive)
-            {
-                imagennucleo.color = new Color(1, 1, 1, 1);
-                collidernucleo.enabled = true;
-            }
-            else if (!isActive)
-            {
-                imagennucleo.color = new Color(1, 1, 1, 0);
-                collidernucleo.enabled = false;
-            }
-            isActive = !isActive;
-            ustednosientequetodoserepite++;
+            yield return new WaitForSeconds(7f);
+            imagennucleo.color = new Color(1, 1, 1, 1);
+            collidernucleo.enabled = true;
+            yield return new WaitForSeconds(3f);
+            imagennucleo.color = new Color(1, 1, 1, 0);
+            collidernucleo.enabled = false;
         }
-        
     }
 
     public void RecibirDaño(float cantidad)

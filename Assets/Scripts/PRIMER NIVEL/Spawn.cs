@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    [SerializeField] CaogulitoController coagulito;
+    [SerializeField] CoagulitoSController coagulito;
     [SerializeField] GameObject spawn;
     [SerializeField] GameObject player;
 
@@ -47,12 +47,11 @@ public class Spawn : MonoBehaviour
 
         
 
-        while (ustednosientequetodoserepite < 10) 
+        while (ustednosientequetodoserepite < 6) 
         {
             Debug.Log("Spawned Coagulito");
-            yield return new WaitForSeconds(9f);
-            CaogulitoController spawnedCoagulito = Instantiate(coagulito, spawn.transform.position, spawn.transform.rotation);
-            spawnedCoagulito.enemyMovementPoints[0] = player.transform;
+            yield return new WaitForSeconds(5f);
+            Instantiate(coagulito, spawn.transform.position, spawn.transform.rotation);
             ustednosientequetodoserepite++;
         }
 

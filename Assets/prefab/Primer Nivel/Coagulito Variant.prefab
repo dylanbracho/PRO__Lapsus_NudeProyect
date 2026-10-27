@@ -66,11 +66,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6138327524166352440, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_GravityScale
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7242710030751842697, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: enemySpeed
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7242710030751842697, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
+      propertyPath: enemyStrength
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7242710030751842697, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: actualObjective
@@ -94,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215717744017236110, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.754
+      value: 66.66614
       objectReference: {fileID: 0}
     - target: {fileID: 8215717744017236110, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13
+      value: 40.525444
       objectReference: {fileID: 0}
     - target: {fileID: 8215717744017236110, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -132,14 +136,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7242710030751842697, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3881386285016832142}
+    - targetCorrespondingSourceObject: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7151723575001603879}
   m_SourcePrefab: {fileID: 100100000, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
+--- !u!50 &7589847408035225572 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6138327524166352440, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
+  m_PrefabInstance: {fileID: 4358136838941827548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8819968358438367019 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
@@ -163,3 +176,27 @@ MonoBehaviour:
   sucubo: 0
   trampa: {fileID: 0}
   objeto: {fileID: 0}
+--- !u!114 &7151723575001603879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8819968358438367019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e66fffdddc59547a9aae0ae23b5c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoagulitoSController
+  enemySpeed: 3
+  enemyRb: {fileID: 7589847408035225572}
+  isFacingRight: 0
+  target: {fileID: 0}
+  enemyMovementPoints: []
+  chaseDuration: 2
+  restDuration: 1.5
+  landDelay: 0.5
+  hitRestDuration: 2
+  stopDistance: 0.5
+  enemyDamage: 5
+  enemyStrength: 0
