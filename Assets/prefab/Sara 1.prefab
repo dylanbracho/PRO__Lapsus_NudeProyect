@@ -307,6 +307,8 @@ MonoBehaviour:
   attackActionMazo: {fileID: 0}
   mazoHitbox: {fileID: 0}
   isStunned: 0
+  DamageSprite: {fileID: 2100000, guid: 22328828fdea6d14e93746e836432d40, type: 2}
+  flashTime: 0.2
 --- !u!114 &5924841076811310492
 MonoBehaviour:
   m_ObjectHideFlags: 0

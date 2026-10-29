@@ -170,7 +170,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 50
   dead: 0
+  espejo: 0
+  sucubo: 0
   trampa: {fileID: 0}
+  objeto: {fileID: 0}
+  flash: {fileID: 2100000, guid: 22328828fdea6d14e93746e836432d40, type: 2}
 --- !u!114 &2796114815208760775
 MonoBehaviour:
   m_ObjectHideFlags: 0

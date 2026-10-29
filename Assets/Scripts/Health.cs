@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -8,11 +9,16 @@ public class Health : MonoBehaviour
     [SerializeField] private bool sucubo = false;
     public GameObject trampa;
     public GameObject objeto;
+    SpriteRenderer sr;
+    Material OG;
+    [SerializeField] private Material flash;
+    float flashTime = 0.15f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
+        OG = sr.material;
     }
 
     // Update is called once per frame
@@ -30,6 +36,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        StartCoroutine(flashDamage());
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
@@ -44,5 +51,13 @@ public class Health : MonoBehaviour
             }
         }
             
+    }
+
+    IEnumerator flashDamage()
+    {
+        sr.material = flash;
+        yield return new WaitForSeconds(flashTime);
+        sr.material = OG;
+
     }
 }
