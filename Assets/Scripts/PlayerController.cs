@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
     // NPC
     public DialogueTrigger activeNPC;
     public Animator holasamy;
+    public SignifierDialogo signifierDialogo;
 
     //Proyectil
     public ProjectlieBehaviour proyectilPrefab;
@@ -262,7 +263,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Hola Dylan");
             activeNPC.TriggerDialogue();
-            
+            signifierDialogo.isDoorOpen = true;
         }
     }
 
