@@ -103,9 +103,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         canJump = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        animator.SetFloat("Jump", rb.linearVelocity.y);
+        animator.SetBool("IsJumping", canJump);
         //canDash = !canJump;
-      
-        
+
 
         if (!isFacingRight && direction > 0f)
         {
@@ -253,7 +254,8 @@ public class PlayerController : MonoBehaviour
         if (context.performed && canJump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-           // canDash = true;
+            SFXManager.PlaySFX(Soundtype.JUMP, 0.5f);
+            // canDash = true;
         }
     }
 
