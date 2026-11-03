@@ -3008,18 +3008,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 501237015}
     - target: {fileID: 5293318602838249819, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.43431
-      objectReference: {fileID: 0}
-    - target: {fileID: 5293318602838249819, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.43431
-      objectReference: {fileID: 0}
-    - target: {fileID: 5293318602838249819, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.43431
-      objectReference: {fileID: 0}
-    - target: {fileID: 5293318602838249819, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 89.961
       objectReference: {fileID: 0}
@@ -84064,6 +84052,17 @@ MonoBehaviour:
   trampa: {fileID: 0}
   objeto: {fileID: 1685061208}
   flash: {fileID: 0}
+--- !u!114 &1528459576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+  m_PrefabInstance: {fileID: 277819006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16072651a4f8d24eab5600b08b4ec5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
 --- !u!1 &1537160494
 GameObject:
   m_ObjectHideFlags: 0
@@ -92245,7 +92244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1528459576}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: DisplayNextSentence
         m_Mode: 1

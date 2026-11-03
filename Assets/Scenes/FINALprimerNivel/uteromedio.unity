@@ -34663,6 +34663,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 646840904}
     - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: maxPitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: npcNameText
       value: 
       objectReference: {fileID: 1616816600}
@@ -34717,6 +34721,22 @@ PrefabInstance:
     - target: {fileID: 8271670914057200226, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: m_Name
       value: dialogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668811599825993505, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: m_Size.x
+      value: 40.30972
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668811599825993505, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: m_Size.y
+      value: 27.19413
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668811599825993505, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.4366169
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668811599825993505, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: m_Offset.y
+      value: -3.5727806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -16,11 +16,19 @@ public class DialogueManager : MonoBehaviour
     public float textAnimationSpeed;
 
     string sentenceInProgress;
+    [SerializeField] private AudioClip[] sounds;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private bool stopAudio;
+    [Range  (0f, 0.5f)]
+    [SerializeField] private float minPitch = 0.5f;
+    [Range  (0f, 2f)]
+    [SerializeField] private float maxPitch = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void StartDialogue(Dialogue _dialogue)
@@ -60,14 +68,20 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         sentenceInProgress = sentence;
 
         npcDialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        int charIndex = 0;
+        foreach (char letter in sentence.ToCharArray())
         {
+            if (!char.IsWhiteSpace(letter))
+            {
+                PlaySound(charIndex);
+            }
             npcDialogueText.text += letter;
+            charIndex++;
             yield return new WaitForSeconds(textAnimationSpeed);
         }
     }
@@ -75,6 +89,21 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+    }
+
+    private void PlaySound(int displayCharacters)
+    {
+        if (displayCharacters % 2 == 0)
+        {
+            if (stopAudio)
+            {
+                audioSource.Stop();
+            }
+            int randomIndex = Random.Range(0, sounds.Length);
+            AudioClip soundClip = sounds[randomIndex];
+            audioSource.pitch = Random.Range(minPitch, maxPitch);
+            audioSource.PlayOneShot(soundClip);
+        }
     }
 
 }
