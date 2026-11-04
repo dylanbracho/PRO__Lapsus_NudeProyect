@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FINALprimerNivel/Inicio.unity
     guid: 4766e86397f9e48459efebdb736ed780
   - enabled: 1
+    path: Assets/Scenes/FINALprimerNivel/Tutorial.unity
+    guid: b36ae008dde02df48ab1aa835fcefec0
+  - enabled: 1
     path: Assets/Scenes/FINALprimerNivel/ovario1.unity
     guid: 21aa13427259d8c47b1c695666cd4f3e
   - enabled: 1
