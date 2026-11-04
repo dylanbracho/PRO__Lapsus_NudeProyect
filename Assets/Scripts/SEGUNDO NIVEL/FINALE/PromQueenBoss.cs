@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class PromQueenBoss : MonoBehaviour
 {
-   
-    public float maxHealth = 100f;
-    public float currentHealth;
+    
+    [SerializeField] private Health bossHealth; // Arrastra aquí el componente Health de la Prom Queen
 
-  
     public float attackInterval = 2.5f;
     private float attackTimer;
 
@@ -16,51 +14,58 @@ public class PromQueenBoss : MonoBehaviour
     public GameObject ribSlashPrefab;    // Fase 2 (50% HP): Ataque de costilla
     public GameObject implantPrefab;     // Fase 3 (25% HP): Implante explosivo
 
-
     public bool isVulnerable = false;
-    public float vulnerabilityDuration = 3f; // Tiempo que se queda quieta posando
+    public float vulnerabilityDuration = 3f;
     private float vulnerabilityTimer;
 
     private int currentPhase = 1;
-    private bool introPlayed = false;
+    private float maxHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;
         attackTimer = attackInterval;
 
-        // La intro de la jefa al entrar a la escena
-        IntroReaction();
+        if (bossHealth == null)
+        {
+            bossHealth = GetComponent<Health>();
+        }
+
+        if (bossHealth != null)
+        {
+            maxHealth = bossHealth.currentHealth;
+        }
+
+        Debug.Log("Prom Queen: ¿Qué diablos haces aquí?! (Combate iniciado)");
     }
 
     void Update()
     {
-        // Revisar cambios de fase por vida
+        if (bossHealth == null || bossHealth.dead) return;
+
         CheckPhaseTransition();
 
         if (isVulnerable)
         {
-            // Ventana de vulnerabilidad (se queda quieta haciendo pose)
+            // Ventana de vulnerabilidad (la jefa hace pose y se queda quieta)
             vulnerabilityTimer -= Time.deltaTime;
             if (vulnerabilityTimer <= 0)
             {
                 isVulnerable = false;
-                attackTimer = attackInterval; // Vuelve a atacar
-                Debug.Log("Prom Queen exits pose and resumes attack!");
+                attackTimer = attackInterval;
+                Debug.Log("Prom Queen sale de la pose y retoma el ataque.");
             }
         }
         else
         {
-            // Ciclo normal de ataque
+            // Ciclo normal de ataques
             attackTimer -= Time.deltaTime;
             if (attackTimer <= 0)
             {
                 ExecutePhaseAttack();
                 attackTimer = attackInterval;
 
-                // Opcional: cada cierto número de ataques, abre su ventana de pose/vulnerabilidad para que Sara la golpee
-                // Aquí simulamos que tras un ataque fuerte entra en pose de diva
-                if (Random.value > 0.5f)
+                // Probabilidad de abrir su ventana de vulnerabilidad tras atacar
+                if (Random.value > 0.4f)
                 {
                     StartVulnerabilityWindow();
                 }
@@ -68,30 +73,23 @@ public class PromQueenBoss : MonoBehaviour
         }
     }
 
-    void IntroReaction()
-    {
-        // Aquí puedes activar tu animación de "What the fuck are you doing here?" o UI flotante
-        Debug.Log("Prom Queen: ¿Qué diablos haces aquí?! (Intro de combate iniciada)");
-        introPlayed = true;
-    }
-
     void CheckPhaseTransition()
     {
-        float healthPercentage = (currentHealth / maxHealth) * 100f;
+        float healthPercentage = (bossHealth.currentHealth / maxHealth) * 100f;
 
-        // Fase 3: A 25% de vida (Desesperación / Implante)
+        // Fase 3: A 25% de vida (Implantes explosivos)
         if (healthPercentage <= 25f && currentPhase < 3)
         {
             currentPhase = 3;
-            Debug.Log("Fase 3: ¡Prom Queen muta y lanza implantes explosivos!");
             attackInterval = 1.8f; // Ataca más rápido
+            Debug.Log("¡Fase 3 activada! Prom Queen lanza implantes explosivos.");
         }
-        // Fase 2: A 50% de vida (Forma monstruosa / Costilla)
+        // Fase 2: A 50% de vida (Ataque de costilla)
         else if (healthPercentage <= 50f && currentPhase < 2)
         {
             currentPhase = 2;
-            Debug.Log("Fase 2: ¡Prom Queen revela su forma montruosa de cirugías (Rib attack)!");
             attackInterval = 2.1f;
+            Debug.Log("¡Fase 2 activada! Prom Queen revela su forma monstruosa.");
         }
     }
 
@@ -102,19 +100,16 @@ public class PromQueenBoss : MonoBehaviour
             case 1:
                 if (flowerPrefab != null && attackSpawnPoint != null)
                     Instantiate(flowerPrefab, attackSpawnPoint.position, Quaternion.identity);
-                Debug.Log("Prom Queen lanza Tormenta de Flores.");
                 break;
 
             case 2:
                 if (ribSlashPrefab != null && attackSpawnPoint != null)
                     Instantiate(ribSlashPrefab, attackSpawnPoint.position, Quaternion.identity);
-                Debug.Log("Prom Queen ataca con su costilla.");
                 break;
 
             case 3:
                 if (implantPrefab != null && attackSpawnPoint != null)
                     Instantiate(implantPrefab, attackSpawnPoint.position, Quaternion.identity);
-                Debug.Log("Prom Queen lanza Implante Explosivo.");
                 break;
         }
     }
@@ -123,42 +118,20 @@ public class PromQueenBoss : MonoBehaviour
     {
         isVulnerable = true;
         vulnerabilityTimer = vulnerabilityDuration;
-        Debug.Log("Prom Queen strike a pose! ¡Ahora es vulnerable!");
+        Debug.Log("¡La Prom Queen está vulnerable en su pose!");
     }
 
-    // Método para que Sara le haga daño cuando la golpee en su pose
+    // Método para que Sara le haga daño SOLO cuando está vulnerable
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Detecta si Sara la golpea durante la ventana de vulnerabilidad
         if (isVulnerable && (collision.GetComponent<PlayerController>() != null || collision.name.Contains("Sara")))
         {
-            // O si choca con el ataque/espada de Sara (puedes ajustar esta condición según tu script de ataque de Sara)
-            TakeDamage(25f); // Daño por golpe
-        }
-    }
-
-    public void TakeDamage(float amount)
-    {
-        if (isVulnerable)
-        {
-            currentHealth -= amount;
-            Debug.Log("¡Golpe crítico a la Prom Queen! Vida restante: " + currentHealth);
-
-            if (currentHealth <= 0)
+            if (bossHealth != null)
             {
-                Die();
+                // Le resta vida usando el script Health que ya tienes[cite: 1]
+                bossHealth.TakeDamage(15f);
+                Debug.Log("¡Golpe exitoso a la Prom Queen!");
             }
         }
-        else
-        {
-            Debug.Log("¡La Prom Queen es invulnerable o está atacando!");
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("¡Prom Queen derrotada!");
-        // Aquí activas la escena final / victoria
-        gameObject.SetActive(false);
     }
 }
