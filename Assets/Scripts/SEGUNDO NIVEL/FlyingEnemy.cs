@@ -12,9 +12,13 @@ public class FlyingEnemy : MonoBehaviour
     [SerializeField] private float enemyHitStrength = 5f;
     [SerializeField] private float enemyHitTime = 0.2f;
 
+    [SerializeField] private Collider2D detectionCollider; // Arrastra aquí el collider que hace de zona
     private bool isWaiting = false;
     private bool isAttacking = false;
     private float timer = 0f;
+
+    //PRUEBEN PORFA
+    bool isPlayerInRange = false;
 
     void Start()
     {
@@ -36,17 +40,24 @@ public class FlyingEnemy : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= detectionRange && !isAttacking && !isWaiting)
+        if (isPlayerInRange && !isAttacking && !isWaiting)
         {
             isWaiting = true;
             timer = 0f;
         }
 
+
         if (isWaiting)
         {
             timer += Time.deltaTime;
+            if (!isPlayerInRange)
+            {
+                timer = 0f;
+                return;
+            }
             if (timer >= attackDelay)
             {
+                Debug.Log("Attack initiated");
                 isWaiting = false;
                 isAttacking = true;
             }
@@ -60,30 +71,55 @@ public class FlyingEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerController pc = collision.GetComponentInParent<PlayerController>();
-        if (pc != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (hitParticles != null)
-            {
-                Vector2 contactoPunto = collision.ClosestPoint(transform.position);
-                ParticleSystem particles = Instantiate(hitParticles, contactoPunto, Quaternion.identity);
-                particles.Play();
-                Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
-            }
+            isPlayerInRange = true;
+        }
 
-            pc.hitTime = enemyHitTime;
-            pc.hitForce = enemyHitStrength;
+        //PlayerController pc = collision.GetComponentInParent<PlayerController>();
+        //if (pc != null)
+        //{
+        //    if (hitParticles != null)
+        //    {
+        //        Vector2 contactoPunto = collision.ClosestPoint(transform.position);
+        //        ParticleSystem particles = Instantiate(hitParticles, contactoPunto, Quaternion.identity);
+        //        particles.Play();
+        //        Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
+        //    }
+
+        //    pc.hitTime = enemyHitTime;
+        //    pc.hitForce = enemyHitStrength;
+        //    pc.TakeDamage(enemyDamage);
+
+
+        //    if (collision.transform.position.x < transform.position.x)
+        //    {
+        //        pc.hitFromRight = true;
+        //    }
+        //    else
+        //    {
+        //        pc.hitFromRight = false;
+        //    }
+
+        //    //Destroy(gameObject);
+        //}
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
             pc.TakeDamage(enemyDamage);
-
-            if (collision.transform.position.x < transform.position.x)
-            {
-                pc.hitFromRight = true;
-            }
-            else
-            {
-                pc.hitFromRight = false;
-            }
-
+            Debug.Log("GOLPEA Y DESAPARECE");
             Destroy(gameObject);
         }
     }
