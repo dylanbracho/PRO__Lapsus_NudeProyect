@@ -4078,7 +4078,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b74fa9bed69bb294297e6c498a1a0a43, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.489
+  m_Volume: 0.371
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -34972,14 +34972,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f55a79b853de644a78a1c1d1287390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SFXManager
-  sounds:
-  - {fileID: 8300000, guid: 401f6fbfce6200047939189def15c2e2, type: 3}
-  - {fileID: 8300000, guid: 07afd248ea14c1d4e854a6c50f3aa954, type: 3}
-  - {fileID: 8300000, guid: 66fbe46929a325f4784805f8fb0f5d46, type: 3}
-  - {fileID: 8300000, guid: 401f6fbfce6200047939189def15c2e2, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 70380a0cd321ed649ac8781ac5869126, type: 3}
+  soundList:
+  - name: STEP
+    sounds:
+    - {fileID: 8300000, guid: 401f6fbfce6200047939189def15c2e2, type: 3}
+  - name: WHIP
+    sounds:
+    - {fileID: 8300000, guid: 07afd248ea14c1d4e854a6c50f3aa954, type: 3}
+  - name: JUMP
+    sounds:
+    - {fileID: 8300000, guid: 66fbe46929a325f4784805f8fb0f5d46, type: 3}
+  - name: LAND
+    sounds: []
+  - name: HURT
+    sounds:
+    - {fileID: 8300000, guid: 29f75ca6a3699a34aa74f96a50bb86c9, type: 3}
+  - name: MAGIC
+    sounds: []
+  - name: BLOOD
+    sounds:
+    - {fileID: 8300000, guid: 70380a0cd321ed649ac8781ac5869126, type: 3}
 --- !u!4 &1968435210
 Transform:
   m_ObjectHideFlags: 0

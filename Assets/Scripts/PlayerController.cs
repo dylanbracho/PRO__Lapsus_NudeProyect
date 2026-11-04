@@ -307,6 +307,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         health -= damage;
+        animator.SetTrigger("Hurt");
         StartCoroutine(DamageFlash());
         healthBarSlider.value = health;
         healthBarSlider.maxValue = maxhealth;
