@@ -6,13 +6,17 @@ public class GlitchedEnemy : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float detectionRange = 7f;
     [SerializeField] private float fireInterval = 1.5f;
     [SerializeField] private float projectileSpeed = 6f;
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float enemyStrength = 7f;
     [SerializeField] public bool isFacingRight;
     [SerializeField] private float fireTimer = 0f;
+
+    
+    [SerializeField] private Collider2D detectionCollider; // Arrastra aquí el collider que hace de zona
+    private bool isPlayerInRange = false;
+
     public Rigidbody2D enemyRb;
     public Transform actualObjective;
     public float direction;
@@ -21,11 +25,9 @@ public class GlitchedEnemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         enemyRb = GetComponent<Rigidbody2D>();
         actualObjective = player;
         isFacingRight = false;
-
     }
 
 
@@ -33,9 +35,7 @@ public class GlitchedEnemy : MonoBehaviour
     {
         if (player == null) return;
 
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (distanceToPlayer <= detectionRange)
+        if (isPlayerInRange)
         {
             Vector2 targetPosition = new Vector2(player.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
@@ -52,18 +52,36 @@ public class GlitchedEnemy : MonoBehaviour
             fireTimer = 0f;
         }
 
-        // Calculamos la distancia en X entre el enemigo y Sara para saber de qué lado está
+        // Calculamos la distancia en X entre el enemigo y el jugador para saber de qué lado está
         float diffX = player.position.x - transform.position.x;
 
-        // Si Sara está a la derecha (diffX > 0) y el enemigo mira a la izquierda, se voltea
+        // Si el jugador está a la derecha (diffX > 0) y el enemigo mira a la izquierda, se voltea
         if (!isFacingRight && diffX > 0f)
         {
             Flip();
         }
-        // Si Sara está a la izquierda (diffX < 0) y el enemigo mira a la derecha, se voltea
+        // Si el jugador está a la izquierda (diffX < 0) y el enemigo mira a la derecha, se voltea
         else if (isFacingRight && diffX < 0f)
         {
             Flip();
+        }
+    }
+
+    // Comparamos directamente contra la variable 'player'
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (player != null && other.transform == player)
+        {
+            isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (player != null && other.transform == player)
+        {
+            isPlayerInRange = false;
+            fireTimer = 0f;
         }
     }
 
@@ -74,10 +92,7 @@ public class GlitchedEnemy : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
-
     }
-
-
 
     void Shoot()
     {

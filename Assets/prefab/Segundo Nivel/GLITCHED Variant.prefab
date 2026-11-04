@@ -77,6 +77,14 @@ PrefabInstance:
       value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: moveSpeed
+      value: 3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
+      propertyPath: fireInterval
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: enemyStrength
       value: 5
       objectReference: {fileID: 0}
@@ -86,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8714982951006377653, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: detectionRange
-      value: 6.83
+      value: 7.45
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6470234460855062036, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}

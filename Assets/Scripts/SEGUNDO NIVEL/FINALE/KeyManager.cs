@@ -2,34 +2,38 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
-    public static KeyManager Instance;
+    // Patrón Singleton para que sea único y accesible desde cualquier escena
+    public static KeyManager Instance { get; private set; }
 
-    public int totalPiecesNeeded = 3;
+    
     public int currentPieces = 0;
+    public int totalPiecesNeeded = 3;
     public bool hasFullKey = false;
 
-    void Awake()
+    private void Awake()
     {
-        // Keeps a single active instance
+        // Configuración del Singleton y DontDestroyOnLoad
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Esto evita que se destruya al cambiar de escena
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Evita duplicados si regresas a la escena anterior
+            return;
         }
     }
 
     public void CollectPiece()
     {
         currentPieces++;
-        Debug.Log("Key Piece Collected: " + currentPieces + "/" + totalPiecesNeeded);
+        Debug.Log("Pieza de llave recolectada. Total: " + currentPieces + "/" + totalPiecesNeeded);
 
         if (currentPieces >= totalPiecesNeeded)
         {
             hasFullKey = true;
-            Debug.Log("Heart Locket Key Assembled!");
+            Debug.Log("¡Llave completa! El Heart Locket está listo.");
         }
     }
 }

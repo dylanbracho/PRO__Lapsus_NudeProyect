@@ -256,8 +256,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void LanzarProyectil(InputAction.CallbackContext context)
+    public void LanzarProyectil(InputAction.CallbackContext context)
     {
+        Debug.Log("Lanzar Proyectil");
         if (!enableProjectile) return; // Si la casilla está apagada, no hace nada
 
         if (context.performed && proyectilPrefab != null && launchOffset != null)
@@ -341,7 +342,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = false;
     }
 
-    private void OnAttack(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if (!enableWhip) return; // Si la casilla está apagada, no hace nada
 
@@ -355,7 +356,7 @@ public class PlayerController : MonoBehaviour
         Invoke(nameof(DisableWhip), hitboxActiveTime);
         Invoke(nameof(ResetAttack), attackCooldown);
     }
-    void AttackMazo(InputAction.CallbackContext context)
+    public void AttackMazo(InputAction.CallbackContext context)
     {
         if (!enableMazo) return; // Si la casilla está apagada, no hace nada
 

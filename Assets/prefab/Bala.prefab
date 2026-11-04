@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectlieBehaviour
   speed: 16.2
-  damage: 5
+  damage: 10
   enemyProjectile: 0
 --- !u!58 &8917452987133054880
 CircleCollider2D:
