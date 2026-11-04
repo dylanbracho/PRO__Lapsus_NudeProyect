@@ -1,48 +1,60 @@
+using System.Collections;
 using UnityEngine;
 
 public class CaogulitoController : MonoBehaviour
 {
-    Vector2 movement; 
-    public float enemySpeed;           
+    Vector2 movement;
+    public float enemySpeed;
     public Rigidbody2D enemyRb;
     public float detectionRadius = 0.5f;
     public Transform actualObjective;
     public Transform[] enemyMovementPoints;
     public bool isFacingRight;
-    [SerializeField] private float enemyDamage;     
+    [SerializeField] private float enemyDamage;
     [SerializeField] private float enemyStrength;
+    private Animator animator;
+    [SerializeField] private Collider2D hitbox;
+    [SerializeField] private Transform player;
+    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float attackCooldown = 2f;
+    private bool isAttacking = false;
+    private bool canAttack = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         actualObjective = enemyMovementPoints[0];
-        isFacingRight = false;
+        if (player == null)
+            player = FindFirstObjectByType<PlayerController>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isAttacking) return;   // stand still while attacking
 
-            // Arrived? (compare X only, ignore height)
-            if (Mathf.Abs(actualObjective.position.x - transform.position.x) < detectionRadius)
-            {
-                actualObjective = (actualObjective == enemyMovementPoints[0])
-                    ? enemyMovementPoints[1]
-                    : enemyMovementPoints[0];
-            }
+        // Attack if the player is close
+        if (canAttack && Vector2.Distance(transform.position, player.position) <= attackRange)
+        {
+            StartCoroutine(Attack());
+            return;
+        }
 
-            // -1 = go left, +1 = go right
-            float dir = Mathf.Sign(actualObjective.position.x - transform.position.x);
+        // ---- your existing patrol code goes here, unchanged ----
+        if (Mathf.Abs(actualObjective.position.x - transform.position.x) < detectionRadius)
+        {
+            actualObjective = (actualObjective == enemyMovementPoints[0])
+                ? enemyMovementPoints[1]
+                : enemyMovementPoints[0];
+        }
 
-            // Turn around if facing the wrong way
-            if ((dir < 0 && isFacingRight) || (dir > 0 && !isFacingRight))
-            {
-                Flip();
-            }
+        float dir = Mathf.Sign(actualObjective.position.x - transform.position.x);
 
-            enemyRb.MovePosition(enemyRb.position + new Vector2(dir, 0) * enemySpeed * Time.deltaTime);
-        
+        if ((dir < 0 && isFacingRight) || (dir > 0 && !isFacingRight))
+            Flip();
+
+        enemyRb.MovePosition(enemyRb.position + new Vector2(dir, 0) * enemySpeed * Time.deltaTime);
     }
 
     private void Flip()
@@ -56,35 +68,18 @@ public class CaogulitoController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Preguntamos: "¿con lo que choqué tiene un componente PlayerController?"
-        // Si GetComponent no encuentra el componente, devuelve null (nada).
-        // Entonces "!= null" significa "SÍ lo encontró" -> choqué con el jugador.
-        //
-        // Esta es una alternativa a usar CompareTag("Player"). Es más segura,
-        // porque garantiza que el objeto realmente tiene el script que vamos a
-        // usar y no solo una etiqueta que alguien pudo asignar mal.
+      
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            // Guardamos la referencia al script del jugador en una variable,
-            // para no tener que escribir GetComponent una y otra vez.
-            // Ahora, a través de "player", podemos usar sus métodos y variables.
+            
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
-            // Llamamos al método TakeDamage() que está EN EL OTRO SCRIPT.
-            // Le enviamos enemyDamage como parámetro: el enemigo decide cuánto
-            // daño hace, y el jugador se encarga de restarlo y actualizar la UI.
+            
             player.TakeDamage(enemyDamage);
 
-            // Le ESCRIBIMOS variables al jugador para configurar su empujón.
-            // Recuerden que en el PlayerController, mientras hitTime sea mayor
-            // que 0, el jugador pierde el control y sale volando.
+            
             player.hitTime = 0.5f;              // Medio segundo de aturdimiento.
             player.hitForce = enemyStrength;    // Qué tan fuerte sale volando.
-
-            // ---- ¿HACIA DÓNDE DEBE SALIR VOLANDO EL JUGADOR? ----
-            // Comparamos las posiciones en X para saber quién está a la izquierda.
-            // collision.transform.position.x -> X del JUGADOR
-            // transform.position.x           -> X del ENEMIGO (o sea, la mía)
 
             if (collision.transform.position.x <= transform.position.x)
             {
@@ -101,6 +96,27 @@ public class CaogulitoController : MonoBehaviour
 
             
         }
+    }
+
+    IEnumerator Attack()
+    {
+        isAttacking = true;
+        canAttack = false;
+
+        // Face the player before swinging
+        float dirToPlayer = Mathf.Sign(player.position.x - transform.position.x);
+        if ((dirToPlayer < 0 && isFacingRight) || (dirToPlayer > 0 && !isFacingRight))
+            Flip();
+
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);   // wind-up
+        hitbox.enabled = true;
+        yield return new WaitForSeconds(0.5f);   // active frames
+        hitbox.enabled = false;
+
+        isAttacking = false;                     // can walk again
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;                        // can attack again
     }
 
 

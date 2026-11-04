@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     public bool isFacingRight;
-    
+
     public float hitForce;      // Con cuánta fuerza sale volando el jugador al ser golpeado.
     public float hitTime;       // Cuántos segundos dura el empujón. Mientras sea > 0, el
                                 // jugador NO puede controlarse (está "aturdido").
@@ -49,14 +49,14 @@ public class PlayerController : MonoBehaviour
 
     //vida
     public float health;
-    public float maxhealth;  
+    public float maxhealth;
     public bool muerta = false;
-    
+
 
     //ui, spawn, cosas de ale
 
     public UIManager uimanager;
-  
+
     public GameObject spawnpoint;
 
     public Slider healthBarSlider;
@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
     // NPC
     public DialogueTrigger activeNPC;
     public Animator holasamy;
+    public SignifierDialogo signifierDialogo;
 
     //Proyectil
     public ProjectlieBehaviour proyectilPrefab;
@@ -79,12 +80,22 @@ public class PlayerController : MonoBehaviour
     //Stun
     public bool isStunned;
 
+    //damage on sprite
+    Material OGsprite;
+    SpriteRenderer SpriteRenderer;
+    [SerializeField] private Material DamageSprite;
+    [SerializeField] private float flashTime = 0.20f;
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = maxhealth;
         rb = GetComponent<Rigidbody2D>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        OGsprite = SpriteRenderer.material;
         
     }
 
@@ -92,9 +103,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         canJump = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        animator.SetFloat("Jump", rb.linearVelocity.y);
+        animator.SetBool("IsJumping", canJump);
         //canDash = !canJump;
-      
-        
+
 
         if (!isFacingRight && direction > 0f)
         {
@@ -242,7 +254,8 @@ public class PlayerController : MonoBehaviour
         if (context.performed && canJump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-           // canDash = true;
+            SFXManager.PlaySFX(Soundtype.JUMP, 0.5f);
+            // canDash = true;
         }
     }
 
@@ -252,7 +265,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Hola Dylan");
             activeNPC.TriggerDialogue();
-            
+            signifierDialogo.isDoorOpen = true;
         }
     }
 
@@ -295,6 +308,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
         health -= damage;
+        animator.SetTrigger("Hurt");
+        StartCoroutine(DamageFlash());
         healthBarSlider.value = health;
         healthBarSlider.maxValue = maxhealth;
         vidaentexto.text = $"HP: {health}/{maxhealth}";
@@ -427,6 +442,14 @@ public class PlayerController : MonoBehaviour
         canJump = couldJump;
         canDash = couldDash;
         isStunned = false;
+    }
+
+    private IEnumerator DamageFlash()
+    {
+        SpriteRenderer.material = DamageSprite;
+        yield return new WaitForSeconds(flashTime);
+        SpriteRenderer.material = OGsprite;
+
     }
 
 
