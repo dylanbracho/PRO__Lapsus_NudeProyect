@@ -662,6 +662,7 @@ MonoBehaviour:
   sucubo: 1
   trampa: {fileID: 1441928558}
   objeto: {fileID: 1387907615}
+  flash: {fileID: 0}
 --- !u!1 &625117182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,7 +2419,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: e018822c35e64cf4dbc42a4f78659cfb, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 7506834963024214061, guid: e018822c35e64cf4dbc42a4f78659cfb, type: 2}
@@ -3969,7 +3970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1993943164
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4311,11 +4312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2403551010101594777, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
       propertyPath: sceneToLoad
-      value: boobsPart2
+      value: boob2
       objectReference: {fileID: 0}
     - target: {fileID: 5635408622486410113, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.05
+      value: 19.21
       objectReference: {fileID: 0}
     - target: {fileID: 5635408622486410113, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
       propertyPath: m_LocalPosition.y

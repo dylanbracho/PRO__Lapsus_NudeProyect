@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     public GameObject spawnpoint;
 
     public Slider healthBarSlider;
-    public TextMeshProUGUI vidaentexto;
+    public TextMeshProUGUI vidaentexto;  
 
     // NPC
     public DialogueTrigger activeNPC;

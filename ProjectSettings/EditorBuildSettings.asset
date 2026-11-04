@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Segundo nivel/PRIMER PARKOUR.unity
     guid: d8c115fb38e15bc4a8b54287c0f7399a
   - enabled: 1
-    path: Assets/Cuarto Nivel/Heart.unity
+    path: Assets/Scenes/Cuarto Nivel/Heart.unity
     guid: 28ad5ec98504a9a4fa13b48b5cdab5d7
   - enabled: 1
     path: Assets/Scenes/Segundo nivel/SEGUNDO PARKOUR.unity

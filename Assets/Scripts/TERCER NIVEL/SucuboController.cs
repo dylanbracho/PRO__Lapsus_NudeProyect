@@ -25,7 +25,6 @@ public class SucuboController : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody2D>();
         actualObjective = enemyMovementPoints[0];
-        isFacingRight = false;
         StartCoroutine(LanzarProyectilCoroutine());
     }
 

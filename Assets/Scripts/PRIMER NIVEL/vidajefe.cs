@@ -12,6 +12,7 @@ public class vidajefe : MonoBehaviour
     public Slider healthBarSlider;
     public TextMeshProUGUI vidaentexto;
 
+
     [SerializeField] private string sceneToLoad;
 
     
@@ -60,12 +61,6 @@ public class vidajefe : MonoBehaviour
         {
             vidaentexto.text = $"HP: {health}/{maxhealth}";
         }
-    }
-
-    public void TakeDamage(float amount)
-    {
-        RecibirDaño(amount);
-        Debug.Log("¡Le pegaste a la flor rosa del jefe!");
     }
 }
 

@@ -34,6 +34,13 @@ public class whip : MonoBehaviour
             jefe.RecibirDaño(damage);
             Debug.Log("dano");
         }
+
+        vidajefe vida = other.GetComponentInParent<vidajefe>();
+        if (vida != null)
+        {
+            vida.RecibirDaño(damage);
+
+        }
     }
 
     
