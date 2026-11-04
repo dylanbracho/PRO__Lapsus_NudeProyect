@@ -8,7 +8,8 @@ public enum Soundtype
     LAND,
     HURT,
     MAGIC,
-    BLOOD
+    BLOOD,
+    THUNDER
 }
 
 [RequireComponent(typeof(AudioSource)) , ExecuteInEditMode]

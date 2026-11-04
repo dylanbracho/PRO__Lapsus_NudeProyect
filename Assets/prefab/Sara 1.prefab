@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 3682216063792654131}
   - component: {fileID: 8269995751584998563}
   - component: {fileID: 2752431758123172179}
+  - component: {fileID: 322917834314137745}
   - component: {fileID: 1014524921074286551}
   - component: {fileID: 5924841076811310492}
   - component: {fileID: 6470465576697560449}
@@ -189,7 +190,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -249,6 +250,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &322917834314137745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477577315465477158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08899bf2913ff3c4d9a47140ffa76437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayFootsteps
 --- !u!114 &1014524921074286551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +315,7 @@ MonoBehaviour:
   vidaentexto: {fileID: 0}
   activeNPC: {fileID: 0}
   holasamy: {fileID: 0}
+  signifierDialogo: {fileID: 0}
   proyectilPrefab: {fileID: 0}
   launchOffset: {fileID: 0}
   attackActionMazo: {fileID: 0}

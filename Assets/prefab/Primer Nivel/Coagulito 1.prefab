@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4588101132470368907
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1881957551885985013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.63, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66,7 +66,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.4528826, y: -0.5572705}
+  m_Offset: {x: 1.0035818, y: -1.1387194}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.9951268, y: 2.114541}
+  m_Size: {x: 2.8937287, y: 3.2774384}
   m_EdgeRadius: 0
 --- !u!1001 &8228837972932422981
 PrefabInstance:
@@ -122,6 +122,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4796532795537006777, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: bde135b320597544b9ac325092409f8b, type: 3}
     - target: {fileID: 4978201156562392751, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_Radius
       value: 1.3163391
@@ -242,6 +246,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7453258567287369578}
+    - targetCorrespondingSourceObject: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1770081989160413691}
     - targetCorrespondingSourceObject: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1197794560268043042}
@@ -388,6 +395,18 @@ MonoBehaviour:
     DissipationDistance: 100
     PropagationSpeed: 343
   DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &1770081989160413691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760312902598091698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6cc04fa3d04c741b8332b915af1252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayBlood
 --- !u!95 &1197794560268043042
 Animator:
   serializedVersion: 7

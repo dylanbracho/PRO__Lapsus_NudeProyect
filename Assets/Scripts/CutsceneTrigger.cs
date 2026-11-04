@@ -31,7 +31,7 @@ public class CutsceneTrigger : MonoBehaviour
         if (other.TryGetComponent(out Rigidbody2D rb))
             rb.linearVelocity = Vector2.zero; 
         player.enabled = false;
-
+        Time.timeScale = 0f;
         cutsceneCanvas.SetActive(true);
         director.stopped += OnCutsceneEnd;
         director.stopped += Test;
@@ -45,6 +45,7 @@ public class CutsceneTrigger : MonoBehaviour
         d.stopped -= OnCutsceneEnd;
         cutsceneCanvas.SetActive(false);
         player.enabled = true;
+        Time.timeScale = 1f;
         bloqueo.SetActive(false);
         // escena.SwitchScene();
         Destroy(gameObject);

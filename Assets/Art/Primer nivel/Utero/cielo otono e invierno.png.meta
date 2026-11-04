@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 377bf606e16e62f4f82b9e7480814819
+guid: 613eb55e63dd3b345aaa069459889a3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1535321527415515551
-    second: black-corner-gradient-free-png-3250574625_0
+      213: 1883838543812129232
+    second: cielo otono e invierno_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: black-corner-gradient-free-png-3250574625_0
+      name: cielo otono e invierno_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 700
-        height: 700
+        width: 10240
+        height: 3200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 166536e843171bae0800000000000000
-      internalID: -1535321527415515551
+      spriteID: 0d17c12bc2db42a10800000000000000
+      internalID: 1883838543812129232
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      black-corner-gradient-free-png-3250574625_0: -1535321527415515551
+      cielo otono e invierno_0: 1883838543812129232
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
