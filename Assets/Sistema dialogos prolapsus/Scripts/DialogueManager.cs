@@ -19,9 +19,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private AudioClip[] sounds;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private bool stopAudio;
-    [Range  (0f, 0.5f)]
+    [Range  (-3f, 3f)]
     [SerializeField] private float minPitch = 0.5f;
-    [Range  (0f, 2f)]
+    [Range  (-3f, 3f)]
     [SerializeField] private float maxPitch = 3f;
 
     // Start is called before the first frame update

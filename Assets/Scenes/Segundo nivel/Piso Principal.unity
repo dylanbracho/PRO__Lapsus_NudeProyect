@@ -64779,7 +64779,11 @@ PrefabInstance:
       objectReference: {fileID: 40403559}
     - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: maxPitch
-      value: 2
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: minPitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: npcNameText
@@ -64789,6 +64793,30 @@ PrefabInstance:
       propertyPath: npcDialogueText
       value: 
       objectReference: {fileID: 221299586}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: 'sounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b8007c4ab4b6fa4f9f5b85a62bf1d42, type: 3}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: 'sounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e3b2651b681152646b0485e62b9bb113, type: 3}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: 'sounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 43015b28c53ac994db42463f9e65d512, type: 3}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: 'sounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f05b9023e7510cd43989b13252587157, type: 3}
+    - target: {fileID: 3044369841216180031, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
+      propertyPath: 'sounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d9a248c1313f31f499de0b70c9f1cc6e, type: 3}
     - target: {fileID: 5293318602838249819, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.08
@@ -64839,7 +64867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8271670914057200226, guid: aa7de1e8123717343987959b7ca1096d, type: 3}
       propertyPath: m_Name
-      value: dialogo
+      value: dialogoJuanfer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
