@@ -9,7 +9,6 @@ public class SignifierDialogo : MonoBehaviour
     private bool isPlayerInRange = false;
     private Transform playerTransform;
     [SerializeField] private GameObject keyObject;
-    public bool isDoorOpen = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,13 +28,12 @@ public class SignifierDialogo : MonoBehaviour
 
             if (pressedE)
             {
-                if (isDoorOpen)
-                {
+                
                     if (keyObject != null)
                     {
                         keyObject.SetActive(false);
                     }
-                }
+                
             }
         }
     }

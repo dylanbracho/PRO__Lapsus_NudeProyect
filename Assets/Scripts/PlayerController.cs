@@ -265,7 +265,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Hola Dylan");
             activeNPC.TriggerDialogue();
-            signifierDialogo.isDoorOpen = true;
         }
     }
 
