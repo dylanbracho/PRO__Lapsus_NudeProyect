@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PromQueenBoss : MonoBehaviour
 {
-    
-    [SerializeField] private Health bossHealth; // Arrastra aquí el componente Health de la Prom Queen
+    [SerializeField] private Health bossHealth;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite phase1Sprite;
+    [SerializeField] private Sprite phase2Sprite;
 
     public float attackInterval = 2.5f;
     private float attackTimer;
 
-
     public Transform attackSpawnPoint;
-    public GameObject flowerPrefab;     // Fase 1: Tormenta de flores
-    public GameObject ribSlashPrefab;    // Fase 2 (50% HP): Ataque de costilla
-    public GameObject implantPrefab;     // Fase 3 (25% HP): Implante explosivo
+    public GameObject flowerPrefab;
+    public GameObject ribSlashPrefab;
 
     public bool isVulnerable = false;
     public float vulnerabilityDuration = 3f;
@@ -26,16 +26,16 @@ public class PromQueenBoss : MonoBehaviour
         attackTimer = attackInterval;
 
         if (bossHealth == null)
-        {
             bossHealth = GetComponent<Health>();
-        }
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (bossHealth != null)
-        {
             maxHealth = bossHealth.currentHealth;
-        }
 
-        Debug.Log("Prom Queen: ¿Qué diablos haces aquí?! (Combate iniciado)");
+        if (spriteRenderer != null && phase1Sprite != null)
+            spriteRenderer.sprite = phase1Sprite;
     }
 
     void Update()
@@ -46,25 +46,21 @@ public class PromQueenBoss : MonoBehaviour
 
         if (isVulnerable)
         {
-            // Ventana de vulnerabilidad (la jefa hace pose y se queda quieta)
             vulnerabilityTimer -= Time.deltaTime;
             if (vulnerabilityTimer <= 0)
             {
                 isVulnerable = false;
                 attackTimer = attackInterval;
-                Debug.Log("Prom Queen sale de la pose y retoma el ataque.");
             }
         }
         else
         {
-            // Ciclo normal de ataques
             attackTimer -= Time.deltaTime;
             if (attackTimer <= 0)
             {
                 ExecutePhaseAttack();
                 attackTimer = attackInterval;
 
-                // Probabilidad de abrir su ventana de vulnerabilidad tras atacar
                 if (Random.value > 0.4f)
                 {
                     StartVulnerabilityWindow();
@@ -77,19 +73,13 @@ public class PromQueenBoss : MonoBehaviour
     {
         float healthPercentage = (bossHealth.currentHealth / maxHealth) * 100f;
 
-        // Fase 3: A 25% de vida (Implantes explosivos)
-        if (healthPercentage <= 25f && currentPhase < 3)
-        {
-            currentPhase = 3;
-            attackInterval = 1.8f; // Ataca más rápido
-            Debug.Log("¡Fase 3 activada! Prom Queen lanza implantes explosivos.");
-        }
-        // Fase 2: A 50% de vida (Ataque de costilla)
-        else if (healthPercentage <= 50f && currentPhase < 2)
+        if (healthPercentage <= 50f && currentPhase < 2)
         {
             currentPhase = 2;
-            attackInterval = 2.1f;
-            Debug.Log("¡Fase 2 activada! Prom Queen revela su forma monstruosa.");
+            attackInterval = 2.0f;
+
+            if (spriteRenderer != null && phase2Sprite != null)
+                spriteRenderer.sprite = phase2Sprite;
         }
     }
 
@@ -101,15 +91,9 @@ public class PromQueenBoss : MonoBehaviour
                 if (flowerPrefab != null && attackSpawnPoint != null)
                     Instantiate(flowerPrefab, attackSpawnPoint.position, Quaternion.identity);
                 break;
-
             case 2:
                 if (ribSlashPrefab != null && attackSpawnPoint != null)
                     Instantiate(ribSlashPrefab, attackSpawnPoint.position, Quaternion.identity);
-                break;
-
-            case 3:
-                if (implantPrefab != null && attackSpawnPoint != null)
-                    Instantiate(implantPrefab, attackSpawnPoint.position, Quaternion.identity);
                 break;
         }
     }
@@ -118,19 +102,15 @@ public class PromQueenBoss : MonoBehaviour
     {
         isVulnerable = true;
         vulnerabilityTimer = vulnerabilityDuration;
-        Debug.Log("¡La Prom Queen está vulnerable en su pose!");
     }
 
-    // Método para que Sara le haga daño SOLO cuando está vulnerable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isVulnerable && (collision.GetComponent<PlayerController>() != null || collision.name.Contains("Sara")))
         {
             if (bossHealth != null)
             {
-                // Le resta vida usando el script Health que ya tienes[cite: 1]
                 bossHealth.TakeDamage(15f);
-                Debug.Log("¡Golpe exitoso a la Prom Queen!");
             }
         }
     }
