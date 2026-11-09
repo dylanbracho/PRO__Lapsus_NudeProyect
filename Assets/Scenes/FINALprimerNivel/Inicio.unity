@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '                                                                Salir'
+  m_text: '                                             Salir'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9868f8ebe87daef4c9b6e166dd350864, type: 2}
   m_sharedMaterial: {fileID: 8692940458976904514, guid: 9868f8ebe87daef4c9b6e166dd350864, type: 2}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '                                                            Jugar              '
+  m_text: '                    Jugar              '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9868f8ebe87daef4c9b6e166dd350864, type: 2}
   m_sharedMaterial: {fileID: 8692940458976904514, guid: 9868f8ebe87daef4c9b6e166dd350864, type: 2}
