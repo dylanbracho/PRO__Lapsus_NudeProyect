@@ -117,6 +117,10 @@ MonoBehaviour:
   isFacingRight: 1
   enemyDamage: 30
   enemyStrength: 2
+  hitbox: {fileID: 0}
+  player: {fileID: 0}
+  attackRange: 1.5
+  attackCooldown: 2
 --- !u!114 &3575917193395338318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +135,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 100
   dead: 0
+  espejo: 0
+  sucubo: 0
   trampa: {fileID: 0}
+  objeto: {fileID: 0}
+  flash: {fileID: 2100000, guid: 22328828fdea6d14e93746e836432d40, type: 2}
 --- !u!50 &7926781932149335530
 Rigidbody2D:
   serializedVersion: 5

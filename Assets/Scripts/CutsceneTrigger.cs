@@ -47,6 +47,7 @@ public class CutsceneTrigger : MonoBehaviour
         player.enabled = true;
         Time.timeScale = 1f;
         bloqueo.SetActive(false);
+        SFXManager.PlaySFX(Soundtype.MAGIC, 0.3f);
         // escena.SwitchScene();
         Destroy(gameObject);
         coleccionableui.SetActive(true);
