@@ -77958,6 +77958,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8269995751584998563, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8477577315465477158, guid: 2d7a23220d501ee49ac139131056f9d0, type: 3}
       propertyPath: m_Name
       value: Sara 1 (1)
@@ -95988,7 +95992,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -96175,10 +96179,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: 2023878544, guid: aca38b0ff6af46b4a8680ab75465de57, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -746428094, guid: aca38b0ff6af46b4a8680ab75465de57, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -746428094, guid: aca38b0ff6af46b4a8680ab75465de57, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 546379402, guid: aca38b0ff6af46b4a8680ab75465de57, type: 3}
   - m_RefCount: 1
