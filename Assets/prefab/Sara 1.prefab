@@ -140,9 +140,9 @@ GameObject:
   - component: {fileID: 6470465576697560449}
   - component: {fileID: 7948445514800136837}
   - component: {fileID: 5101177727423738928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sara 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
