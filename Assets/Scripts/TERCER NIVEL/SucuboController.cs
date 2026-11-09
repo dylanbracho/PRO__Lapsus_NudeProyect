@@ -143,7 +143,7 @@ public class SucuboController : MonoBehaviour
     private void LanzarProyectil(Transform target)
     {
         ProjectlieBehaviour proyectil = Instantiate(proyectilPrefab, launchOffset.position, Quaternion.identity);
-
+        SFXManager.PlaySFX(Soundtype.LAUGH, 1f);
         Vector2 direction = (target.position - launchOffset.position).normalized;
         proyectil.SetDirection(direction);
     }
@@ -151,7 +151,7 @@ public class SucuboController : MonoBehaviour
     private void LanzarGagit(Transform target)
     {
         ProjectlieBehaviour gag = Instantiate(gagitPrefab, launchOffset.position, Quaternion.identity);
-
+        SFXManager.PlaySFX(Soundtype.MOAN, 1f);
         Vector2 direction = (target.position - launchOffset.position).normalized;
         gag.SetDirection(direction);
     }

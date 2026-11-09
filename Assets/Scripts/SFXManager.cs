@@ -9,7 +9,9 @@ public enum Soundtype
     HURT,
     MAGIC,
     BLOOD,
-    THUNDER
+    THUNDER,
+    MOAN,
+    LAUGH
 }
 
 [RequireComponent(typeof(AudioSource)) , ExecuteInEditMode]
