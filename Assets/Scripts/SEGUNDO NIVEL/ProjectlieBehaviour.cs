@@ -25,7 +25,7 @@ public class ProjectlieBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Health enemyHealth = other.GetComponent<Health>();
-        if (enemyHealth != null)
+        if (enemyHealth != null && !enemyProjectile)
         {
             enemyHealth.TakeDamage(damage);
             Destroy(gameObject);
