@@ -5,57 +5,74 @@ public class Plataforma : MonoBehaviour
     [SerializeField] private float metaP;    // Altura máxima a la que sube
     [SerializeField] private float speedP;   // Velocidad de movimiento
 
-    private float startY;          // Posición inicial (abajo)
-    private float targetY;         // Hacia dónde se dirige actualmentes
-    private bool isMoving = false; // Para saber si ya está en movimiento
-    private bool debeSubir = true; // Interruptor: true = toca subir, false = toca bajar
+    [Header("Configuración de Respawn de Sara")]
+    [SerializeField] private bool actualizarSpawnAlLlegar = true;
+
+    [Header("Coordenadas del Nuevo Spawn")]
+    [Tooltip("Coloca aquí la posición X y Y exacta donde quieres que aparezca Sara al llegar arriba.")]
+    [SerializeField] private Vector2 nuevaPosicionSpawn;
+
+    private float startY;
+    private bool isMoving = false;
+    private bool yaSubio = false;
 
     void Start()
     {
-        // Guardamos la posición Y en la que colocaste la plataforma al iniciar el juego
         startY = transform.position.y;
-        targetY = startY;
     }
 
     void Update()
     {
-        // Si la plataforma tiene luz verde para moverse
         if (isMoving)
         {
-            // Movemos la plataforma suavemente hacia el objetivo actual (Y)
-            float currentY = Mathf.MoveTowards(transform.position.y, targetY, speedP * Time.deltaTime);
+            float currentY = Mathf.MoveTowards(transform.position.y, metaP, speedP * Time.deltaTime);
             transform.position = new Vector3(transform.position.x, currentY, transform.position.z);
 
-            // Si ya llegó a su destino exacto, detenemos el movimiento
-            if (Mathf.Approximately(transform.position.y, targetY))
+            if (Mathf.Approximately(transform.position.y, metaP))
             {
                 isMoving = false;
+                Debug.Log("¡La plataforma llegó a su tope!");
+
+                // 1. Actualizamos el Spawn Point de Sara
+                if (actualizarSpawnAlLlegar)
+                {
+                    GameObject objetoSpawn = GameObject.Find("spawnpoint");
+
+                    if (objetoSpawn != null)
+                    {
+                        objetoSpawn.transform.position = new Vector3(nuevaPosicionSpawn.x, nuevaPosicionSpawn.y, objetoSpawn.transform.position.z);
+                        Debug.Log($"¡Spawnpoint actualizado a X: {nuevaPosicionSpawn.x}, Y: {nuevaPosicionSpawn.y}!");
+                    }
+                }
+
+                // 2. BUSCAMOS Y ACTIVAMOS AL "Heart Enemy" AUTOMÁTICAMENTE
+                GameObject jefeObj = GameObject.Find("Heart Enemy");
+
+                if (jefeObj != null)
+                {
+                    BasicMov mov = jefeObj.GetComponent<BasicMov>();
+                    if (mov != null) mov.ActivarJefe();
+
+                    AtaquesBoss atq = jefeObj.GetComponent<AtaquesBoss>();
+                    if (atq != null) atq.ActivarAtaques();
+
+                    Debug.Log("¡Heart Enemy y sus ataques activados con éxito!");
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró ningún objeto llamado 'Heart Enemy' en la escena.");
+                }
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verificamos que sea Sara la que entra y que la plataforma no esté ya en movimiento
-        if (collision.CompareTag("Player") && !isMoving)
+        if (collision.CompareTag("Player") && !isMoving && !yaSubio)
         {
-            // Dependiendo del interruptor, decidimos el destino
-            if (debeSubir)
-            {
-                targetY = metaP;  // Su objetivo es subir
-                Debug.Log("¡Activando: Subiendo plataforma!");
-            }
-            else
-            {
-                targetY = startY; // Su objetivo es bajar al punto inicial
-                Debug.Log("¡Activando: Bajando plataforma!");
-            }
-
-            // Arrancamos el movimiento
             isMoving = true;
-
-            // Invertimos el interruptor para que la *siguiente* vez haga lo opuesto
-            debeSubir = !debeSubir;
+            yaSubio = true;
+            Debug.Log("¡Activando: Subiendo plataforma por única vez!");
         }
     }
 }

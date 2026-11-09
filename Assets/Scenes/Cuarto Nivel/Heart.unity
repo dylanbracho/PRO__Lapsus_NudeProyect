@@ -28853,7 +28853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntradaJefe
   jefe: {fileID: 250713977}
   camaraSeguimientoSara: {fileID: 593017325}
-  nuevoOrthoSize: 20
+  nuevoOrthoSize: 11
+  offsetCamaraY: 8
   duracionShake: 3
   intensidadShake: 20
 --- !u!1 &250713977
@@ -28870,8 +28871,6 @@ GameObject:
   - component: {fileID: 250713984}
   - component: {fileID: 250713983}
   - component: {fileID: 250713982}
-  - component: {fileID: 250713980}
-  - component: {fileID: 250713981}
   - component: {fileID: 250713985}
   m_Layer: 0
   m_Name: Heart Enemy
@@ -28956,49 +28955,6 @@ Transform:
   - {fileID: 1424827168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.54}
---- !u!114 &250713980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250713977}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbee5ec03101de74f978b2da37711064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::tpenemy
-  sppoints:
-  - {fileID: 899963434}
-  - {fileID: 797227059}
-  - {fileID: 1819998316}
-  - {fileID: 1534962127}
-  - {fileID: 567766436}
-  - {fileID: 12087456}
---- !u!114 &250713981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250713977}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b580d88441e4e874e9f05f6fc9e95eff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossCorazon
-  objetivoSara: {fileID: 0}
-  distanciaMinimaSeguridad: 50
-  velocidadMovimiento: 0.4
-  suavidadMovimiento: 6
-  minX: -40
-  maxX: 40
-  minY: -10
-  maxY: 35
-  tiempoAviso: 0.8
-  velocidadAtaque: 22
-  minCooldown: 3
-  maxCooldown: 5.5
 --- !u!114 &250713982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29012,13 +28968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicMov
   objetivoSara: {fileID: 0}
-  puntosDeReposo:
-  - {x: -40, y: 8}
-  - {x: -10, y: 8}
-  - {x: 25, y: 8}
-  velocidadViaje: 9
-  amplitudFlote: 10
-  ritmoFlote: 2
+  velocidadPalpitacion: 4
+  intensidadPalpitacion: 0.3
   estaEnReposado: 0
   movimientoPausado: 0
 --- !u!114 &250713983
@@ -29034,13 +28985,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AtaquesBoss
   sistemaSangre: {fileID: 372238887}
-  colliderEmbestida: {fileID: 250713985}
-  danoEmbestida: 20
-  fuerzaEmpuje: 12
-  duracionCarga: 2
-  duracionAtaque: 1
-  distanciaRetroceso: 2
-  distanciaOvershoot: 4
+  tiempoMinimoEntreAtaques: 8
+  tiempoMaximoEntreAtaques: 9
 --- !u!114 &250713984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29084,7 +29030,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -29112,8 +29058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48571dfa8294b6845a86254a7c9178e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossVida
-  vidaMaxima: 100
-  efectoMuerte: {fileID: 0}
+  maxhealth: 100
+  health: 0
 --- !u!1 &372238884
 GameObject:
   m_ObjectHideFlags: 0
@@ -35490,8 +35436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48571dfa8294b6845a86254a7c9178e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossVida
-  vidaMaxima: 100
-  efectoMuerte: {fileID: 0}
+  maxhealth: 100
+  health: 0
 --- !u!61 &1424827170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36375,6 +36321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Plataforma
   metaP: -5.98
   speedP: 3
+  actualizarSpawnAlLlegar: 1
+  nuevaPosicionSpawn: {x: -40, y: -1}
 --- !u!61 &1960866285
 BoxCollider2D:
   m_ObjectHideFlags: 0

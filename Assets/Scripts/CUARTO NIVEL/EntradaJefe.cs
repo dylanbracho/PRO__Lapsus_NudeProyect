@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
+using System.Collections;
 
 public class EntradaJefe : MonoBehaviour
 {
@@ -8,8 +8,10 @@ public class EntradaJefe : MonoBehaviour
     [SerializeField] private GameObject jefe;
     [SerializeField] private CinemachineCamera camaraSeguimientoSara;
 
-    [Header("Configuración de Zoom de Arena")]
+    [Header("Configuración de Zoom y Encuadre")]
     [SerializeField] private float nuevoOrthoSize = 20f;
+    [Tooltip("Sube este valor si quieres que la cámara apunte más arriba y tape el piso de abajo.")]
+    [SerializeField] private float offsetCamaraY = 3f; // Ajusta este número en el Inspector a tu gusto
 
     [Header("Configuración de Microshake")]
     [SerializeField] private float duracionShake = 2f;
@@ -30,7 +32,17 @@ public class EntradaJefe : MonoBehaviour
 
             if (camaraSeguimientoSara != null)
             {
+                // Aplicamos el Zoom
                 camaraSeguimientoSara.Lens.OrthographicSize = nuevoOrthoSize;
+
+                // Buscamos el componente PositionComposer de Cinemachine para modificar el Target Offset de forma segura
+                CinemachinePositionComposer compositor = camaraSeguimientoSara.GetComponent<CinemachinePositionComposer>();
+                if (compositor != null)
+                {
+                    Vector3 offsetActual = compositor.TargetOffset;
+                    compositor.TargetOffset = new Vector3(offsetActual.x, offsetCamaraY, offsetActual.z);
+                }
+
                 StartCoroutine(RutinaMicroshake());
             }
             else
@@ -52,14 +64,12 @@ public class EntradaJefe : MonoBehaviour
         {
             tiempoTranscurrido += Time.deltaTime;
 
-            // Genera un temblor sutil y rápido de sorpresa
             Vector2 desplazamientoAleatorio = Random.insideUnitCircle * intensidadShake;
             transformCamara.localPosition = new Vector3(posicionBase.x + desplazamientoAleatorio.x, posicionBase.y + desplazamientoAleatorio.y, posicionBase.z);
 
             yield return null;
         }
 
-        // Restablece la posición exacta al terminar
         transformCamara.localPosition = posicionBase;
     }
 }

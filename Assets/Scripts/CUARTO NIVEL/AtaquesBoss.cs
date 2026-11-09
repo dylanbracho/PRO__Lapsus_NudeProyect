@@ -5,17 +5,14 @@ public class AtaquesBoss : MonoBehaviour
 {
     [SerializeField] private ParticleSystem sistemaSangre;
 
-    [Header("Configuración de Estampida")]
-    [SerializeField] private BoxCollider2D colliderEmbestida; // Arrastra aquí el BoxCollider
-    [SerializeField] private float danoEmbestida = 20f;        // Daño que hace la embestida
-    [SerializeField] private float fuerzaEmpuje = 16f;        // Fuerza con la que empuja a Sara
-    [SerializeField] private float duracionCarga = 0.8f;
-    [SerializeField] private float duracionAtaque = 0.25f;
-    [SerializeField] private float distanciaRetroceso = 1.5f;
-    [SerializeField] private float distanciaOvershoot = 4f;
+    [Header("Configuración de Cooldowns y Esperas")]
+    [SerializeField] private float tiempoMinimoEntreAtaques = 1.5f;
+    [SerializeField] private float tiempoMaximoEntreAtaques = 3.0f;
 
     private BasicMov movimientoJefe;
-    private bool ataqueEjecutadoEnEstaPausa = false;
+    private bool ejecutandoAtaque = false;
+    private bool ataquesHabilitados = false; // No dispara hasta que la plataforma avise
+    private int ultimoAtaqueElegido = -1;
 
     void Start()
     {
@@ -25,199 +22,127 @@ public class AtaquesBoss : MonoBehaviour
         {
             sistemaSangre = transform.Find("Sangre")?.GetComponent<ParticleSystem>();
         }
-
-        // Asegurarnos de que el collider empiece apagado para que no haga daño de la nada
-        if (colliderEmbestida != null)
-        {
-            colliderEmbestida.enabled = false;
-        }
     }
 
-    void Update()
+    // Llamado por la plataforma al llegar arriba
+    public void ActivarAtaques()
     {
-        if (movimientoJefe == null) return;
+        if (ataquesHabilitados) return;
+        ataquesHabilitados = true;
+        StartCoroutine(BucleDeAtaques());
+    }
 
-        if (movimientoJefe.PausadoEnPunto)
+    IEnumerator BucleDeAtaques()
+    {
+        // Espera de cortesía tras la presentación inicial del jefe antes de lanzar el primer chorro
+        yield return new WaitForSeconds(5f);
+
+        while (ataquesHabilitados)
         {
-            if (!ataqueEjecutadoEnEstaPausa)
+            if (movimientoJefe != null && !ejecutandoAtaque)
             {
-                ataqueEjecutadoEnEstaPausa = true;
-                EjecutarAtaqueAleatorio();
+                EjecutarAtaqueVariado();
             }
-        }
-        else
-        {
-            ataqueEjecutadoEnEstaPausa = false;
+
+            float cooldownActual = Random.Range(tiempoMinimoEntreAtaques, tiempoMaximoEntreAtaques);
+            yield return new WaitForSeconds(cooldownActual);
         }
     }
 
-    private void EjecutarAtaqueAleatorio()
+    private void EjecutarAtaqueVariado()
     {
-        int ataqueElegido = Random.Range(0, 3);
+        int ataqueElegido;
+
+        do
+        {
+            ataqueElegido = Random.Range(0, 3);
+        }
+        while (ataqueElegido == ultimoAtaqueElegido);
+
+        ultimoAtaqueElegido = ataqueElegido;
 
         switch (ataqueElegido)
         {
             case 0:
-                DispararSangre();
+                StartCoroutine(RutinaChorroDirecto());
                 break;
             case 1:
-                StartCoroutine(RutinaEstampida());
+                StartCoroutine(RutinaRafagaTriple());
                 break;
             case 2:
-                LanzarTercerAtaque();
+                StartCoroutine(RutinaAbanicoSangre());
                 break;
         }
     }
 
-    private void DispararSangre()
+    IEnumerator RutinaChorroDirecto()
     {
+        ejecutandoAtaque = true;
+
         if (sistemaSangre != null && movimientoJefe.ObjetivoSara != null)
         {
             Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
             Vector3 posicionEmisor = sistemaSangre.transform.position;
 
             Vector2 direccion = (posicionSara - posicionEmisor).normalized;
-
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
             sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo);
-
             sistemaSangre.Play();
         }
+
+        yield return new WaitForSeconds(0.8f);
+        ejecutandoAtaque = false;
     }
 
-    IEnumerator RutinaEstampida()
+    IEnumerator RutinaRafagaTriple()
     {
-        if (movimientoJefe.ObjetivoSara == null) yield break;
+        ejecutandoAtaque = true;
 
-        movimientoJefe.movimientoPausado = true;
-
-        Vector3 posicionInicial = transform.position;
-        Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
-        Vector3 direccionCarga = (posicionSara - posicionInicial).normalized;
-
-        Vector3 puntoLentitud = posicionInicial - (direccionCarga * distanciaRetroceso);
-        Vector3 puntoDestino = posicionSara + (direccionCarga * distanciaOvershoot);
-
-        // Fase 1: Retroceso (Seguro, no hace daño)
-        float tiempoCarga = 0f;
-        while (tiempoCarga < duracionCarga)
+        for (int i = 0; i < 3; i++)
         {
-            tiempoCarga += Time.deltaTime;
-            float progreso = tiempoCarga / duracionCarga;
-            float curvaSuave = Mathf.SmoothStep(0f, 1f, progreso);
-
-            transform.position = Vector3.Lerp(posicionInicial, puntoLentitud, curvaSuave);
-
-            float angulo = Mathf.Atan2(direccionCarga.y, direccionCarga.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, 0f, angulo), Time.deltaTime * 10f);
-
-            yield return null;
-        }
-
-        // ¡AQUÍ ACTIVA EL DAÑO (Empieza la embestida rápida)!
-        if (colliderEmbestida != null) colliderEmbestida.enabled = true;
-
-        // Fase 2: Ataque veloz
-        float tiempoAtaque = 0f;
-        while (tiempoAtaque < duracionAtaque)
-        {
-            tiempoAtaque += Time.deltaTime;
-            float progreso = tiempoAtaque / duracionAtaque;
-
-            transform.position = Vector3.Lerp(puntoLentitud, puntoDestino, progreso);
-
-            yield return null;
-        }
-
-        // ¡APAGA EL DAÑO (Terminó la embestida)!
-        if (colliderEmbestida != null) colliderEmbestida.enabled = false;
-
-        yield return new WaitForSeconds(0.4f);
-
-        transform.rotation = Quaternion.identity;
-        movimientoJefe.movimientoPausado = false;
-    }
-
-    private void LanzarTercerAtaque()
-    {
-        StartCoroutine(RutinaLluviaHorizontal());
-    }
-
-    IEnumerator RutinaLluviaHorizontal()
-    {
-        if (movimientoJefe == null || movimientoJefe.ObjetivoSara == null) yield break;
-
-        movimientoJefe.movimientoPausado = true;
-
-        float direccionBarrido = Mathf.Sign(movimientoJefe.ObjetivoSara.position.x - transform.position.x);
-        Vector3 posicionInicial = transform.position;
-        Vector3 puntoDestino = posicionInicial + new Vector3(direccionBarrido * 12f, 0f, 0f);
-
-        float tiempoViaje = 0f;
-        float duracionBarrido = 4f;
-        float intervaloDisparo = 0.3f;
-        float temporizadorDisparo = 0f;
-
-        while (tiempoViaje < duracionBarrido)
-        {
-            tiempoViaje += Time.deltaTime;
-            temporizadorDisparo += Time.deltaTime;
-
-            float progreso = tiempoViaje / duracionBarrido;
-            transform.position = Vector3.Lerp(posicionInicial, puntoDestino, progreso);
-
-            if (temporizadorDisparo >= intervaloDisparo)
+            if (sistemaSangre != null && movimientoJefe.ObjetivoSara != null)
             {
-                temporizadorDisparo = 0f;
+                Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
+                Vector3 posicionEmisor = sistemaSangre.transform.position;
 
-                if (sistemaSangre != null)
-                {
-                    sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                    sistemaSangre.Play();
-                }
+                Vector2 direccion = (posicionSara - posicionEmisor).normalized;
+                float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+                sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo);
+                sistemaSangre.Play();
             }
 
-            yield return null;
+            yield return new WaitForSeconds(0.3f);
         }
 
-        yield return new WaitForSeconds(0.4f);
-
-        transform.rotation = Quaternion.identity;
-        movimientoJefe.movimientoPausado = false;
+        yield return new WaitForSeconds(0.6f);
+        ejecutandoAtaque = false;
     }
 
-    // Detecta la colisión, le quita vida a Sara mediante su método original y la empuja liberando su movimiento por un instante
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator RutinaAbanicoSangre()
     {
-        if (colliderEmbestida != null && colliderEmbestida.enabled && collision.CompareTag("Player"))
+        ejecutandoAtaque = true;
+
+        if (sistemaSangre != null && movimientoJefe.ObjetivoSara != null)
         {
-            if (collision.TryGetComponent<PlayerController>(out PlayerController player))
+            Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
+            Vector3 posicionEmisor = sistemaSangre.transform.position;
+
+            Vector2 direccionBase = (posicionSara - posicionEmisor).normalized;
+            float anguloBase = Mathf.Atan2(direccionBase.y, direccionBase.x) * Mathf.Rad2Deg;
+
+            float[] offsetsAngulo = { -25f, 0f, 25f };
+
+            foreach (float offset in offsetsAngulo)
             {
-                player.TakeDamage(danoEmbestida); // Llama al método original de vida de Sara
-
-                // Aplicamos el impulso físico directo con linearVelocity (Unity 6)
-                if (collision.TryGetComponent<Rigidbody2D>(out Rigidbody2D rbPlayer))
-                {
-                    Vector2 direccionEmpuje = (collision.transform.position - transform.position).normalized;
-                    direccionEmpuje.y += 0.5f; // Salto ligero hacia arriba
-                    direccionEmpuje.Normalize();
-
-                    rbPlayer.linearVelocity = direccionEmpuje * fuerzaEmpuje;
-                }
-
-                // Apagamos el PlayerController de Sara por 0.25 segundos para que vuele libre sin que su script frene el golpe
-                StartCoroutine(PausarControlTemporada(player, 0.25f));
-
-                Debug.Log("¡Embestida conectada y Sara empujada sin tocar su script!");
+                sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, anguloBase + offset);
+                sistemaSangre.Play();
+                yield return new WaitForSeconds(0.18f);
             }
         }
-    }
 
-    IEnumerator PausarControlTemporada(PlayerController player, float duracion)
-    {
-        player.enabled = false;
-        yield return new WaitForSeconds(duracion);
-        player.enabled = true;
+        yield return new WaitForSeconds(0.8f);
+        ejecutandoAtaque = false;
     }
 }

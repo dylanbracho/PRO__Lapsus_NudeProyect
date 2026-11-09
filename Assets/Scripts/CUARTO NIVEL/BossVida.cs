@@ -1,62 +1,33 @@
-using System.Collections;
 using UnityEngine;
 
 public class BossVida : MonoBehaviour
 {
     [Header("Configuración de Vida")]
-    [SerializeField] private float vidaMaxima = 100f;
-    private float vidaActual;
-
-    [Header("Efectos o Acciones al Morir")]
-    [SerializeField] private GameObject efectoMuerte; 
-
-    private bool estaMuerto = false;
+    public float maxhealth = 100f;
+    public float health;
 
     void Start()
     {
-        vidaActual = vidaMaxima;
+        // Inicializamos la vida al arrancar
+        health = maxhealth;
     }
 
-
-    public void RecibirDano(float cantidad)
+    void Update()
     {
-        if (estaMuerto) return;
-
-        vidaActual -= cantidad;
-        vidaActual = Mathf.Clamp(vidaActual, 0f, vidaMaxima);
-
-        Debug.Log($"¡El Jefe recibió {cantidad} de daño! Vida restante: {vidaActual}/{vidaMaxima}");
-
-        if (vidaActual <= 0f)
+        // Si la vida llega a 0, se desactiva el jefe
+        if (health <= 0)
         {
-            Morir();
+            Debug.Log("¡El Heart Enemy ha sido derrotado!");
+            gameObject.SetActive(false);
         }
     }
 
-    private void Morir()
+    // Usamos TakeDamage para que coincida con la estructura de tu PlayerController
+    public void TakeDamage(float cantidad)
     {
-        estaMuerto = true;
-        Debug.Log("¡El Jefe ha sido derrotado!");
+        health -= cantidad;
+        health = Mathf.Clamp(health, 0, maxhealth);
 
-        if (TryGetComponent<AtaquesBoss>(out AtaquesBoss ataques)) ataques.enabled = false;
-        if (TryGetComponent<BasicMov>(out BasicMov movimiento)) movimiento.enabled = false;
-
-        foreach (Collider2D col in GetComponentsInChildren<Collider2D>())
-        {
-            col.enabled = false;
-        }
-
-        if (efectoMuerte != null)
-        {
-            efectoMuerte.SetActive(true);
-        }
-        StartCoroutine(RutinaMuerte());
-    }
-
-    IEnumerator RutinaMuerte()
-    {
-        yield return new WaitForSeconds(2f);
-
-        Destroy(gameObject);
+        Debug.Log($"¡Heart Enemy recibió {cantidad} de daño! Vida actual: {health}/{maxhealth}");
     }
 }
