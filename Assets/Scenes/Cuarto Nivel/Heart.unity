@@ -28947,7 +28947,7 @@ Transform:
   m_GameObject: {fileID: 250713977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.24649073, w: 0.9691452}
-  m_LocalPosition: {x: -3.7771397, y: 10.553837, z: 0}
+  m_LocalPosition: {x: -3.7771397, y: 2, z: 0}
   m_LocalScale: {x: 0.82973444, y: 0.82973444, z: 0.82973444}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29055,11 +29055,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 250713977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48571dfa8294b6845a86254a7c9178e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1384d37fdda625d44ad2c9d4147762fc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossVida
+  m_EditorClassIdentifier: Assembly-CSharp::vidajefe
+  health: 100
   maxhealth: 100
-  health: 0
+  healthBarSlider: {fileID: 0}
+  vidaentexto: {fileID: 0}
+  sceneToLoad: 
 --- !u!1 &372238884
 GameObject:
   m_ObjectHideFlags: 0
@@ -35314,7 +35317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e00c6f4a8d0c548b16fc1a673cbde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::Da\xF1oHitbox"
-  "da\xF1o": 25
 --- !u!1 &1340202765
 GameObject:
   m_ObjectHideFlags: 0
