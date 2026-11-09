@@ -18536,6 +18536,10 @@ PrefabInstance:
       propertyPath: 'enemyMovementPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 2008374694}
+    - target: {fileID: 3504365263222951420, guid: d0a8fb0de5e6c5f40bb102f2416d64db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3760312902598091698, guid: d0a8fb0de5e6c5f40bb102f2416d64db, type: 3}
       propertyPath: m_Name
       value: Coagulito 1 (13)
@@ -80130,7 +80134,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5144175330443347657, guid: 3f072b585b837c7469e8e7bbd1ee6693, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5144175330443347657, guid: 3f072b585b837c7469e8e7bbd1ee6693, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -88298,6 +88302,10 @@ PrefabInstance:
       propertyPath: 'enemyMovementPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 712512046}
+    - target: {fileID: 3504365263222951420, guid: d0a8fb0de5e6c5f40bb102f2416d64db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3760312902598091698, guid: d0a8fb0de5e6c5f40bb102f2416d64db, type: 3}
       propertyPath: m_Name
       value: Coagulito 1 (11)
