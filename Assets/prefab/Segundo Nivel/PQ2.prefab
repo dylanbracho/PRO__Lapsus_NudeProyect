@@ -253,12 +253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PQ2
   bossHealth: {fileID: 3223885679596089994}
+  bossSliderFase2: {fileID: 0}
   moveSpeed: 2.5
   meeleAttackRange: 1.8
   detectionRange: 12
   attackInterval: 1.8
   bossDamage: 20
-  bossStrength: 9
+  bossStrength: 5
   attackSpawnPoint: {fileID: 1601878986974864202}
   implantPrefab: {fileID: 6055478537215550753, guid: f709daa5854223346b996f53756520ea, type: 3}
   player: {fileID: 0}
