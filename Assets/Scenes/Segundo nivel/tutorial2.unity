@@ -813,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2403551010101594777, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
       propertyPath: sceneToLoad
-      value: segundo nivel
+      value: ovario1
       objectReference: {fileID: 0}
     - target: {fileID: 5635408622486410113, guid: 9487d5180be9a1249a8d2352910d3ca5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1286,27 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 2600418723446463888, guid: a8cc243315cec2c458e0fe2fbd38d166, type: 3}
     - target: {fileID: 4796532795537006777, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.990566
       objectReference: {fileID: 0}
     - target: {fileID: 4796532795537006777, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.61720556
       objectReference: {fileID: 0}
     - target: {fileID: 4796532795537006777, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4978201156562392751, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
-      propertyPath: m_Radius
-      value: 1.1152335
-      objectReference: {fileID: 0}
-    - target: {fileID: 4978201156562392751, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0087680565
-      objectReference: {fileID: 0}
-    - target: {fileID: 4978201156562392751, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.108371176
+      value: 0.19157171
       objectReference: {fileID: 0}
     - target: {fileID: 5052445186044235511, guid: 9c9fec024041e3e47a79c499c9238a53, type: 3}
       propertyPath: m_Name
@@ -2028,7 +2016,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.1517334, y: -1.3148432}
+  m_Offset: {x: -1.1517344, y: -1.8275919}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2038,7 +2026,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 56.759155, y: 18.184729}
+  m_Size: {x: 56.759155, y: 19.210222}
   m_EdgeRadius: 0
 --- !u!4 &1097855830
 Transform:
