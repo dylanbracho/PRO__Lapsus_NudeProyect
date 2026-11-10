@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: b90ebf0adddb7fa408982652c0c65ae2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3153870231787451101
+    second: nucleo-Sheet actualizada_0
+  - first:
+      213: 5276276546164668252
+    second: nucleo-Sheet actualizada_1
+  - first:
+      213: -4952447606753788830
+    second: nucleo-Sheet actualizada_2
+  - first:
+      213: -2442872451526998446
+    second: nucleo-Sheet actualizada_3
+  - first:
+      213: -1095962120148737340
+    second: nucleo-Sheet actualizada_4
+  - first:
+      213: -3842391205860763373
+    second: nucleo-Sheet actualizada_5
+  - first:
+      213: 8006894391840519757
+    second: nucleo-Sheet actualizada_6
+  - first:
+      213: 7392259590650513266
+    second: nucleo-Sheet actualizada_7
+  - first:
+      213: -8339352931332785096
+    second: nucleo-Sheet actualizada_8
+  - first:
+      213: -67097036378681069
+    second: nucleo-Sheet actualizada_9
+  - first:
+      213: 7104073286048982892
+    second: nucleo-Sheet actualizada_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 6
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 25
+        width: 76
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d41aeebb33b34d0800000000000000
+      internalID: -3153870231787451101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 27
+        width: 68
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57bed65099193940800000000000000
+      internalID: 5276276546164668252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 29
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cf4be042f554bb0800000000000000
+      internalID: -4952447606753788830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 33
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256452fb27c291ed0800000000000000
+      internalID: -2442872451526998446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_4
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 37
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c22045224c5ac0f0800000000000000
+      internalID: -1095962120148737340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_5
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 37
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319959e5e851daac0800000000000000
+      internalID: -3842391205860763373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_6
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 37
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46b8bbe6043e1f60800000000000000
+      internalID: 8006894391840519757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_7
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 37
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277c23c8ee4969660800000000000000
+      internalID: 7392259590650513266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_8
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 33
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83cfb4751baa44c80800000000000000
+      internalID: -8339352931332785096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_9
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 29
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 311da25d99f911ff0800000000000000
+      internalID: -67097036378681069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nucleo-Sheet actualizada_10
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 27
+        width: 68
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67aa41c30db69260800000000000000
+      internalID: 7104073286048982892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      nucleo-Sheet actualizada_0: -3153870231787451101
+      nucleo-Sheet actualizada_1: 5276276546164668252
+      nucleo-Sheet actualizada_10: 7104073286048982892
+      nucleo-Sheet actualizada_2: -4952447606753788830
+      nucleo-Sheet actualizada_3: -2442872451526998446
+      nucleo-Sheet actualizada_4: -1095962120148737340
+      nucleo-Sheet actualizada_5: -3842391205860763373
+      nucleo-Sheet actualizada_6: 8006894391840519757
+      nucleo-Sheet actualizada_7: 7392259590650513266
+      nucleo-Sheet actualizada_8: -8339352931332785096
+      nucleo-Sheet actualizada_9: -67097036378681069
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,7 +11,7 @@ public class PlayFootsteps : MonoBehaviour
     {
         if (pc.canJump)
         {
-            SFXManager.PlaySFX(Soundtype.STEP, 0.5f);
+            SFXManager.PlaySFX(Soundtype.STEP, 0.15f);
         }
     }
 }
