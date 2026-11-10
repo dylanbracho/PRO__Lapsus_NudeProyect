@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1137963026475610449, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8225728356676695347, guid: 5b45bfc8a871e8f4b86c9bfdde7fc03a, type: 3}
+      objectReference: {fileID: 8833401409534610373, guid: c319a39c4862a1b4c8a8989961e7016f, type: 3}
     - target: {fileID: 2095603952855354850, guid: d84d6ae961ccdff4ca68020bf0a6cec6, type: 3}
       propertyPath: m_Name
       value: GLITCHED Variant
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0273973, y: 1.8949772}
+    oldSize: {x: 9.040001, y: 13.43}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
