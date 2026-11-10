@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: bb3257090739dba4e89fe10ff778dc1b
+guid: 59494b61f64b08845b2f4375c2d4ec57
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7897537618308996268
-    second: WhatsApp Image 2026-10-19 at 7.19.23 PM_0
+      213: -2333788387818254540
+    second: Todo eso3_0
+  - first:
+      213: -222146044129704437
+    second: Todo eso3_1
+  - first:
+      213: 7656481739837473279
+    second: Todo eso3_2
+  - first:
+      213: -6726006270272503274
+    second: Todo eso3_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  alignment: 9
+  spritePivot: {x: 0.4901014, y: 0.37626824}
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp Image 2026-10-19 at 7.19.23 PM_0
+      name: Todo eso3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 640
-        height: 1280
-      alignment: 9
-      pivot: {x: 0.5046685, y: 0.3366013}
+        x: 184
+        y: 494
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cac9793fe90b99d60800000000000000
-      internalID: 7897537618308996268
+      spriteID: 43f492383d7bc9fd0800000000000000
+      internalID: -2333788387818254540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Todo eso3_1
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 454
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06046f8957caecf0800000000000000
+      internalID: -222146044129704437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Todo eso3_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 252
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1074c9399414a60800000000000000
+      internalID: 7656481739837473279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Todo eso3_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 409
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6128b5fdeec68a2a0800000000000000
+      internalID: -6726006270272503274
       vertices: []
       indices: 
       edges: []
@@ -138,8 +213,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 62ada965f200acb4b857169914fa4c9b
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhatsApp Image 2026-10-19 at 7.19.23 PM_0: 7897537618308996268
+      Todo eso3_0: -2333788387818254540
+      Todo eso3_1: -222146044129704437
+      Todo eso3_2: 7656481739837473279
+      Todo eso3_3: -6726006270272503274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

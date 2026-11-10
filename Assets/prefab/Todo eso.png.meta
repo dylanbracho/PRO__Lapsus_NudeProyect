@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 22d1714f82a51b24bb43a7f3b351fdd6
+guid: 096b788b7b1a1de41af7d39bf72eda75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6404307569416566747
-    second: pixel-art-sakura-flower-icon-png-1611572461_0
+      213: -3591857665787869908
+    second: Todo eso_0
+  - first:
+      213: 8160214497414614729
+    second: Todo eso_1
+  - first:
+      213: 6687361871973644316
+    second: Todo eso_2
+  - first:
+      213: 7033839927877595233
+    second: Todo eso_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  alignment: 9
+  spritePivot: {x: 0.5049492, y: 0.36636972}
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixel-art-sakura-flower-icon-png-1611572461_0
+      name: Todo eso_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 0
-        width: 1836
-        height: 1920
+        x: 184
+        y: 494
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 528849472345f17a0800000000000000
-      internalID: -6404307569416566747
+      spriteID: c2543f2cb78272ec0800000000000000
+      internalID: -3591857665787869908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Todo eso_1
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 454
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce0469c9d7ee3170800000000000000
+      internalID: 8160214497414614729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Todo eso_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 192
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18fa7ff0384ecc50800000000000000
+      internalID: 6687361871973644316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Todo eso_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 409
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1607a14c5283d9160800000000000000
+      internalID: 7033839927877595233
       vertices: []
       indices: 
       edges: []
@@ -138,8 +213,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixel-art-sakura-flower-icon-png-1611572461_0: -6404307569416566747
+      Todo eso_0: -3591857665787869908
+      Todo eso_1: 8160214497414614729
+      Todo eso_2: 6687361871973644316
+      Todo eso_3: 7033839927877595233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

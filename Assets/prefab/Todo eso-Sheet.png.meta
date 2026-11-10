@@ -1,19 +1,55 @@
 fileFormatVersion: 2
-guid: acbd1e9b1289f3449bd6b148f2ea9f6c
+guid: f38edf00b6aa1b04bbf741e2c668391e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2106459548668430785
-    second: Sprite-0001-Sheet-Sheet-Recovered-Sheet_0
+      213: 9087230031462789001
+    second: Todo eso-Sheet_0
   - first:
-      213: 3779587612199918279
-    second: Sprite-0001-Sheet-Sheet-Recovered-Sheet_1
+      213: -2711889141428836568
+    second: Todo eso-Sheet_1
   - first:
-      213: 4334121416731807627
-    second: Sprite-0001-Sheet-Sheet-Recovered-Sheet_2
+      213: 5638686436302124938
+    second: Todo eso-Sheet_2
   - first:
-      213: 1201299561206904956
-    second: Sprite-0001-Sheet-Sheet-Recovered-Sheet_3
+      213: 8892939278188302942
+    second: Todo eso-Sheet_3
+  - first:
+      213: -7556036901484339062
+    second: Todo eso-Sheet_4
+  - first:
+      213: 8972284912513930916
+    second: Todo eso-Sheet_5
+  - first:
+      213: 3526084163280580742
+    second: Todo eso-Sheet_6
+  - first:
+      213: -3353505580831127827
+    second: Todo eso-Sheet_7
+  - first:
+      213: -5402927139770050402
+    second: Todo eso-Sheet_8
+  - first:
+      213: -1074449475366946792
+    second: Todo eso-Sheet_9
+  - first:
+      213: -5544953014064587546
+    second: Todo eso-Sheet_10
+  - first:
+      213: -7438224285208910840
+    second: Todo eso-Sheet_11
+  - first:
+      213: 2320809958133342198
+    second: Todo eso-Sheet_12
+  - first:
+      213: 1980224812595051398
+    second: Todo eso-Sheet_13
+  - first:
+      213: -4697611303417824221
+    second: Todo eso-Sheet_14
+  - first:
+      213: -5081528586582624752
+    second: Todo eso-Sheet_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,93 +141,106 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0001-Sheet-Sheet-Recovered-Sheet_0
+      name: Todo eso-Sheet_8
       rect:
         serializedVersion: 2
-        x: 13
+        x: 55
         y: 0
-        width: 52
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 154
+        height: 349
+      alignment: 9
+      pivot: {x: 0.4723299, y: 0.5555829}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c98c1c8cc5ab3d10800000000000000
-      internalID: 2106459548668430785
+      spriteID: e9850be6462f405b0800000000000000
+      internalID: -5402927139770050402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0001-Sheet-Sheet-Recovered-Sheet_1
+      name: Todo eso-Sheet_10
       rect:
         serializedVersion: 2
-        x: 141
+        x: 311
         y: 0
-        width: 52
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 154
+        height: 345
+      alignment: 9
+      pivot: {x: 0.47232988, y: 0.55558294}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ca94ae78eac37430800000000000000
-      internalID: 3779587612199918279
+      spriteID: 6ecd274bc9e5c03b0800000000000000
+      internalID: -5544953014064587546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0001-Sheet-Sheet-Recovered-Sheet_2
+      name: Todo eso-Sheet_12
       rect:
         serializedVersion: 2
-        x: 269
+        x: 567
         y: 0
-        width: 52
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 154
+        height: 337
+      alignment: 9
+      pivot: {x: 0.48765704, y: 0.5860594}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8f46b12774e52c30800000000000000
-      internalID: 4334121416731807627
+      spriteID: 6ff1ab95c5c253020800000000000000
+      internalID: 2320809958133342198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0001-Sheet-Sheet-Recovered-Sheet_3
+      name: Todo eso-Sheet_13
       rect:
         serializedVersion: 2
-        x: 397
+        x: 823
         y: 0
-        width: 52
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 154
+        height: 349
+      alignment: 9
+      pivot: {x: 0.48616523, y: 0.5555829}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c78f19e069fdba010800000000000000
-      internalID: 1201299561206904956
+      spriteID: 68b7422b9fb2b7b10800000000000000
+      internalID: 1980224812595051398
       vertices: []
       indices: 
       edges: []
@@ -200,7 +249,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a131ad86fe42db344907be969138904b
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +259,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sprite-0001-Sheet-Sheet-Recovered-Sheet_0: 2106459548668430785
-      Sprite-0001-Sheet-Sheet-Recovered-Sheet_1: 3779587612199918279
-      Sprite-0001-Sheet-Sheet-Recovered-Sheet_2: 4334121416731807627
-      Sprite-0001-Sheet-Sheet-Recovered-Sheet_3: 1201299561206904956
+      Todo eso-Sheet_0: 9087230031462789001
+      Todo eso-Sheet_1: -2711889141428836568
+      Todo eso-Sheet_10: -5544953014064587546
+      Todo eso-Sheet_11: -7438224285208910840
+      Todo eso-Sheet_12: 2320809958133342198
+      Todo eso-Sheet_13: 1980224812595051398
+      Todo eso-Sheet_14: -4697611303417824221
+      Todo eso-Sheet_15: -5081528586582624752
+      Todo eso-Sheet_2: 5638686436302124938
+      Todo eso-Sheet_3: 8892939278188302942
+      Todo eso-Sheet_4: -7556036901484339062
+      Todo eso-Sheet_5: 8972284912513930916
+      Todo eso-Sheet_6: 3526084163280580742
+      Todo eso-Sheet_7: -3353505580831127827
+      Todo eso-Sheet_8: -5402927139770050402
+      Todo eso-Sheet_9: -1074449475366946792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
