@@ -131,7 +131,7 @@ public class AtaquesBoss : MonoBehaviour
             main.startSpeed = 22f;
             main.startSize = 1.3f;
             main.gravityModifier = 0.25f;
-            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = sistemaSangre.emission;
             emission.rateOverTime = 0;
@@ -167,7 +167,7 @@ public class AtaquesBoss : MonoBehaviour
             main.startSpeed = 15f;
             main.startSize = 1.4f;
             main.gravityModifier = 1.3f;
-            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = sistemaSangre.emission;
             emission.rateOverTime = 0;
@@ -253,7 +253,7 @@ public class AtaquesBoss : MonoBehaviour
             main.startSpeed = 11f;
             main.startSize = 1.3f;
             main.gravityModifier = 0.25f;
-            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = sistemaSangre.emission;
             emission.rateOverTime = 0;
@@ -289,7 +289,7 @@ public class AtaquesBoss : MonoBehaviour
             main.startSpeed = 12f;
             main.startSize = 1.3f;
             main.gravityModifier = 0.2f;
-            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = sistemaSangre.emission;
             emission.rateOverTime = 0;
