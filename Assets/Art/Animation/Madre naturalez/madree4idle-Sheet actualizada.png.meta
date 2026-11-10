@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: de949b765575bf4439edea6489087a87
+guid: 0464f39acc4e73e46a63703000ea9b43
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5267801244864420197
-    second: f154db98aa6d7c929f7bf077b3ff2bac_0
+      213: -5572252736246418127
+    second: madree4idle-Sheet actualizada_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: f154db98aa6d7c929f7bf077b3ff2bac_0
+      name: madree4idle-Sheet actualizada_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 800
+        width: 319
+        height: 393
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b96ee748da205e6b0800000000000000
-      internalID: -5267801244864420197
+      spriteID: 1357551d8a16ba2b0800000000000000
+      internalID: -5572252736246418127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: madree4idle-Sheet actualizada_1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 0
+        width: 325
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c36ef8676fff143be3cac7496a5f94
+      internalID: 246218870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: madree4idle-Sheet actualizada_2
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 319
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ece5c2af8b570347b52e07bce1024e5
+      internalID: -1487630256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: madree4idle-Sheet actualizada_3
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 0
+        width: 321
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ab7de20200f9d4cb1310f8bc74b423
+      internalID: 1412013719
       vertices: []
       indices: 
       edges: []
@@ -138,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 940c91016dc66ba4b9e4f53d26efbadc
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +214,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      f154db98aa6d7c929f7bf077b3ff2bac_0: -5267801244864420197
+      madree4idle-Sheet actualizada_0: -5572252736246418127
+      madree4idle-Sheet actualizada_1: 246218870
+      madree4idle-Sheet actualizada_2: -1487630256
+      madree4idle-Sheet actualizada_3: 1412013719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
