@@ -26200,6 +26200,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 885799378733883459, guid: ab052b4b674bcfb4e9b2da670309aa41, type: 3}
   m_PrefabInstance: {fileID: 1200553139}
   m_PrefabAsset: {fileID: 0}
+--- !u!320 &795026727 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 1137004404528600846, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+  m_PrefabInstance: {fileID: 796071379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &796071379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32009,8 +32014,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb5fbb16fed91d4a8201c8a2a39f016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::copiaSceneTrigger
-  director: {fileID: 0}
-  cutsceneCanvas: {fileID: 0}
+  director: {fileID: 795026727}
+  cutsceneCanvas: {fileID: 1455892198}
   coleccionableui: {fileID: 341476183}
 --- !u!1001 &1289396774
 PrefabInstance:
@@ -32467,6 +32472,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421169533}
   m_CullTransparentMesh: 1
+--- !u!1 &1455892198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6957265508769612997, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+  m_PrefabInstance: {fileID: 796071379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468265859
 GameObject:
   m_ObjectHideFlags: 0

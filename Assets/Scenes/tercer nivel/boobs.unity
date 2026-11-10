@@ -276435,6 +276435,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+--- !u!1 &1278671204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6957265508769612997, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+  m_PrefabInstance: {fileID: 1278671203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!320 &1278671205 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 1137004404528600846, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+  m_PrefabInstance: {fileID: 1278671203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1296812975
 GameObject:
   m_ObjectHideFlags: 0
@@ -278877,8 +278887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776c21d652f2f394694d3e7f68e0a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneTrigger
-  director: {fileID: 0}
-  cutsceneCanvas: {fileID: 0}
+  director: {fileID: 1278671205}
+  cutsceneCanvas: {fileID: 1278671204}
   bloqueo: {fileID: 962702335}
   played: 0
   player: {fileID: 895643324}
