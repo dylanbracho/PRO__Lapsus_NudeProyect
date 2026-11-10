@@ -41,8 +41,16 @@ public class whip : MonoBehaviour
             vida.RecibirDaño(damage);
 
         }
+
+        if (other.TryGetComponent<vidajefe4>(out vidajefe4 heartEnemy))
+        {
+            heartEnemy.RecibirDaño(damage);
+            //Debug.Log("cbdhsjj");
+        }
+
+
     }
 
-    
+
 
 }

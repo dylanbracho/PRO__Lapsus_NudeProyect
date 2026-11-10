@@ -28853,7 +28853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntradaJefe
   jefe: {fileID: 250713977}
   camaraSeguimientoSara: {fileID: 593017325}
-  nuevoOrthoSize: 11
+  nuevoOrthoSize: 13
   offsetCamaraY: 8
   duracionShake: 3
   intensidadShake: 20
@@ -28867,6 +28867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 250713979}
   - component: {fileID: 250713978}
+  - component: {fileID: 250713987}
   - component: {fileID: 250713986}
   - component: {fileID: 250713984}
   - component: {fileID: 250713983}
@@ -28947,7 +28948,7 @@ Transform:
   m_GameObject: {fileID: 250713977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.24649073, w: 0.9691452}
-  m_LocalPosition: {x: -3.7771397, y: 2, z: 0}
+  m_LocalPosition: {x: -4.3, y: 8.5, z: 0}
   m_LocalScale: {x: 0.82973444, y: 0.82973444, z: 0.82973444}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29053,11 +29054,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250713977}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1384d37fdda625d44ad2c9d4147762fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::vidajefe
+  health: 100
+  maxhealth: 100
+  healthBarSlider: {fileID: 0}
+  vidaentexto: {fileID: 0}
+  sceneToLoad: 
+--- !u!114 &250713987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250713977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b704b37c9d138154cbac03b28e645fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::vidajefe4
   health: 100
   maxhealth: 100
   healthBarSlider: {fileID: 0}
@@ -33970,7 +33988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858c9e1589fec8f4ebf2d90c18fb3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DanoParticulas
-  danoPorParticula: 5
+  danoPorParticula: 1
 --- !u!1 &443402508
 GameObject:
   m_ObjectHideFlags: 0
