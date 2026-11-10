@@ -18,6 +18,7 @@ public class GordoController : MonoBehaviour
     [SerializeField] private GameObject whipHitbox;
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private JumpEnemy salto;
+    [SerializeField]private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -110,6 +111,7 @@ public class GordoController : MonoBehaviour
         if (whipHitbox != null && isAttacking == false)
         {
             if (salto.busy == true) yield break;
+            animator.SetTrigger("Attack");
             whipHitbox.SetActive(true);
             OnTriggerEnter2D(whipHitbox.GetComponent<Collider2D>());
             isAttacking = true;

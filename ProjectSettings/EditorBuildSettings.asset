@@ -74,6 +74,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Segundo nivel/tutorial2.unity
     guid: 65fc422ba98daf44fbe523f8381486c9
+  - enabled: 1
+    path: Assets/Scenes/FInal.unity
+    guid: 81bbfa1abc490394b9176e50578e68ed
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
