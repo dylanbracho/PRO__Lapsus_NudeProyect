@@ -11,7 +11,8 @@ public enum Soundtype
     BLOOD,
     THUNDER,
     MOAN,
-    LAUGH
+    LAUGH,
+    MIRROR
 }
 
 [RequireComponent(typeof(AudioSource)) , ExecuteInEditMode]
