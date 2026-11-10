@@ -18,54 +18,73 @@ public class nucleo : MonoBehaviour
     public TextMeshProUGUI vidaentexto;
 
     [SerializeField] private string sceneToLoad;
+    private bool isDead = false; // Evita que se llame a LoadScene varias veces seguidas
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-
         health = maxhealth;
-        healthBarSlider.value = health;
-        healthBarSlider.maxValue = maxhealth;
-        vidaentexto.text = $"HP: {health}/{maxhealth}";
-        imagennucleo.color = new Color(1, 1, 1, 0);
-        collidernucleo.enabled = false;
+
+        if (healthBarSlider != null)
+        {
+            healthBarSlider.maxValue = maxhealth;
+            healthBarSlider.value = health;
+        }
+
+        if (vidaentexto != null)
+        {
+            vidaentexto.text = $"HP: {health}/{maxhealth}";
+        }
+
+        if (imagennucleo != null)
+        {
+            imagennucleo.color = new Color(1, 1, 1, 0);
+        }
+
+        if (collidernucleo != null)
+        {
+            collidernucleo.enabled = false;
+        }
+
         StartCoroutine(NucleoOHSI_());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        // Si la vida llega a 0 y no hemos cambiado de escena aún, cambia a la escena deseada
+        if (health <= 0 && !isDead)
         {
-
-            SceneManager.LoadScene(sceneToLoad);
-
+            CargarSiguienteEscena();
         }
     }
 
-    IEnumerator NucleoOHSI_() 
+    IEnumerator NucleoOHSI_()
     {
-
         while (true)
         {
             yield return new WaitForSeconds(7f);
-            imagennucleo.color = new Color(1, 1, 1, 1);
-            collidernucleo.enabled = true;
+            if (imagennucleo != null) imagennucleo.color = new Color(1, 1, 1, 1);
+            if (collidernucleo != null) collidernucleo.enabled = true;
+
             yield return new WaitForSeconds(3f);
-            imagennucleo.color = new Color(1, 1, 1, 0);
-            collidernucleo.enabled = false;
+            if (imagennucleo != null) imagennucleo.color = new Color(1, 1, 1, 0);
+            if (collidernucleo != null) collidernucleo.enabled = false;
         }
     }
 
     public void RecibirDaño(float cantidad)
     {
+        if (isDead) return;
+
         health -= cantidad;
         health = Mathf.Clamp(health, 0, maxhealth);
 
         ActualizarInterfaz();
 
-        Debug.Log("aaaa");
+        // Al recibir daño y quedarse sin vida, cambia de escena inmediatamente
+        if (health <= 0)
+        {
+            CargarSiguienteEscena();
+        }
     }
 
     void ActualizarInterfaz()
@@ -82,5 +101,16 @@ public class nucleo : MonoBehaviour
         }
     }
 
-    
+    void CargarSiguienteEscena()
+    {
+        isDead = true;
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        else
+        {
+            Debug.LogWarning("No colocaste el nombre de la escena en 'sceneToLoad' en el Inspector.");
+        }
+    }
 }
