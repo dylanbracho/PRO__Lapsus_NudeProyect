@@ -1,5 +1,4 @@
 using System;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
@@ -9,7 +8,6 @@ public class CutsceneTrigger : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject cutsceneCanvas;
     [SerializeField] private GameObject bloqueo;
-    public event Action CutsceneFinished;
     public bool played;
     public PlayerController player;
 

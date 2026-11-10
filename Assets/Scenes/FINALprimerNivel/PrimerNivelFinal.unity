@@ -77578,7 +77578,7 @@ MonoBehaviour:
   maxhealth: 100
   healthBarSlider: {fileID: 506832510}
   vidaentexto: {fileID: 320617286}
-  sceneToLoad: segundo nivel
+  sceneToLoad: tutorial2
 --- !u!1 &920764522
 GameObject:
   m_ObjectHideFlags: 0

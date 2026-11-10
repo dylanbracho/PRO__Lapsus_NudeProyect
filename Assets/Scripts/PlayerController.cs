@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-
+using Unity.Cinemachine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask enemyLayer;
     private float lastMoveX = 1f;
     private bool isAttacking = false;
+    //Cinemachine
+    private CinemachineImpulseSource impulseSource;
 
     //ataque
 
@@ -96,7 +98,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         OGsprite = SpriteRenderer.material;
-        
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     // Update is called once per frame
@@ -307,6 +309,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         health -= damage;
+        ImpulseManager.instance.CameraShake(impulseSource);
         animator.SetTrigger("Hurt");
         StartCoroutine(DamageFlash());
         healthBarSlider.value = health;
