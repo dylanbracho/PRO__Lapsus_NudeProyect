@@ -335,6 +335,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6491260871123765228, guid: 7e48a100773c15449bbe7a7f54baf8a7, type: 3}
   m_PrefabInstance: {fileID: 820015123}
   m_PrefabAsset: {fileID: 0}
+--- !u!320 &131673687 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 1137004404528600846, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+  m_PrefabInstance: {fileID: 1933948927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &265352907
 GameObject:
   m_ObjectHideFlags: 0
@@ -10190,6 +10195,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223509540}
   m_CullTransparentMesh: 1
+--- !u!1 &1228735358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6957265508769612997, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+  m_PrefabInstance: {fileID: 1933948927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1335597977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10427,8 +10437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776c21d652f2f394694d3e7f68e0a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneTrigger
-  director: {fileID: 0}
-  cutsceneCanvas: {fileID: 0}
+  director: {fileID: 131673687}
+  cutsceneCanvas: {fileID: 1228735358}
   bloqueo: {fileID: 991098722}
   played: 0
   player: {fileID: 490972646}
@@ -12053,6 +12063,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timeline
       objectReference: {fileID: 0}
+    - target: {fileID: 1380515644135005770, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -855298285791758126, guid: 166ab71e3aab26b44850687706b2365f, type: 3}
+    - target: {fileID: 2712411635384449094, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4178046375966092550, guid: 704135e7d9f307e448024e3da3cb02bb, type: 3}
+    - target: {fileID: 3100149616383154417, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3191368755569544091, guid: 211d627d31deda94fb1f3eb9afa727e6, type: 3}
+    - target: {fileID: 6226646801042304257, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6937817954938267909, guid: ab5a9521b50c14648b28989ef8a341a7, type: 3}
     - target: {fileID: 6957265508769612997, guid: c903ff57b26b1a94ab080cedeb21269f, type: 3}
       propertyPath: m_IsActive
       value: 1
