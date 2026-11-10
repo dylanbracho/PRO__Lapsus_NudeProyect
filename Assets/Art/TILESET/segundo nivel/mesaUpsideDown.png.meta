@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
-        width: 10
-        height: 10
+        y: 24
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: mesaUpsideDown_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 30
-        width: 10
-        height: 10
+        x: 32
+        y: 24
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,9 +148,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
-        width: 10
-        height: 10
+        y: 12
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: mesaUpsideDown_3
       rect:
         serializedVersion: 2
-        x: 50
-        y: 20
-        width: 10
-        height: 10
+        x: 32
+        y: 12
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,9 +192,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 10
-        width: 10
-        height: 10
+        y: 0
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +213,10 @@ TextureImporter:
       name: mesaUpsideDown_5
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 10
-        height: 10
+        x: 32
+        y: 0
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,226 +227,6 @@ TextureImporter:
       bones: []
       spriteID: 99464bf3975351e469111cbda5084a7b
       internalID: 1292123784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_6
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 10
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3492c0da56bd7ec4990cd1774db0348d
-      internalID: -1370246285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_7
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 10
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c255bad03eed9084f84fa5f622e18e19
-      internalID: 374449294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_8
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 10
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dda1c55f747906499b2a228b1ba8f73
-      internalID: -224825444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_9
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 10
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f930c72a73610f847a8c83f16da7a997
-      internalID: 2099184385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84b3de08a739379468dead2c43a54cb1
-      internalID: 1071202568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_11
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 577b4c9ec3512ce4c95e13b8ab180cbc
-      internalID: -771095221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_12
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7e3107ac832a3241ad366a498de02d3
-      internalID: 285813988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_13
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14dfd5c4950a6bb43adfe5a187a2c500
-      internalID: -256333565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_14
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 063c2b244054f894db02ffb388844808
-      internalID: -1889734115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesaUpsideDown_15
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e1d6764488a620409eee9aa370156c8
-      internalID: 1968877274
       vertices: []
       indices: 
       edges: []
@@ -465,24 +245,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":10.0,"y":10.0},"gridSpriteOffset":{"x":0.0,"y":4.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":12.0},"gridSpriteOffset":{"x":0.0,"y":4.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       mesaUpsideDown_0: -1133112061527460912
       mesaUpsideDown_1: -850823688
-      mesaUpsideDown_10: 1071202568
-      mesaUpsideDown_11: -771095221
-      mesaUpsideDown_12: 285813988
-      mesaUpsideDown_13: -256333565
-      mesaUpsideDown_14: -1889734115
-      mesaUpsideDown_15: 1968877274
       mesaUpsideDown_2: 727342444
       mesaUpsideDown_3: -581589197
       mesaUpsideDown_4: -1969931826
       mesaUpsideDown_5: 1292123784
-      mesaUpsideDown_6: -1370246285
-      mesaUpsideDown_7: 374449294
-      mesaUpsideDown_8: -224825444
-      mesaUpsideDown_9: 2099184385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

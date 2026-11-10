@@ -122,6 +122,13 @@ public class PromQueenBoss : MonoBehaviour
 
     void ExecutePhase1Attack()
     {
+        // Activa la animación de ataque si el Animator está asignado
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack");
+        }
+
         if (flowerPrefab != null && attackSpawnPoint != null)
         {
             GameObject spawnedAttack = Instantiate(flowerPrefab, attackSpawnPoint.position, Quaternion.identity);
@@ -143,7 +150,6 @@ public class PromQueenBoss : MonoBehaviour
             }
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController targetPlayer = collision.gameObject.GetComponent<PlayerController>();

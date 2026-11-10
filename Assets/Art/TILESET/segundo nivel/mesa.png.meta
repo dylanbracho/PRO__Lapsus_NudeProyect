@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 24
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: mesa_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 32
+        y: 24
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: mesa_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 0
+        y: 12
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: mesa_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 32
+        y: 12
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,9 +192,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +213,10 @@ TextureImporter:
       name: mesa_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 32
+        y: 0
+        width: 32
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,94 +227,6 @@ TextureImporter:
       bones: []
       spriteID: d0edcea1484a3e94ebd5af292b75783f
       internalID: -923486791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesa_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c31a2635594bffb40ab8923a4380f014
-      internalID: 272012053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesa_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 202272a3617303a40939f273f23982a9
-      internalID: -478675277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesa_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0673dc63de39f54db9aadfe68562669
-      internalID: 1082363663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mesa_9
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 384bb24badcf3c047a4284b18bcb028a
-      internalID: -1734306722
       vertices: []
       indices: 
       edges: []
@@ -333,7 +245,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":12.0},"gridSpriteOffset":{"x":0.0,"y":4.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       mesa_0: -7473354087148204023
       mesa_1: 1317276717
@@ -341,10 +253,6 @@ TextureImporter:
       mesa_3: 1639384007
       mesa_4: 1824875238
       mesa_5: -923486791
-      mesa_6: 272012053
-      mesa_7: -478675277
-      mesa_8: 1082363663
-      mesa_9: -1734306722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,21 +12,25 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3122309595442505232, guid: 3d4861a3ba8d0d7479bec08af982f9db, type: 3}
+    - target: {fileID: 1274080227773749909, guid: df57ee093745aa648aa0e9e08a01aa95, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1333615804363471987, guid: df57ee093745aa648aa0e9e08a01aa95, type: 3}
       propertyPath: m_Name
       value: IMPLANT Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4108057713267089875, guid: df57ee093745aa648aa0e9e08a01aa95, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10.15
+      value: 5.74
       objectReference: {fileID: 0}
     - target: {fileID: 4108057713267089875, guid: df57ee093745aa648aa0e9e08a01aa95, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10.15
+      value: 5.74
       objectReference: {fileID: 0}
     - target: {fileID: 4108057713267089875, guid: df57ee093745aa648aa0e9e08a01aa95, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10.15
+      value: 5.74
       objectReference: {fileID: 0}
     - target: {fileID: 4108057713267089875, guid: df57ee093745aa648aa0e9e08a01aa95, type: 3}
       propertyPath: m_LocalPosition.x

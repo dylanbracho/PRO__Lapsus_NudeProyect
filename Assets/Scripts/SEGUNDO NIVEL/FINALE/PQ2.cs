@@ -5,12 +5,11 @@ using UnityEngine.UI;
 public class PQ2 : MonoBehaviour
 {
     [SerializeField] private vidajefe bossHealth;
-    [SerializeField] private Slider bossSliderFase2; // <-- Opcional: Arrastra aquí 'barravida' de la UI fase 2 si quieres asegurarte de pintarla directo
+    [SerializeField] private Slider bossSliderFase2;
 
     [Header("Movimiento y Persecución")]
-    public float moveSpeed = 2.5f;
-    public float meeleAttackRange = 1.8f;
-    public float detectionRange = 12f;
+    public float moveSpeed = 3f;
+    public float meeleAttackRange = 1.5f;
 
     [Header("Combat & Stats")]
     public float attackInterval = 1.8f;
@@ -18,9 +17,10 @@ public class PQ2 : MonoBehaviour
     [SerializeField] private float bossDamage = 20f;
     [SerializeField] private float bossStrength = 9f;
 
-    [Header("Ataque a Distancia")]
+    [Header("Ataque a Distancia (Implante Único)")]
     public Transform attackSpawnPoint;
     public GameObject implantPrefab;
+    private bool hasShotImplant = false; // Bandera para que el implante se lance una sola vez si lo deseas
 
     [Header("Objetivo")]
     [SerializeField] private Transform player;
@@ -39,13 +39,14 @@ public class PQ2 : MonoBehaviour
         {
             bossHealth.health = bossHealth.maxhealth;
 
-            // Si arrastraste el slider específico aquí, lo actualiza al instante
             if (bossSliderFase2 != null)
             {
                 bossSliderFase2.maxValue = bossHealth.maxhealth;
                 bossSliderFase2.value = bossHealth.health;
             }
         }
+
+        hasShotImplant = false; // Reinicia el implante al reactivarse la fase
     }
 
     void Start()
@@ -73,23 +74,25 @@ public class PQ2 : MonoBehaviour
             else return;
         }
 
-        float distanceToPlayer = Vector2.Distance(transform.position, currentTarget.position);
-        if (distanceToPlayer > detectionRange) return;
-
         FaceCurrentTarget();
 
+        float distanceToPlayer = Vector2.Distance(transform.position, currentTarget.position);
+
+        // Persecución: Se acerca a Sara si está fuera de rango de melé
         if (distanceToPlayer > meeleAttackRange)
         {
             Vector2 targetPos = new Vector2(currentTarget.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         }
 
-        attackTimer -= Time.deltaTime;
-        if (attackTimer <= 0)
+        // Opcional: Si quieres que lance el implante una vez al iniciar la fase 2
+        /*
+        if (!hasShotImplant)
         {
+            hasShotImplant = true;
             ShootImplant();
-            attackTimer = attackInterval;
         }
+        */
     }
 
     void FaceCurrentTarget()
@@ -110,15 +113,13 @@ public class PQ2 : MonoBehaviour
         transform.localScale = localScale;
     }
 
-    void ShootImplat() // Mantengo el nombre o por si acaso tu método anterior
-    {
-        ShootImplant();
-    }
-
+    // Ataque a distancia (Implante)
     void ShootImplant()
     {
         if (implantPrefab != null && attackSpawnPoint != null)
         {
+            if (animator != null) animator.SetTrigger("Attack2");
+
             GameObject spawnedAttack = Instantiate(implantPrefab, attackSpawnPoint.position, Quaternion.identity);
 
             if (currentTarget != null)
@@ -139,12 +140,17 @@ public class PQ2 : MonoBehaviour
         }
     }
 
+    // Ataque normal por colisión directa (Aquí es donde colisiona y triggerea la animación con Sara)
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController targetPlayer = collision.gameObject.GetComponent<PlayerController>();
         if (targetPlayer != null)
         {
-            if (animator != null) animator.SetTrigger("Attack");
+            // ¡Dispara la animación de ataque al colisionar con Sara!
+            if (animator != null)
+            {
+                animator.SetTrigger("Attack");
+            }
 
             targetPlayer.TakeDamage(bossDamage);
             targetPlayer.hitTime = 0.5f;
@@ -153,6 +159,7 @@ public class PQ2 : MonoBehaviour
         }
     }
 
+    // Recibe daño de los ataques de Sara
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ProjectlieBehaviour>() != null || collision.name.Contains("Whip") || collision.name.Contains("Mazo"))
@@ -166,13 +173,5 @@ public class PQ2 : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, meeleAttackRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }
