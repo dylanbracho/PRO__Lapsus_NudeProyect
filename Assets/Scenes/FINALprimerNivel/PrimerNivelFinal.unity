@@ -652,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 120677431}
   - component: {fileID: 120677432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18782,7 +18782,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.3
+  orthographic size: 7.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18807,7 +18807,7 @@ Transform:
   m_GameObject: {fileID: 710608383}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.2, y: -29.640001, z: -10}
+  m_LocalPosition: {x: 16.11839, y: -2.2162502, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77552,7 +77552,8 @@ GameObject:
   - component: {fileID: 909081914}
   - component: {fileID: 909081915}
   - component: {fileID: 909081916}
-  m_Layer: 0
+  - component: {fileID: 909081917}
+  m_Layer: 6
   m_Name: nucleo
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -77656,7 +77657,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7, y: 7.3333335}
+    oldSize: {x: 9.18, y: 9.6}
     newSize: {x: 9.18, y: 9.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -77750,6 +77751,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &909081917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909081908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1384d37fdda625d44ad2c9d4147762fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::vidajefe
+  health: 100
+  maxhealth: 100
+  healthBarSlider: {fileID: 506832510}
+  vidaentexto: {fileID: 320617286}
+  sceneToLoad: tutorial2
 --- !u!1 &920764522
 GameObject:
   m_ObjectHideFlags: 0

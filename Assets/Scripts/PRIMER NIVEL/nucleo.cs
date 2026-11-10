@@ -17,8 +17,9 @@ public class nucleo : MonoBehaviour
     public Slider healthBarSlider;
     public TextMeshProUGUI vidaentexto;
 
+    [Header("Cambio de Escena al Destruirse")]
     [SerializeField] private string sceneToLoad;
-    private bool isDead = false; // Evita que se llame a LoadScene varias veces seguidas
+    private bool hasChangedScene = false;
 
     void Start()
     {
@@ -50,10 +51,10 @@ public class nucleo : MonoBehaviour
 
     void Update()
     {
-        // Si la vida llega a 0 y no hemos cambiado de escena aún, cambia a la escena deseada
-        if (health <= 0 && !isDead)
+        // Control de seguridad por si la salud llega a 0 por otro medio
+        if (health <= 0 && !hasChangedScene)
         {
-            CargarSiguienteEscena();
+            CambiarEscena();
         }
     }
 
@@ -73,17 +74,17 @@ public class nucleo : MonoBehaviour
 
     public void RecibirDaño(float cantidad)
     {
-        if (isDead) return;
+        if (hasChangedScene) return;
 
         health -= cantidad;
         health = Mathf.Clamp(health, 0, maxhealth);
 
         ActualizarInterfaz();
 
-        // Al recibir daño y quedarse sin vida, cambia de escena inmediatamente
+        // Cambia de escena de inmediato si el golpe deja el health en 0
         if (health <= 0)
         {
-            CargarSiguienteEscena();
+            CambiarEscena();
         }
     }
 
@@ -101,16 +102,16 @@ public class nucleo : MonoBehaviour
         }
     }
 
-    void CargarSiguienteEscena()
+    void CambiarEscena()
     {
-        isDead = true;
+        hasChangedScene = true;
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
             SceneManager.LoadScene(sceneToLoad);
         }
         else
         {
-            Debug.LogWarning("No colocaste el nombre de la escena en 'sceneToLoad' en el Inspector.");
+            Debug.LogWarning("No has escrito el nombre de la escena en la variable 'Scene To Load' del Núcleo.");
         }
     }
 }
