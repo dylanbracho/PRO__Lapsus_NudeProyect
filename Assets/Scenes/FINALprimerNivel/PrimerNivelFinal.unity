@@ -90077,7 +90077,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 885799378733883459, guid: ab052b4b674bcfb4e9b2da670309aa41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.84162
+      value: 86.18
       objectReference: {fileID: 0}
     - target: {fileID: 885799378733883459, guid: ab052b4b674bcfb4e9b2da670309aa41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -94881,6 +94881,10 @@ PrefabInstance:
       propertyPath: 'enemyMovementPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1049826560}
+    - target: {fileID: 3504365263222951420, guid: d0a8fb0de5e6c5f40bb102f2416d64db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3760312902598091698, guid: d0a8fb0de5e6c5f40bb102f2416d64db, type: 3}
       propertyPath: m_Name
       value: Coagulito 1 (12)
