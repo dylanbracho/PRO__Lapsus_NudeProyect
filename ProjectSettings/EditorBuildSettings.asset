@@ -47,7 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Segundo nivel/SEGUNDO PARKOUR.unity
     guid: 35e2f231dc73d1344bbb3bf6059a425a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Segundo nivel/Segundo Piso.unity
     guid: 0e4bc4bfdbbaf134eaede8e8e759098a
   - enabled: 1
@@ -65,7 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Segundo nivel/PROM NIGHT.unity
     guid: 6adff27e30c73f642b96f74798c51215
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Segundo nivel/Primer piso 2.unity
     guid: ae7c2a5cf58612549ac0dfc29e54f949
   - enabled: 1
