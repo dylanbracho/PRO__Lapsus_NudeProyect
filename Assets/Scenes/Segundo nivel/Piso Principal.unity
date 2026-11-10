@@ -36730,7 +36730,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.59
+  orthographic size: 6.22
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -36755,7 +36755,7 @@ Transform:
   m_GameObject: {fileID: 1856322308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.899994, y: 44.989998, z: -10}
+  m_LocalPosition: {x: -347.8512, y: 67.868576, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37076,6 +37076,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3213942812975383481, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
+      propertyPath: m_SortingOrder
+      value: 57
+      objectReference: {fileID: 0}
     - target: {fileID: 5202611254635282095, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
       propertyPath: m_Name
       value: PuertaNo
@@ -37083,6 +37087,22 @@ PrefabInstance:
     - target: {fileID: 5257735043145737663, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
       propertyPath: targetSceneName
       value: Primer piso
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625321558520688843, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
+      propertyPath: m_Size.x
+      value: 11.999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625321558520688843, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625321558520688843, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5000019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625321558520688843, guid: 98a5b6e45f2eea048bd128c8e2a7b366, type: 3}
+      propertyPath: m_Offset.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37352,6 +37372,10 @@ PrefabInstance:
     - target: {fileID: 262602805468420193, guid: 34172935c8ed4664781b81fb6f0d8935, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547169441615632734, guid: 34172935c8ed4664781b81fb6f0d8935, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2610917816281776603, guid: 34172935c8ed4664781b81fb6f0d8935, type: 3}
       propertyPath: m_Name
