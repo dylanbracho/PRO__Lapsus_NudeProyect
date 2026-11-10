@@ -17,8 +17,12 @@ public class DanoParticulas : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("OnParticleCollision disparado con: " + other.name);
+
         if (other.TryGetComponent<PlayerController>(out PlayerController player1))
         {
+            Debug.Log("SÍ tiene PlayerController");
+
             // 1. Sara recibe el daño completo de las partículas
             player1.TakeDamage(danoPorParticula);
 
@@ -28,6 +32,10 @@ public class DanoParticulas : MonoBehaviour
                 float vidaRobada = danoPorParticula * 0.5f;
                 jefeScript.Curar(vidaRobada);
             }
+        }
+        else
+        {
+            Debug.Log("NO tiene PlayerController, el objeto que choco se llama: " + other.name);
         }
     }
 }
