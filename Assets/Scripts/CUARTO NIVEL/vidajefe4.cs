@@ -54,6 +54,15 @@ public class vidajefe4 : MonoBehaviour
         Debug.Log("¡Daño recibido por el Heart Enemy!");
     }
 
+    // Este es el método Curar que faltaba en vidajefe4
+    public void Curar(float cantidad)
+    {
+        health += cantidad;
+        health = Mathf.Clamp(health, 0, maxhealth);
+
+        ActualizarInterfaz();
+    }
+
     void ActualizarInterfaz()
     {
         if (healthBarSlider != null)

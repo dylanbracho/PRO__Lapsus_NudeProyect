@@ -28947,15 +28947,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250713977}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.24649073, w: 0.9691452}
-  m_LocalPosition: {x: -4.3, y: 8.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.072021, w: 0.99740314}
+  m_LocalPosition: {x: -2.8700988, y: 6.910554, z: 0}
   m_LocalScale: {x: 0.82973444, y: 0.82973444, z: 0.82973444}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 372238885}
   - {fileID: 1424827168}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.54}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.26}
 --- !u!114 &250713982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28968,7 +28968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9aa285fdf5d82c48961215fa3046761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicMov
-  objetivoSara: {fileID: 0}
+  objetivoSara: {fileID: 601965466}
   velocidadPalpitacion: 4
   intensidadPalpitacion: 0.3
   estaEnReposado: 0
@@ -28986,8 +28986,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AtaquesBoss
   sistemaSangre: {fileID: 372238887}
+  objetivoSeguimiento: {fileID: 601965466}
   tiempoMinimoEntreAtaques: 8
   tiempoMaximoEntreAtaques: 9
+  cajaAncho: 100
+  cajaAlto: 0.5
+  alturaSobreJugador: 30
+  cantidadOlasLluvia: 5
+  intervaloEntreOlas: 0.6
 --- !u!114 &250713984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29001,6 +29007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DanoParticulas
   danoPorParticula: 0.2
+  jefeScript: {fileID: 0}
 --- !u!61 &250713985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29077,7 +29084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::vidajefe4
   health: 100
-  maxhealth: 100
+  maxhealth: 200
   healthBarSlider: {fileID: 0}
   vidaentexto: {fileID: 0}
   sceneToLoad: 
@@ -29203,7 +29210,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372238884}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -29331,7 +29338,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 23
+      scalar: 12
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -29826,8 +29833,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
-    angle: 25
+    type: 0
+    angle: 3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -33988,7 +33995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858c9e1589fec8f4ebf2d90c18fb3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DanoParticulas
-  danoPorParticula: 1
+  danoPorParticula: 4
+  jefeScript: {fileID: 0}
 --- !u!1 &443402508
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,18 +5,33 @@ public class AtaquesBoss : MonoBehaviour
 {
     [SerializeField] private ParticleSystem sistemaSangre;
 
+    [Header("Referencia al Jugador (Arrastra a Sara aquí desde el Inspector)")]
+    [SerializeField] private Transform objetivoSeguimiento;
+
     [Header("Configuración de Cooldowns y Esperas")]
     [SerializeField] private float tiempoMinimoEntreAtaques = 1.5f;
-    [SerializeField] private float tiempoMaximoEntreAtaques = 3.0f;
+    [SerializeField] private float tiempoMaximoEntreAtaques = 2.8f;
+
+    [Header("Configuración de Lluvia sobre el Jugador (Box)")]
+    [SerializeField] private float cajaAncho = 14f;
+    [SerializeField] private float cajaAlto = 0.5f;
+    [SerializeField] private float alturaSobreJugador = 8f;
+    [SerializeField] private int cantidadOlasLluvia = 5;
+    [SerializeField] private float intervaloEntreOlas = 0.6f;
 
     private BasicMov movimientoJefe;
     private bool ejecutandoAtaque = false;
-    private bool ataquesHabilitados = false; // No dispara hasta que la plataforma avise
+    private bool ataquesHabilitados = false;
     private int ultimoAtaqueElegido = -1;
 
     void Start()
     {
         movimientoJefe = GetComponent<BasicMov>();
+
+        if (objetivoSeguimiento == null && movimientoJefe != null && movimientoJefe.ObjetivoSara != null)
+        {
+            objetivoSeguimiento = movimientoJefe.ObjetivoSara;
+        }
 
         if (sistemaSangre == null)
         {
@@ -24,7 +39,6 @@ public class AtaquesBoss : MonoBehaviour
         }
     }
 
-    // Llamado por la plataforma al llegar arriba
     public void ActivarAtaques()
     {
         if (ataquesHabilitados) return;
@@ -34,12 +48,11 @@ public class AtaquesBoss : MonoBehaviour
 
     IEnumerator BucleDeAtaques()
     {
-        // Espera de cortesía tras la presentación inicial del jefe antes de lanzar el primer chorro
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         while (ataquesHabilitados)
         {
-            if (movimientoJefe != null && !ejecutandoAtaque)
+            if (!ejecutandoAtaque)
             {
                 EjecutarAtaqueVariado();
             }
@@ -55,7 +68,28 @@ public class AtaquesBoss : MonoBehaviour
 
         do
         {
-            ataqueElegido = Random.Range(0, 3);
+            int azar = Random.Range(0, 8);
+
+            if (azar == 2 || azar == 5 || azar == 6)
+            {
+                ataqueElegido = 2; // Alta probabilidad de Lluvia
+            }
+            else if (azar == 0)
+            {
+                ataqueElegido = 0;
+            }
+            else if (azar == 1)
+            {
+                ataqueElegido = 1;
+            }
+            else if (azar == 3)
+            {
+                ataqueElegido = 3;
+            }
+            else
+            {
+                ataqueElegido = 4;
+            }
         }
         while (ataqueElegido == ultimoAtaqueElegido);
 
@@ -64,85 +98,223 @@ public class AtaquesBoss : MonoBehaviour
         switch (ataqueElegido)
         {
             case 0:
-                StartCoroutine(RutinaChorroDirecto());
+                StartCoroutine(RutinaDisparoLineal());
                 break;
             case 1:
-                StartCoroutine(RutinaRafagaTriple());
+                StartCoroutine(RutinaMorteroArco());
                 break;
             case 2:
-                StartCoroutine(RutinaAbanicoSangre());
+                StartCoroutine(RutinaLluviaCaja());
+                break;
+            case 3:
+                StartCoroutine(RutinaOndaDonut());
+                break;
+            case 4:
+                StartCoroutine(RutinaPulsoCircular());
                 break;
         }
     }
 
-    IEnumerator RutinaChorroDirecto()
+    // 1. DISPARO LINEAL
+    IEnumerator RutinaDisparoLineal()
     {
         ejecutandoAtaque = true;
 
-        if (sistemaSangre != null && movimientoJefe.ObjetivoSara != null)
+        if (sistemaSangre != null && objetivoSeguimiento != null)
         {
-            Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
-            Vector3 posicionEmisor = sistemaSangre.transform.position;
+            var shape = sistemaSangre.shape;
+            shape.shapeType = ParticleSystemShapeType.Circle;
+            shape.radius = 0.05f;
+            shape.scale = Vector3.one; // Asignación corregida vía variable temporal
 
-            Vector2 direccion = (posicionSara - posicionEmisor).normalized;
+            var main = sistemaSangre.main;
+            main.startSpeed = 22f;
+            main.startSize = 1.3f;
+            main.gravityModifier = 0.25f;
+            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+
+            var emission = sistemaSangre.emission;
+            emission.rateOverTime = 0;
+            emission.SetBurst(0, new ParticleSystem.Burst(0f, 10f));
+
+            Vector3 posicionObjetivo = objetivoSeguimiento.position;
+            Vector3 posicionEmisor = sistemaSangre.transform.position;
+            Vector2 direccion = (posicionObjetivo - posicionEmisor).normalized;
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
+            sistemaSangre.transform.localPosition = Vector3.zero;
             sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo);
             sistemaSangre.Play();
         }
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.6f);
         ejecutandoAtaque = false;
     }
 
-    IEnumerator RutinaRafagaTriple()
+    // 2. MORTERO EN ARCO
+    IEnumerator RutinaMorteroArco()
     {
         ejecutandoAtaque = true;
 
-        for (int i = 0; i < 3; i++)
+        if (sistemaSangre != null && objetivoSeguimiento != null)
         {
-            if (sistemaSangre != null && movimientoJefe.ObjetivoSara != null)
-            {
-                Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
-                Vector3 posicionEmisor = sistemaSangre.transform.position;
+            var shape = sistemaSangre.shape;
+            shape.shapeType = ParticleSystemShapeType.Hemisphere;
+            shape.radius = 0.8f;
+            shape.scale = Vector3.one;
 
-                Vector2 direccion = (posicionSara - posicionEmisor).normalized;
-                float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+            var main = sistemaSangre.main;
+            main.startSpeed = 15f;
+            main.startSize = 1.4f;
+            main.gravityModifier = 1.3f;
+            main.simulationSpace = ParticleSystemSimulationSpace.Local;
 
-                sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo);
-                sistemaSangre.Play();
-            }
+            var emission = sistemaSangre.emission;
+            emission.rateOverTime = 0;
+            emission.SetBurst(0, new ParticleSystem.Burst(0f, 12f));
 
-            yield return new WaitForSeconds(0.3f);
-        }
-
-        yield return new WaitForSeconds(0.6f);
-        ejecutandoAtaque = false;
-    }
-
-    IEnumerator RutinaAbanicoSangre()
-    {
-        ejecutandoAtaque = true;
-
-        if (sistemaSangre != null && movimientoJefe.ObjetivoSara != null)
-        {
-            Vector3 posicionSara = movimientoJefe.ObjetivoSara.position;
+            Vector3 posicionObjetivo = objetivoSeguimiento.position;
             Vector3 posicionEmisor = sistemaSangre.transform.position;
+            Vector2 direccion = (posicionObjetivo - posicionEmisor).normalized;
 
-            Vector2 direccionBase = (posicionSara - posicionEmisor).normalized;
-            float anguloBase = Mathf.Atan2(direccionBase.y, direccionBase.x) * Mathf.Rad2Deg;
+            float anguloBase = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+            float anguloMortero = Mathf.Max(anguloBase, 45f);
 
-            float[] offsetsAngulo = { -25f, 0f, 25f };
+            sistemaSangre.transform.localPosition = Vector3.zero;
+            sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, anguloMortero);
+            sistemaSangre.Play();
+        }
 
-            foreach (float offset in offsetsAngulo)
+        yield return new WaitForSeconds(2.2f);
+        ejecutandoAtaque = false;
+    }
+
+    // 3. LLUVIA EN CAJA
+    IEnumerator RutinaLluviaCaja()
+    {
+        ejecutandoAtaque = true;
+
+        if (sistemaSangre != null && objetivoSeguimiento != null)
+        {
+            var shape = sistemaSangre.shape;
+            shape.shapeType = ParticleSystemShapeType.Box;
+            shape.scale = new Vector3(cajaAlto, cajaAncho, 1f); // Escala exclusiva para Box
+
+            var main = sistemaSangre.main;
+            main.startSpeed = 2.5f;
+            main.startSize = 1.3f;
+            main.gravityModifier = 1.2f;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+
+            var emission = sistemaSangre.emission;
+            emission.rateOverTime = 0;
+
+            Vector3 posObjetivo = objetivoSeguimiento.position;
+            sistemaSangre.transform.position = new Vector3(posObjetivo.x, posObjetivo.y + alturaSobreJugador, posObjetivo.z);
+            sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+
+            for (int i = 0; i < cantidadOlasLluvia; i++)
             {
-                sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, anguloBase + offset);
+                emission.SetBurst(0, new ParticleSystem.Burst(0f, 35f));
                 sistemaSangre.Play();
-                yield return new WaitForSeconds(0.18f);
+
+                yield return new WaitForSeconds(intervaloEntreOlas);
             }
         }
 
         yield return new WaitForSeconds(0.8f);
+
+        sistemaSangre.transform.localPosition = Vector3.zero;
+        sistemaSangre.transform.localRotation = Quaternion.identity;
+
+        var mainRest = sistemaSangre.main;
+        mainRest.simulationSpace = ParticleSystemSimulationSpace.Local;
+
+        var shapeRest = sistemaSangre.shape;
+        shapeRest.scale = Vector3.one; // Restablece la escala por defecto
+
+        ejecutandoAtaque = false;
+    }
+
+    // 4. ONDA DONUT
+    IEnumerator RutinaOndaDonut()
+    {
+        ejecutandoAtaque = true;
+
+        if (sistemaSangre != null && objetivoSeguimiento != null)
+        {
+            var shape = sistemaSangre.shape;
+            shape.shapeType = ParticleSystemShapeType.Donut;
+            shape.radius = 1.8f;
+            shape.donutRadius = 0.5f;
+            shape.scale = Vector3.one;
+
+            var main = sistemaSangre.main;
+            main.startSpeed = 11f;
+            main.startSize = 1.3f;
+            main.gravityModifier = 0.25f;
+            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+
+            var emission = sistemaSangre.emission;
+            emission.rateOverTime = 0;
+            emission.SetBurst(0, new ParticleSystem.Burst(0f, 35f));
+
+            Vector3 posicionObjetivo = objetivoSeguimiento.position;
+            Vector3 posicionEmisor = sistemaSangre.transform.position;
+            Vector2 direccion = (posicionObjetivo - posicionEmisor).normalized;
+            float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+            sistemaSangre.transform.localPosition = Vector3.zero;
+            sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, angulo);
+            sistemaSangre.Play();
+        }
+
+        yield return new WaitForSeconds(2.0f);
+        ejecutandoAtaque = false;
+    }
+
+    // 5. PULSO CIRCULAR
+    IEnumerator RutinaPulsoCircular()
+    {
+        ejecutandoAtaque = true;
+
+        if (sistemaSangre != null && objetivoSeguimiento != null)
+        {
+            var shape = sistemaSangre.shape;
+            shape.shapeType = ParticleSystemShapeType.Circle;
+            shape.radius = 0.8f;
+            shape.scale = Vector3.one;
+
+            var main = sistemaSangre.main;
+            main.startSpeed = 12f;
+            main.startSize = 1.3f;
+            main.gravityModifier = 0.2f;
+            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+
+            var emission = sistemaSangre.emission;
+            emission.rateOverTime = 0;
+            emission.SetBurst(0, new ParticleSystem.Burst(0f, 6f));
+
+            Vector3 posicionObjetivo = objetivoSeguimiento.position;
+            Vector3 posicionEmisor = sistemaSangre.transform.position;
+            Vector2 direccion = (posicionObjetivo - posicionEmisor).normalized;
+            float anguloBase = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+            int pasos = 6;
+            float pasoAngulo = 360f / pasos;
+
+            sistemaSangre.transform.localPosition = Vector3.zero;
+
+            for (int i = 0; i < pasos; i++)
+            {
+                float anguloActual = anguloBase + (i * pasoAngulo);
+                sistemaSangre.transform.rotation = Quaternion.Euler(0f, 0f, anguloActual);
+                sistemaSangre.Play();
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+
+        yield return new WaitForSeconds(2.0f);
         ejecutandoAtaque = false;
     }
 }
