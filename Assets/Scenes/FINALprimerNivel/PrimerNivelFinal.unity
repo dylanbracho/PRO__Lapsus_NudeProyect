@@ -80443,7 +80443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 0}
-  sceneToLoad: asUI
+  sceneToLoad: Inicio
 --- !u!114 &1201327922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95704,7 +95704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 1556866653}
-  sceneToLoad: 
+  sceneToLoad: PrimerNivelFinal
 --- !u!114 &2037785169
 MonoBehaviour:
   m_ObjectHideFlags: 0

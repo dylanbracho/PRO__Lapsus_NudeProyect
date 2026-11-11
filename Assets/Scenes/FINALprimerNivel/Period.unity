@@ -26699,7 +26699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 0}
-  sceneToLoad: asUI
+  sceneToLoad: Inicio
 --- !u!114 &900031954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30210,7 +30210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 1892108257}
-  sceneToLoad: 
+  sceneToLoad: Period
 --- !u!114 &1079585342
 MonoBehaviour:
   m_ObjectHideFlags: 0

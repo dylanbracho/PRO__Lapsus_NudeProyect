@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 163053537}
-  sceneToLoad: Heart
+  sceneToLoad: Segunfo piso
 --- !u!114 &67366428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 163053537}
-  sceneToLoad: asUI
+  sceneToLoad: Inicio
 --- !u!114 &1867943064
 MonoBehaviour:
   m_ObjectHideFlags: 0

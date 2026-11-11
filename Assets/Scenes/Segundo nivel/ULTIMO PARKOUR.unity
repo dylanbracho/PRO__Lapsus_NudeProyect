@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 556154371}
-  sceneToLoad: asUI
+  sceneToLoad: Inicio
 --- !u!114 &96530475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,7 +2679,7 @@ Transform:
   m_GameObject: {fileID: 880288437}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -354.46603, y: 107.80601, z: -10}
+  m_LocalPosition: {x: -358.17715, y: 107.80601, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -294744,7 +294744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 556154371}
-  sceneToLoad: Heart
+  sceneToLoad: ULTIMO PARKOUR
 --- !u!114 &1271924939
 MonoBehaviour:
   m_ObjectHideFlags: 0

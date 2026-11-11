@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 391346670}
-  sceneToLoad: ovario1
+  sceneToLoad: tutorial2
 --- !u!114 &185550497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 0}
-  sceneToLoad: asUI
+  sceneToLoad: Inicio
 --- !u!114 &810805428
 MonoBehaviour:
   m_ObjectHideFlags: 0

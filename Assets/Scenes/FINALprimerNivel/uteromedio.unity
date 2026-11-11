@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 0}
-  sceneToLoad: asUI
+  sceneToLoad: Inicio
 --- !u!114 &201514733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::botonmenupausa
   menupausa: {fileID: 851760886}
-  sceneToLoad: 
+  sceneToLoad: uteromedio
 --- !u!114 &632220630
 MonoBehaviour:
   m_ObjectHideFlags: 0
